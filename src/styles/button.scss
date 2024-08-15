@@ -1,0 +1,80 @@
+.capybara-button {
+
+    font-size: 14px;
+    line-height: 1;
+    padding: 12px 16px;
+    border: 1px solid lightgray;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+
+    &:hover {
+        background-color: rgb(233, 233, 233);
+        border-color: gray;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    }
+
+    &:active {
+        background-color: rgb(240, 239, 239);
+        border-color: gray;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0);
+    }
+
+    &.rounded-pill {
+        border-radius: 19px;
+    }
+
+    &.size-xs {
+        font-size: 10px;
+        padding: 4px 8px;
+        &.rounded-pill {
+            border-radius: 9px;
+        }
+    }
+
+    &.size-sm {
+        font-size: 12px;
+        padding: 8px 12px;
+        &.rounded-pill {
+            border-radius: 14px;
+        }
+    }
+
+    &.size-lg {
+        font-size: 16px;
+        padding: 16px 20px;
+        &.rounded-pill {
+            border-radius:24px;
+        }
+    }
+
+    &.size-xl {
+        font-size: 18px;
+        padding: 20px 24px;
+        &.rounded-pill {
+            border-radius: 28px;
+        }
+    }
+
+    &.rounded-sm {
+        border-radius: 2.5px;
+    }
+
+    &.rounded {
+        border-radius: 5px;
+    }
+
+    &.rounded-lg {
+        border-radius: 7.5px;
+    }
+
+    &.rounded-circle {
+        border-radius: 50%;
+        width: fit-content;
+        aspect-ratio: 1;
+    }
+
+    .hide {
+        opacity: 0;
+    }
+}
