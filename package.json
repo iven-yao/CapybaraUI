@@ -29,6 +29,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "test": "vitest",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "gh-pages": "^6.1.1",
-    "vite": "^5.4.0"
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
   }
 }
