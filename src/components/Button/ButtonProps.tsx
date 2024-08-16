@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 export type ButtonProps = {
     variant?: string,
     size?: 'xs'|'sm'|'md'|'lg'|'xl',
@@ -5,4 +7,5 @@ export type ButtonProps = {
     className?: string,
     isLoading?: boolean,
     style?: React.CSSProperties,
+    onClick?: MouseEventHandler<HTMLButtonElement>,
 }

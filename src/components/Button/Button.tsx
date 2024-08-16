@@ -1,10 +1,10 @@
 import { ButtonProps } from "./ButtonProps";
 import { PropsWithChildren } from "react";
 import clsx from "clsx";
-import 'src/styles/button.scss';
+import './Button.scss';
 
 const Button = (props: PropsWithChildren<ButtonProps>) => {
-    const {children, variant, className, size, isLoading, rounded, style} = {...props};
+    const {children, variant, className, size, isLoading, rounded, style, onClick} = {...props};
 
     return (
         <button className={clsx(
@@ -23,6 +23,7 @@ const Button = (props: PropsWithChildren<ButtonProps>) => {
             })}
             
             style={style}
+            onClick={onClick}
         >
             <div className={clsx({'hide':isLoading})}>
                 {children}
