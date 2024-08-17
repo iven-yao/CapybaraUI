@@ -1,4 +1,4 @@
-import fullLogo from '../../../public/fulllogo1000x250.png'
+import fullLogo from '../../assets/fullLogo1000x250.png'
 import './Home.scss';
 
 const Home = () => {

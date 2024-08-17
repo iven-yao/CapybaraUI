@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
-import logo from '../../../public/logo500.png';
+import logo from '../../assets/logo500.png';
 import './Layout.scss';
   
 // Layout component

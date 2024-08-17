@@ -20,11 +20,11 @@ const ButtonDocs = () => {
 
                 <div style={{fontSize:'30px'}}>Size</div>
                 <div style={{padding:'10px', display:'flex', gap:'10px', alignItems:'center'}}>
-                    <Button size="xs">x-small</Button>
-                    <Button size="sm">small</Button>
-                    <Button size="md">medium</Button>
-                    <Button size="lg">large</Button>
                     <Button size="xl">x-large</Button>
+                    <Button size="lg">large</Button>
+                    <Button size="md">medium</Button>
+                    <Button size="sm">small</Button>
+                    <Button size="xs">x-small</Button>
                 </div>
 
                 <div style={{fontSize:'30px'}}>Shape</div>
