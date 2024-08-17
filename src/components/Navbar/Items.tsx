@@ -1,11 +1,18 @@
 import { PropsWithChildren } from "react";
+import { ItemsProps } from "./NavbarProps";
+import clsx from "clsx";
 
-const Items = (props:PropsWithChildren) => {
+const Items = (props:PropsWithChildren<ItemsProps>) => {
 
-    const {children} = {...props};
+    const {children, justify} = {...props};
 
     return (
-        <div className="navbar-items">
+        <div className={clsx(
+            "navbar-items",
+            {
+                [`justify-${justify}`]:justify
+            }
+        )}>
             {children}
         </div>
     );

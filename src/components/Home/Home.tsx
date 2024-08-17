@@ -1,12 +1,13 @@
-import Button from "../Button";
+import fullLogo from '../../../public/fulllogo1000x250.png'
+import './Home.scss';
 
 const Home = () => {
 
     return (
-        <>
-            <h1>Welcome to the Home page</h1>
+        <div className='home-container'>
+            <img src={fullLogo} alt="capybara ui"/>
             
-        </>
+        </div>
     
     );
 }

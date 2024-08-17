@@ -3,9 +3,18 @@ import { PropsWithChildren } from "react";
 import clsx from "clsx";
 import './Button.scss';
 
-const Button = (props: PropsWithChildren<ButtonProps>) => {
-    const {children, variant, className, size, isLoading, rounded, style, onClick, border} = {...props};
-
+const Button = ( {
+    children, 
+    className, 
+    variant= 'white', 
+    size='md', 
+    isLoading, 
+    rounded, 
+    style, 
+    onClick, 
+    border
+}: PropsWithChildren<ButtonProps>) => {
+    
     return (
         <button className={clsx(
             'capybara-button',

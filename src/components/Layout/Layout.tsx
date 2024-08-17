@@ -1,19 +1,23 @@
 import { Link, Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
+import logo from '../../../public/logo500.png';
+import './Layout.scss';
   
 // Layout component
 const Layout = () => {
     return (
-        <div>
-            <Navbar variant="yellow">
-                <Navbar.Items>
-                    <Navbar.Item><Link to={'./docs'}>Docs</Link></Navbar.Item>
-                    <Navbar.Item>About</Navbar.Item>
-                    <Navbar.Item>Storybook</Navbar.Item>
-                    <Navbar.Item>Blog</Navbar.Item>
+        <div className="container">
+            <Navbar height={'80px'}>
+                <Navbar.Logo src={logo}></Navbar.Logo>
+                <Navbar.Items justify="end">
+                    <Navbar.Item><Link to={'./docs'} className="navbar-link">DOCS</Link></Navbar.Item>
+                    <Navbar.Item>ABOUT</Navbar.Item>
+                    <Navbar.Item>BLOG</Navbar.Item>
                 </Navbar.Items>
             </Navbar>
-            <Outlet />
+            <div className="content">
+                <Outlet/>
+            </div>
         </div>
     );
 };
