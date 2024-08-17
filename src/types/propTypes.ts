@@ -1,0 +1,1 @@
+export type variant = 'red'|'orange'|'yellow'|'green'|'blue'|'indigo'|'purple'|'black'|'white';

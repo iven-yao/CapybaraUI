@@ -1,0 +1,22 @@
+.docs-container {
+    display: flex;
+
+    .side-bar {
+        width: 200px;
+
+        li {
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            .active {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .content {
+        flex-grow:1;
+    }
+}

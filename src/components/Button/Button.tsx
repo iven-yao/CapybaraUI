@@ -4,22 +4,17 @@ import clsx from "clsx";
 import './Button.scss';
 
 const Button = (props: PropsWithChildren<ButtonProps>) => {
-    const {children, variant, className, size, isLoading, rounded, style, onClick} = {...props};
+    const {children, variant, className, size, isLoading, rounded, style, onClick, border} = {...props};
 
     return (
         <button className={clsx(
             'capybara-button',
             className,
             {
-            'size-xs': size === 'xs',
-            'size-sm': size === 'sm',
-            'size-lg': size === 'lg',
-            'size-xl': size === 'xl',
-            'rounded': rounded === true || rounded === 'md',
-            'rounded-sm': rounded === 'sm',
-            'rounded-lg': rounded === 'lg',
-            'rounded-pill': rounded === 'pill',
-            'rounded-circle': rounded === 'circle',
+                [`size-${size}`]: size,
+                [`rounded-${rounded}`]: rounded,
+                [`bg-${variant}`]:variant,
+                [`border-${variant} border`]:border
             })}
             
             style={style}

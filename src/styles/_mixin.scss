@@ -1,0 +1,139 @@
+@import './variables';
+
+@mixin variant-background {
+    &.bg-red {
+        background-color: color(red, bg);
+    }
+
+    &.bg-orange {
+        background-color: color(orange, bg);
+    }
+
+    &.bg-yellow {
+        background-color: color(yellow, bg);
+    }
+
+    &.bg-green {
+        background-color: color(green, bg);
+    }
+
+    &.bg-blue {
+        background-color: color(blue, bg);
+    }
+
+    &.bg-indigo {
+        background-color: color(indigo, bg);
+    }
+
+    &.bg-violet {
+        background-color: color(violet, bg);
+    }
+
+    &.bg-white {
+        background-color: white;
+    }
+
+    &.bg-black {
+        background-color: black;
+    }
+}
+
+@mixin variant-hover-background {
+    &.bg-red:hover {
+        background-color: color(red, hover);
+    }
+
+    &.bg-orange:hover {
+        background-color: color(orange, hover);
+    }
+
+    &.bg-yellow:hover {
+        background-color: color(yellow, hover);
+    }
+
+    &.bg-green:hover {
+        background-color: color(green, hover);
+    }
+
+    &.bg-blue:hover {
+        background-color: color(blue, hover);
+    }
+
+    &.bg-indigo:hover {
+        background-color: color(indigo, hover);
+    }
+
+    &.bg-violet:hover {
+        background-color: color(violet, hover);
+    }
+
+    &.bg-white:hover {
+        background-color: white;
+    }
+
+    &.bg-black:hover {
+        background-color: black;
+    }
+}
+
+@mixin variant-border {
+    &.border-red {
+        border-color: color(red, border);
+    }
+
+    &.border-orange {
+        border-color: color(orange, border);
+    }
+
+    &.border-yellow {
+        border-color: color(yellow, border);
+    }
+
+    &.border-green {
+        border-color: color(green, border);
+    }
+
+    &.border-blue {
+        border-color: color(blue, border);
+    }
+
+    &.border-indigo {
+        border-color: color(indigo, border);
+    }
+
+    &.border-violet {
+        border-color: color(violet, border);
+    }
+
+    &.border-white {
+        border-color: white;
+    }
+
+    &.border-black {
+        border-color: black;
+    }
+}
+
+@mixin rounded {
+    &.rounded-sm {
+        border-radius: 0.25rem;
+    }
+
+    &.rounded-md {
+        border-radius: 0.5rem;
+    }
+
+    &.rounded-lg {
+        border-radius: 0.75rem;
+    }
+
+    &.rounded-pill {
+        border-radius: 9999px;
+    }
+
+    &.rounded-circle {
+        border-radius: 50%;
+        width: fit-content;
+        aspect-ratio: 1;
+    }
+}
