@@ -1,16 +1,11 @@
-import { createContext, PropsWithChildren } from "react";
-import { NavbarShared, NavbarProps } from "./NavbarProps";
+import { PropsWithChildren } from "react";
+import { NavbarProps } from "./NavbarProps";
 import './Navbar.scss';
 import clsx from "clsx";
 import Items from "./Items";
 import Item from "./Item";
 import Logo from "./Logo";
-
-
-export const NavbarContext = createContext<NavbarShared>({
-    variant: 'white',
-    height: 50
-});
+import { NavbarContext } from "./NavbarContext";
 
 const Navbar = ({
     children,
@@ -24,10 +19,10 @@ const Navbar = ({
         <NavbarContext.Provider value={{variant, height}}>
             <nav className={clsx(
                 'capybara-navbar',
-                className,
                 {
                     [`bg-${variant}`]:variant
-                }
+                },
+                className,
             )}
                 style={{
                     height:`${typeof height === 'number' ? `${height}px`:height}`,

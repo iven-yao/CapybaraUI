@@ -1,13 +1,11 @@
 import { MouseEventHandler } from "react";
-import { variant } from "../../types/propTypes";
+import { componentBasics, variant } from "../../types/propTypes";
 
-export type ButtonProps = {
+export type ButtonProps = componentBasics & {
     variant?: variant,
     size?: 'xs'|'sm'|'md'|'lg'|'xl',
-    rounded?: 'sm'|'md'|'lg'|'pill'|'circle',
+    rounded?: 'sm'|'md'|'lg'|'pill'|'circle'|'none',
     border?: boolean|undefined
-    className?: string,
     isLoading?: boolean,
-    style?: React.CSSProperties,
     onClick?: MouseEventHandler<HTMLButtonElement>,
 }

@@ -1,7 +1,7 @@
 import { PropsWithChildren, useContext } from "react";
-import { NavbarContext } from "./Navbar";
 import { LogoProps } from "./NavbarProps";
 import { Link } from "react-router-dom";
+import { NavbarContext } from "./NavbarContext";
 
 const Logo = ({
     children,

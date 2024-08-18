@@ -1,21 +1,20 @@
-import { variant } from "../../types/propTypes"
+import { componentBasics, variant } from "../../types/propTypes"
 
 export type NavbarShared = {
     variant:variant,
     height:number|string,
 }
 
-export type NavbarProps = {
+export type NavbarProps = componentBasics & {
     position?:'static'|'fixed'|'sticky'
-    className?:string,
     variant?:variant,
     height?:number|string
 }
 
-export type LogoProps = {
+export type LogoProps = componentBasics & {
     src?:string,
 }
 
-export type ItemsProps = {
+export type ItemsProps = componentBasics & {
     justify?:'center'|'start'|'end';
 }

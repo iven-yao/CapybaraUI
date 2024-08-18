@@ -33,3 +33,27 @@
         flex-grow:1;
     }
 }
+
+.title {
+    font-size: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.interactive-section {
+    display: flex;
+    .controller {
+        padding: 10px;
+        min-width: 50%;
+    }
+
+    .result {
+        padding: 10px;
+        flex-grow:1;
+        background-color: rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

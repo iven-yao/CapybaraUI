@@ -9,22 +9,23 @@ const Button = ( {
     variant= 'white', 
     size='md', 
     isLoading, 
-    rounded, 
+    rounded='sm', 
     style, 
     onClick, 
-    border
+    border=true
 }: PropsWithChildren<ButtonProps>) => {
     
     return (
         <button className={clsx(
             'capybara-button',
-            className,
             {
                 [`size-${size}`]: size,
-                [`rounded-${rounded}`]: rounded,
+                [`rounded-${rounded}`]: rounded && rounded !== 'none',
                 [`bg-${variant}`]:variant,
                 [`border-${variant} border`]:border
-            })}
+            },
+            className,
+            )}
             
             style={style}
             onClick={onClick}

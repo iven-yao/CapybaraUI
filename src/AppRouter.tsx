@@ -3,7 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Docs from './components/Docs/Docs';
-import ButtonDocs from './components/Button/ButtonDocs';
+import ButtonDocs from './components/Docs/ButtonDocs';
+import DropdownMenuDocs from './components/Docs/DropdownMenuDocs';
 
 function AppRouter() {
 
@@ -26,7 +27,7 @@ function AppRouter() {
             },
             {
               path:'dropdown-menu',
-              element: <div>Dropdown Menu</div>
+              element: <DropdownMenuDocs />
             },
             {
               path:'navbar',

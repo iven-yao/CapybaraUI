@@ -2,9 +2,7 @@
 
 .capybara-button {
 
-    font-size: 14px;
     line-height: 1;
-    padding: 12px 16px;
     background-color: white;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -25,22 +23,27 @@
     }
 
     &.size-xs {
-        font-size: 10px;
+        font-size: 14px;
         padding: 4px 8px;
     }
 
     &.size-sm {
-        font-size: 12px;
+        font-size: 14px;
         padding: 8px 12px;
     }
 
+    &.size-md {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+
     &.size-lg {
-        font-size: 16px;
+        font-size: 14px;
         padding: 16px 20px;
     }
 
     &.size-xl {
-        font-size: 18px;
+        font-size: 14px;
         padding: 20px 24px;
     }
 
