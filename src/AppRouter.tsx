@@ -11,7 +11,7 @@ function AppRouter() {
 
   const router = createHashRouter([
     {
-      path:'/capybaraui/',
+      path:'/',
       element: <Layout />,
       children: [
         {
