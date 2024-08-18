@@ -1,14 +1,15 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Docs from './components/Docs/Docs';
 import ButtonDocs from './components/Docs/ButtonDocs';
 import DropdownMenuDocs from './components/Docs/DropdownMenuDocs';
+import SelectDocs from './components/Docs/SelectDocs';
 
 function AppRouter() {
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path:'/capybaraui/',
       element: <Layout />,
@@ -32,6 +33,10 @@ function AppRouter() {
             {
               path:'navbar',
               element: <div>Navbar</div>
+            },
+            {
+              path:'select',
+              element: <SelectDocs />
             },
           ]
         }

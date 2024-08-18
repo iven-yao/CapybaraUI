@@ -10,6 +10,7 @@ const Docs = () => {
                         <li><NavLink to={"./button"}>Button</NavLink></li>
                         <li><NavLink to={"./dropdown-menu"}>Dropdown Menu</NavLink></li>
                         <li><NavLink to={"./navbar"}>Navbar</NavLink></li>
+                        <li><NavLink to={"./select"}>Select</NavLink></li>
                     </ul>
                 </nav>
             </div>

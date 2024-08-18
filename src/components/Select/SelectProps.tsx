@@ -1,8 +1,8 @@
 import { componentBasics } from "../../types/propTypes"
 
 export type SelectShared = {
-    isOpen: boolean,
-    selectedValue: string|string[],
+    selectedValue: string|string[]|undefined,
+    setSelectedValue: React.Dispatch<React.SetStateAction<string | string[] | undefined>>,
     multiple: boolean,
 }
 
@@ -13,6 +13,7 @@ export type SelectProps = componentBasics & {
     placeholder?: string,
     disabled?: boolean,
     multiple?: boolean,
+    width?: number|string
 }
 
 export type SelectOptionProps = componentBasics & {
