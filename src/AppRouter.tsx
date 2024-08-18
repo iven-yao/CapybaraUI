@@ -1,5 +1,5 @@
 import React from 'react';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Docs from './components/Docs/Docs';
@@ -9,7 +9,7 @@ import SelectDocs from './components/Docs/SelectDocs';
 
 function AppRouter() {
 
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path:'/',
       element: <Layout />,
