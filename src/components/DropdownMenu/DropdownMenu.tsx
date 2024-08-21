@@ -6,6 +6,7 @@ import './DropdownMenu.scss';
 import Items from "./Items";
 import Item from "./Item";
 import DropdownButton from "./DropdownButton";
+import { FaCaretDown } from "react-icons/fa";
 
 const DropdownMenu = ({
     children,
@@ -27,7 +28,9 @@ const DropdownMenu = ({
                     "active":isOpen
                 },
                 className,
-                )} onClick={() => setIsOpen(!isOpen)}>
+                )} 
+                onClick={() => setIsOpen(!isOpen)}
+            >
                 {children}
             </div>
         </DropdownMenuContext.Provider>

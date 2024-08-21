@@ -1,44 +1,68 @@
+import { useState } from "react";
 import Button from "../Button";
+import { size, variant, rounded } from "../../types/propTypes";
+import Select from "../Select";
+import { _rounded, _size, _variant } from "../../constants/propConstants";
+import Checkbox from "../Checkbox";
 
 const ButtonDocs = () => {
+    const [variant, setVariant] = useState<variant>();
+    const [size, setSize] = useState<size>();
+    const [rounded, setRounded] = useState<rounded>();
+    const [border, setBorder] = useState(false);
+
     return (
         <>
             <div className="title">Button</div>
             <div className="interactive-section">
                 <div className="controller">
-                    <div style={{fontSize:'30px'}}>variant</div>
-                    <div style={{padding:'10px', display:'flex', gap:'10px'}}>
-                        <Button variant="red">red</Button>
-                        <Button variant="orange">orange</Button>
-                        <Button variant="yellow">yellow</Button>
-                        <Button variant="green">green</Button>
-                        <Button variant="blue">blue</Button>
-                        <Button variant="indigo">indigo</Button>
-                        <Button variant="violet">violet</Button>
-                        <Button variant="white">white</Button>
+                    <div className="select-panel">
+                        <div className="label">
+                            variant
+                        </div>
+                        <div className="control">
+                            <Select onChange={(value) => setVariant(value as variant)} value={variant}>
+                                {_variant.map(v => 
+                                    <Select.Option value={v.value} key={v.value} label={v.label} />
+                                )}
+                            </Select>
+                        </div>
                     </div>
-
-                    <div style={{fontSize:'30px'}}>size</div>
-                    <div style={{padding:'10px', display:'flex', gap:'10px', alignItems:'center'}}>
-                        <Button size="xl">x-large</Button>
-                        <Button size="lg">large</Button>
-                        <Button size="md">medium</Button>
-                        <Button size="sm">small</Button>
-                        <Button size="xs">x-small</Button>
+                    <div className="select-panel">
+                        <div className="label">
+                            size
+                        </div>
+                        <div className="control">
+                            <Select onChange={(value) => setSize(value as size)}>
+                                {_size.map(v => 
+                                    <Select.Option value={v.value} key={v.value} label={v.label} />
+                                )}
+                            </Select>
+                        </div>
                     </div>
-
-                    <div style={{fontSize:'30px'}}>rounded</div>
-                    <div style={{padding:'10px', display:'flex', gap:'10px', alignItems:'center'}}>
-                        <Button rounded="none">none</Button>
-                        <Button rounded="sm">sm-radius</Button>
-                        <Button rounded="md">md-radius</Button>
-                        <Button rounded="lg">lg-radius</Button>
-                        <Button rounded="pill">pill-button</Button>
-                        <Button rounded="circle">circle</Button>
+                    <div className="select-panel">
+                        <div className="label">
+                            rounded
+                        </div>
+                        <div className="control">
+                            <Select onChange={(value) => setRounded(value as rounded)}>
+                                {_rounded.map(v => 
+                                    <Select.Option value={v.value} key={v.value} label={v.label} />
+                                )}
+                            </Select>
+                        </div>
+                    </div>
+                    <div className="select-panel">
+                        <div className="label">
+                            border
+                        </div>
+                        <div className="control">
+                            <Checkbox onChange={(v) => setBorder(v)} />
+                        </div>
                     </div>
                 </div>
                 <div className="result">
-                    <Button>Click Me!</Button>
+                    <Button variant={variant} size={size} rounded={rounded} border={border}>Click Me!</Button>
                 </div>
             </div>
         </>

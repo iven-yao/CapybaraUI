@@ -47,3 +47,5 @@ $colors: (
 @function color($color-name, $color-variant) {
   @return map-get(map-get($colors, $color-name), $color-variant);
 }
+
+$border-color: rgba(lightgray,0.5);

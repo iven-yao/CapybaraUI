@@ -19,7 +19,12 @@ const SelectDocs = () => {
                     </div>
                 </div>
                 <div className="result">
-                    <Select options={[{value:"1", label:"one"}]}/>
+                    <Select variant="blue" onChange={(s) => console.log(s)}>
+                        <Select.Option value="1" label="one"/>
+                        <Select.Option value="2" label="two"/>
+                        <Select.Option value="3" label="three"/>
+                        <Select.Option value="4" label="four"/>
+                    </Select>
                 </div>
             </div>
         </>

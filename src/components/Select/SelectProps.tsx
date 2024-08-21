@@ -1,23 +1,25 @@
-import { componentBasics } from "../../types/propTypes"
+import { componentBasics, variant } from "../../types/propTypes"
 
 export type SelectShared = {
     selectedValue: string|string[]|undefined,
     setSelectedValue: React.Dispatch<React.SetStateAction<string | string[] | undefined>>,
-    multiple: boolean,
+    setSelectedLabel: React.Dispatch<React.SetStateAction<string>>,
+    variant: variant,
+    multiple: boolean
 }
 
 export type SelectProps = componentBasics & {
-    options: Array<{value: string, label: string}>,
     value?: string|string[],
     onChange?: (value:string|string[]) => void,
     placeholder?: string,
     disabled?: boolean,
     multiple?: boolean,
     width?: number|string
+    variant?: variant,
 }
 
 export type SelectOptionProps = componentBasics & {
-    label: string,
     value: string,
+    label: string,
     disabled?: boolean,
 }

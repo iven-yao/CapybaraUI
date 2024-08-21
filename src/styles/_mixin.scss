@@ -68,7 +68,7 @@
     }
 
     &.bg-white:hover {
-        background-color: white;
+        background-color: rgba(lightgray,0.3);
     }
 
     &.bg-black:hover {
@@ -106,7 +106,7 @@
     }
 
     &.border-white {
-        border-color: rgba(0,0,0,0.1);
+        border-color: rgba(lightgray,0.5);
     }
 
     &.border-black {

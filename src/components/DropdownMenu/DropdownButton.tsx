@@ -1,6 +1,8 @@
 import { PropsWithChildren, useContext } from "react";
 import Button from "../Button";
 import { DropdownMenuContext } from "./DropdownMenuContext";
+import { FaChevronDown } from "react-icons/fa";
+import { DropdownIcon } from "../Icon/Icons";
 
 const DropdownButton = ({
     children
@@ -11,6 +13,7 @@ const DropdownButton = ({
     return (
         <Button variant={variant} size="md" rounded="sm" onClick={() => setIsOpen(!isOpen)}>
             {children}
+            <DropdownIcon />
         </Button>
     );
 }

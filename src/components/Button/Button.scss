@@ -2,7 +2,6 @@
 
 .capybara-button {
 
-    line-height: 1;
     background-color: white;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -19,7 +18,7 @@
     }
 
     &.border {
-        border: 1px solid lightgray;
+        border: 2px solid lightgray;
     }
 
     &.size-xs {

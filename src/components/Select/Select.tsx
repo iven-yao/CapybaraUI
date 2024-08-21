@@ -4,6 +4,8 @@ import { SelectContext } from "./SelectContext";
 import './Select.scss';
 import clsx from "clsx";
 import { FaCaretDown } from "react-icons/fa";
+import { DropdownIcon } from "../Icon/Icons";
+import SelectOption from "./SelectOption";
 
 const Select = ({
     children,
@@ -11,13 +13,15 @@ const Select = ({
     onChange,
     placeholder="Choose...",
     disabled,
-    width=100,
+    width,
+    variant='white',
     multiple=false,
     className,
     style
 }:PropsWithChildren<SelectProps>) => {
 
     const [selectedValue, setSelectedValue] = useState<string|string[]|undefined>(value);
+    const [selectedLabel, setSelectedLabel] = useState<string>(placeholder);
     const [isOpen, setIsOpen] = useState(false);
     
     useEffect(() => {
@@ -27,11 +31,13 @@ const Select = ({
     },[selectedValue]);
 
     return (
-        <SelectContext.Provider value={{selectedValue, setSelectedValue, multiple}}>
+        <SelectContext.Provider value={{selectedValue, setSelectedValue, setSelectedLabel, variant, multiple}}>
             {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}/>}
             <div 
                 className={clsx(
                     "capybara-select",
+                    `bg-${variant}`,
+                    `border-${variant}`,
                     {
                         "active":isOpen,
                         "disabled":disabled
@@ -44,25 +50,24 @@ const Select = ({
                 }}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span className="selected-value">
-                    {selectedValue ?
-                        typeof selectedValue === 'string' ?
-                            selectedValue
-                            :
-                            selectedValue.join(',')
-                        :
-                        placeholder
-                    }
-                </span>
-                <FaCaretDown />
+                <div className="selected-value">
+                    {selectedLabel}
+                </div>
+                <div className="select-dropdown-icon">
+                    <DropdownIcon />
+                </div>
+                <div className={clsx(
+                    "options",
+                )}
+                    hidden={!isOpen}
+                >
+                    {children}
+                </div>
             </div>
-            {isOpen && 
-            <div className="options">
-                {children}
-            </div>
-            }
         </SelectContext.Provider>
     );
 }
+
+Select.Option = SelectOption;
 
 export default Select;
