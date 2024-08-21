@@ -1,18 +1,19 @@
 import { ButtonProps } from "./ButtonProps";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import clsx from "clsx";
 import './Button.scss';
+import Ripple from "../Ripple/Ripple";
 
 const Button = ( {
     children, 
     className, 
-    variant= 'white', 
+    color = 'white', 
     size='md', 
     isLoading, 
     rounded='sm', 
     style, 
     onClick, 
-    border=true
+    border=false
 }: PropsWithChildren<ButtonProps>) => {
     
     return (
@@ -21,14 +22,14 @@ const Button = ( {
             {
                 [`size-${size}`]: size,
                 [`rounded-${rounded}`]: rounded && rounded !== 'none',
-                [`bg-${variant}`]:variant,
-                [`border-${variant} border`]:border
+                [`bg-${color}`]:color,
+                [`border-${color} border`]:border
             },
             className,
             )}
             
             style={style}
-            onClick={onClick}
+            onMouseDown={onClick}
         >
             <div className={clsx({'hide':isLoading})}>
                 {children}
@@ -38,6 +39,7 @@ const Button = ( {
                     L
                 </div>
             }
+            <Ripple />
         </button>
     );
 }

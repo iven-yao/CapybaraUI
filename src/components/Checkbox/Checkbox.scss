@@ -10,7 +10,7 @@
     cursor: pointer;
 
     &:hover {
-        @include variant-hover-background;
+        @include preset-hover-background;
     }
 
     &:after {

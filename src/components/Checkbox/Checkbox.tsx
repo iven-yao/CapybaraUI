@@ -9,7 +9,7 @@ const Checkbox = ({
     onChange,
     checked = false,
     disabled,
-    variant = 'white'
+    color = 'white'
 }:CheckboxProps) => {
 
     const [isChecked, setIsChecked] = useState(checked);
@@ -34,7 +34,7 @@ const Checkbox = ({
             <div 
                 className={clsx(
                     "capybara-checkbox",
-                    `bg-${variant}`,
+                    `bg-${color}`,
                     {
                         "checked":isChecked,
                         "disabled":disabled

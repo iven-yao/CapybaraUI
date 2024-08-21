@@ -10,17 +10,17 @@ import { NavbarContext } from "./NavbarContext";
 const Navbar = ({
     children,
     className,
-    variant = 'white',
+    color = 'white',
     position = 'sticky',
     height = 50,
 }: PropsWithChildren<NavbarProps>) => {
 
     return (
-        <NavbarContext.Provider value={{variant, height}}>
+        <NavbarContext.Provider value={{color, height}}>
             <nav className={clsx(
                 'capybara-navbar',
                 {
-                    [`bg-${variant}`]:variant
+                    [`bg-${color}`]:color
                 },
                 className,
             )}

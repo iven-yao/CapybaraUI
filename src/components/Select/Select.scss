@@ -11,7 +11,7 @@
     position: relative;
 
     &.active {
-        @include variant-border;
+        @include preset-border;
     }
 
     .select-dropdown-icon {
@@ -28,12 +28,12 @@
         background-color: white;
         box-shadow: 0px 5px 10px rgba(black, 0.2);
         border: 2px solid rgba(black, 0.1);
-        @include variant-border;
+        @include preset-border;
     }
 
     .option {
         padding: 0.5rem;
 
-        @include variant-hover-background;
+        @include preset-hover-background;
     }
 }

@@ -8,10 +8,10 @@ const DropdownButton = ({
     children
 }:PropsWithChildren) => {
 
-    const {isOpen, setIsOpen, variant} = useContext(DropdownMenuContext);
+    const {isOpen, setIsOpen, color} = useContext(DropdownMenuContext);
 
     return (
-        <Button variant={variant} size="md" rounded="sm" onClick={() => setIsOpen(!isOpen)}>
+        <Button color={color} size="md" rounded="sm" onClick={() => setIsOpen(!isOpen)}>
             {children}
             <DropdownIcon />
         </Button>

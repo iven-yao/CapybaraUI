@@ -11,7 +11,7 @@ const SelectOption = ({
     style
 }:PropsWithChildren<SelectOptionProps>) => {
     
-    const {variant, setSelectedValue, setSelectedLabel, selectedValue, multiple} = useContext(SelectContext);
+    const {color, setSelectedValue, setSelectedLabel, selectedValue, multiple} = useContext(SelectContext);
 
     useEffect(() => {
         if(selectedValue === value) {
@@ -32,7 +32,6 @@ const SelectOption = ({
                     setSelectedValue([value]);
                 }
             }   
-
         } else {
             setSelectedValue(value);
         }
@@ -42,7 +41,7 @@ const SelectOption = ({
         <option 
         className={clsx(
             "option",
-            `bg-${variant}`,
+            `bg-${color}`,
             className
         )}
         style={style}

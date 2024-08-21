@@ -4,17 +4,13 @@
 
     background-color: white;
     cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     border: none;
+    position: relative;
+    overflow: hidden;
 
     &:hover {
         background-color: rgb(224, 224, 224);
-        box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    }
-
-    &:active {
-        background-color: rgb(239, 239, 239);
-        box-shadow: 2px 2px 5px rgba(0,0,0,0);
+        
     }
 
     &.border {
@@ -22,27 +18,27 @@
     }
 
     &.size-xs {
-        font-size: 14px;
+        font-size: 1rem;
         padding: 4px 8px;
     }
 
     &.size-sm {
-        font-size: 14px;
+        font-size: 1rem;
         padding: 8px 12px;
     }
 
     &.size-md {
-        font-size: 14px;
+        font-size: 1rem;
         padding: 12px 16px;
     }
 
     &.size-lg {
-        font-size: 14px;
+        font-size: 1.5rem;
         padding: 16px 20px;
     }
 
     &.size-xl {
-        font-size: 14px;
+        font-size: 2rem;
         padding: 20px 24px;
     }
 
@@ -50,8 +46,8 @@
         opacity: 0;
     }
 
-    @include variant-background;
-    @include variant-border;
-    @include variant-hover-background;
+    @include preset-background;
+    @include preset-border;
+    @include preset-hover-background;
     @include rounded;
 }

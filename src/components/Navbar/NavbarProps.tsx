@@ -1,13 +1,13 @@
-import { componentBasics, variant } from "../../types/propTypes"
+import { componentBasics, color } from "../../types/propTypes"
 
 export type NavbarShared = {
-    variant:variant,
+    color:color,
     height:number|string,
 }
 
 export type NavbarProps = componentBasics & {
     position?:'static'|'fixed'|'sticky'
-    variant?:variant,
+    color?:color,
     height?:number|string
 }
 

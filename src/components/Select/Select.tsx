@@ -14,7 +14,7 @@ const Select = ({
     placeholder="Choose...",
     disabled,
     width,
-    variant='white',
+    color='white',
     multiple=false,
     className,
     style
@@ -31,13 +31,13 @@ const Select = ({
     },[selectedValue]);
 
     return (
-        <SelectContext.Provider value={{selectedValue, setSelectedValue, setSelectedLabel, variant, multiple}}>
+        <SelectContext.Provider value={{selectedValue, setSelectedValue, setSelectedLabel, color, multiple}}>
             {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}/>}
             <div 
                 className={clsx(
                     "capybara-select",
-                    `bg-${variant}`,
-                    `border-${variant}`,
+                    `bg-${color}`,
+                    `border-${color}`,
                     {
                         "active":isOpen,
                         "disabled":disabled

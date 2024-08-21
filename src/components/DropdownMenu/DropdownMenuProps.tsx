@@ -1,13 +1,13 @@
-import { componentBasics, variant } from "../../types/propTypes"
+import { componentBasics, color } from "../../types/propTypes"
 
 export type DropdownMenuShared = {
     isOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
-    variant: variant
+    color: color
 }
 
 export type DropdownMenuProps = componentBasics & {
-    variant?: variant
+    color?: color
 }
 
 export type ItemProps = componentBasics & {

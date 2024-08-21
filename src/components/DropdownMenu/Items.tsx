@@ -7,13 +7,13 @@ const Items = ({
     children,
     className
 }:PropsWithChildren<DropdownMenuProps>) => {
-    const {isOpen, variant} = useContext(DropdownMenuContext);
+    const {isOpen, color} = useContext(DropdownMenuContext);
 
     return (
         isOpen?
         <div className={clsx(
             "menu",
-            `bg-${variant}`,
+            `bg-${color}`,
             className,
             )} role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {children}

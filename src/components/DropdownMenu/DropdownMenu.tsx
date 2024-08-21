@@ -11,19 +11,19 @@ import { FaCaretDown } from "react-icons/fa";
 const DropdownMenu = ({
     children,
     className,
-    variant='white'
+    color='white'
 }:PropsWithChildren<DropdownMenuProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, variant}}>
+        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color}}>
             {isOpen &&
                 <div className="overlay" onClick={() => setIsOpen(false)}/>
             }
             <div className={clsx(
                 "capybara-dropdown", 
-                `bg-${variant}`,
+                `bg-${color}`,
                 {
                     "active":isOpen
                 },

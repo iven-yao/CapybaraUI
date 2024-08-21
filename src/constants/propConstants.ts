@@ -1,4 +1,4 @@
-export const _variant = [
+export const _color = [
     {
         value:'red',
         label:'red',

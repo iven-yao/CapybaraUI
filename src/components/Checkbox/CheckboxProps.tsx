@@ -1,8 +1,8 @@
-import { componentBasics, variant } from "../../types/propTypes";
+import { componentBasics, color } from "../../types/propTypes";
 
 export type CheckboxProps = componentBasics & {
     onChange?: (value:boolean) => void,
     checked?: boolean,
     disabled?: boolean,
-    variant?: variant,
+    color?: color,
 }

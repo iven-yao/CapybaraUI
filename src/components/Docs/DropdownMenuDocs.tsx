@@ -6,7 +6,7 @@ const DropdownMenuDocs = () => {
             <div className="title">Dropdown Menu</div>
             <div className="interactive-section">
                 <div className="controller">
-                    <div style={{fontSize:'30px'}}>variant</div>
+                    <div style={{fontSize:'30px'}}>color</div>
                     <div style={{padding:'10px', display:'flex', gap:'10px'}}>
                     </div>
 
