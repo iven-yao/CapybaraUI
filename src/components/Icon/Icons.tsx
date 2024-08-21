@@ -5,7 +5,7 @@ import { componentBasics } from "../../types/propTypes"
 const DropdownIcon = ({className, style}:componentBasics) => {
     return <FaChevronDown 
         className={className}
-        style={{transform:"translateY(3px)", marginLeft:"0.5rem", color:"rgba(0,0,0,0.25)", ...style}}
+        style={{transform:"translateY(2px)", marginLeft:"0.5rem", color:"rgba(0,0,0,0.25)", ...style}}
     />
 }
 
@@ -18,8 +18,8 @@ const RotateIcon = ({className, style}:componentBasics) => {
 
 const HandPointUpIcon = ({className, style}:componentBasics) => {
     return <FaRegHandPointUp 
-        className={className}
-        style={style}
+        className={className}        
+        style={{transform:"translateY(2px)", ...style}}
     />
 }
 

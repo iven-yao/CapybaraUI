@@ -1,12 +1,12 @@
 import { PropsWithChildren, useContext } from "react";
-import { DropdownMenuProps } from "./DropdownMenuProps";
 import { DropdownMenuContext } from "./DropdownMenuContext";
 import clsx from "clsx";
+import { componentBasics } from "../../types/propTypes";
 
 const Items = ({
     children,
     className
-}:PropsWithChildren<DropdownMenuProps>) => {
+}:PropsWithChildren<componentBasics>) => {
     const {isOpen, color} = useContext(DropdownMenuContext);
 
     return (

@@ -1,4 +1,5 @@
-import { componentBasics, color } from "../../types/propTypes"
+import { MouseEventHandler } from "react"
+import { componentBasics, color, size, rounded } from "../../types/propTypes"
 
 export type DropdownMenuShared = {
     isOpen: boolean,
@@ -7,9 +8,14 @@ export type DropdownMenuShared = {
 }
 
 export type DropdownMenuProps = componentBasics & {
-    color?: color
+    color?: color,
+    size?: size,
+    rounded?: rounded,
+    border?:boolean,
+    shadow?:boolean,
+    label: string,
 }
 
 export type ItemProps = componentBasics & {
-    onClick: Function,
+    onClick: MouseEventHandler<HTMLDivElement>,
 }

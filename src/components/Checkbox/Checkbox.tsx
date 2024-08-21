@@ -44,8 +44,7 @@ const Checkbox = ({
 
                 style={style}
                 onClick={handleClick}
-            >
-            </div>
+            />
         </>
     );
 }

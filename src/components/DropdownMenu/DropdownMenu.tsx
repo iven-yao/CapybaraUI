@@ -5,22 +5,24 @@ import clsx from "clsx";
 import './DropdownMenu.scss';
 import Items from "./Items";
 import Item from "./Item";
-import DropdownButton from "./DropdownButton";
-import { FaCaretDown } from "react-icons/fa";
+import Button from "../Button";
+import { DropdownIcon } from "../Icon/Icons";
 
 const DropdownMenu = ({
     children,
     className,
-    color='white'
+    color='white',
+    label='Label',
+    size,
+    rounded,
+    border,
+    shadow,
 }:PropsWithChildren<DropdownMenuProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color}}>
-            {isOpen &&
-                <div className="overlay" onClick={() => setIsOpen(false)}/>
-            }
             <div className={clsx(
                 "capybara-dropdown", 
                 `bg-${color}`,
@@ -29,15 +31,20 @@ const DropdownMenu = ({
                 },
                 className,
                 )} 
-                onClick={() => setIsOpen(!isOpen)}
+
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
             >
+                <Button color={color} size={size} rounded={rounded} border={border} shadow={shadow}>
+                    {label}
+                    <DropdownIcon style={color==='black'?{color:'white'}:{}}/>
+                </Button>
                 {children}
             </div>
         </DropdownMenuContext.Provider>
     );
 }
 
-DropdownMenu.Button = DropdownButton;
 DropdownMenu.Items = Items;
 DropdownMenu.Item = Item;
 

@@ -18,18 +18,22 @@
         margin-top: 0rem;
         min-width: 100%;
         border-radius: 0.25rem;
-        box-shadow: 2px 2px 5px rgba(black, 0.2);
-
-        @include preset-background;
-
+        box-shadow: 2.5px 2.5px 5px rgba(black, 0.25);
+        overflow: hidden;     
     }
-
+    
     .menu-item {
         padding: 10px;
-
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        
         &:hover {
             background-color: rgba(black, 0.1);
             font-weight: bold;
         }
+
+        @include preset-background;
+        @include preset-hover-background;
     }
 }

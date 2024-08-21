@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { FaCaretDown } from "react-icons/fa";
 import { DropdownIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
+import { createPortal } from "react-dom";
 
 const Select = ({
     children,
@@ -32,7 +33,7 @@ const Select = ({
 
     return (
         <SelectContext.Provider value={{selectedValue, setSelectedValue, setSelectedLabel, color, multiple}}>
-            {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}/>}
+            {isOpen && createPortal(<div className="overlay" onClick={() => setIsOpen(false)}/>, document.body)}
             <div 
                 className={clsx(
                     "capybara-select",

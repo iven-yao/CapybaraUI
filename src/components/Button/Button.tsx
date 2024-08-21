@@ -13,7 +13,10 @@ const Button = ( {
     rounded='sm', 
     style, 
     onClick, 
-    border=false
+    onMouseEnter,
+    onMouseLeave,
+    border=false,
+    shadow=false,
 }: PropsWithChildren<ButtonProps>) => {
     
     return (
@@ -23,13 +26,16 @@ const Button = ( {
                 [`size-${size}`]: size,
                 [`rounded-${rounded}`]: rounded && rounded !== 'none',
                 [`bg-${color}`]:color,
-                [`border-${color} border`]:border
+                [`border-${color} border`]:border,
+                'shadow':shadow
             },
             className,
             )}
             
             style={style}
-            onMouseDown={onClick}
+            onClick={onClick}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             <div className={clsx({'hide':isLoading})}>
                 {children}
