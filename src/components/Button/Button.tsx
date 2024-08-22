@@ -7,7 +7,7 @@ import Ripple from "../Ripple/Ripple";
 const Button = ( {
     children, 
     className, 
-    color = 'white', 
+    color = 'gray', 
     size='md', 
     isLoading, 
     rounded='sm', 

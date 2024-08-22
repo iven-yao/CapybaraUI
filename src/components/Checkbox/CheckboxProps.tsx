@@ -5,4 +5,5 @@ export type CheckboxProps = componentBasics & {
     checked?: boolean,
     disabled?: boolean,
     color?: color,
+    label?: string
 }

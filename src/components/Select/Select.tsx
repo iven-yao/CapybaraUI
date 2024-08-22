@@ -59,6 +59,7 @@ const Select = ({
                 </div>
                 <div className={clsx(
                     "options",
+                    `border-${color}`,
                 )}
                     hidden={!isOpen}
                 >

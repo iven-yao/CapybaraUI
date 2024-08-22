@@ -1,11 +1,20 @@
 @import "../../styles/variables";
 @import "../../styles/mixin";
 
+.capybara-checkbox-container {
+    display: flex;
+    gap: 1rem;
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
 .capybara-checkbox {
     position: relative;
     width: 1rem;
     aspect-ratio: 1;
-    border: 1px solid $border-color;
+    border: 0.15rem solid $border-color;
     border-radius: 0.25rem;
     cursor: pointer;
 

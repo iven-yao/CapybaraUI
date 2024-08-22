@@ -27,13 +27,17 @@ export const _color = [
         value:'violet',
         label:'violet'
     }, 
+    {
+        value:'gray',
+        label:'gray (default)'
+    },
     { 
         value:'black',
         label:'black'
     }, 
     { 
         value:'white',
-        label:'white (default)'
+        label:'white'
     }
 ];
 

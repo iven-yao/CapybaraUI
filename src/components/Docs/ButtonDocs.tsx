@@ -7,7 +7,7 @@ import Checkbox from "../Checkbox";
 import { HandPointUpIcon, RotateIcon } from "../Icon/Icons";
 
 const ButtonDocs = () => {
-    const [color, setColor] = useState<color>('white');
+    const [color, setColor] = useState<color>('gray');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
     const [border, setBorder] = useState(false);
@@ -61,7 +61,7 @@ const ButtonDocs = () => {
                             border
                         </div>
                         <div className="control">
-                            <Checkbox checked={border} onChange={(v) => setBorder(v)} />
+                            <Checkbox checked={border} onChange={(v) => setBorder(v)}/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -69,15 +69,15 @@ const ButtonDocs = () => {
                             shadow
                         </div>
                         <div className="control">
-                            <Checkbox checked={shadow} onChange={(v) => setShadow(v)} />
+                            <Checkbox checked={shadow} onChange={(v) => setShadow(v)}/>
                         </div>
                     </div>
                 </div>
                 <div className="result">
                     <Button 
                         className="switch-code-btn" 
-                        border
                         size="xs"
+                        rounded="none"
                         onClick={() => setShowCode(!showCode)}
                         style={{width:'100px'}}
                     >
@@ -89,13 +89,12 @@ const ButtonDocs = () => {
                     {showCode ?
                         <code className="code-snippet">
     {`
-
     <Button
         color="${color || "white"}"
         size="${size || "md"}"
         rounded="${rounded || "sm"}"${border?"\n\tborder":''}${shadow?"\n\tshadow":''}
     >
-        Click Me! 
+        Click Me 
         <HandPointUpIcon/>
     </Button>
     `}
@@ -108,13 +107,13 @@ const ButtonDocs = () => {
                             border={border}
                             shadow={shadow}
                         >
-                            Click Me! 
+                            Click Me 
                             <HandPointUpIcon/>
                         </Button>
                     }
                 </div>
             </div>
-            <div className="section">
+            <div className="section" style={{height:"50rem"}}>
                 <div className="second-title" id="full-apis">Full APIs</div>
             </div>
         </div>

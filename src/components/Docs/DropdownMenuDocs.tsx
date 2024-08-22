@@ -77,7 +77,7 @@ const DropdownMenuDocs = () => {
                 <div className="result">
                     <Button 
                         className="switch-code-btn" 
-                        border
+                        rounded="none"
                         size="xs"
                         onClick={() => setShowCode(!showCode)}
                         style={{width:'100px'}}
@@ -90,7 +90,6 @@ const DropdownMenuDocs = () => {
                     {showCode ?
                         <code className="code-snippet">
     {`
-
     <DropdownMenu 
         label="Action" 
         color="${color}"

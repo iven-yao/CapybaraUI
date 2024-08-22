@@ -9,10 +9,12 @@ const Checkbox = ({
     onChange,
     checked = false,
     disabled,
-    color = 'white'
+    color = 'white',
+    label
 }:CheckboxProps) => {
 
     const [isChecked, setIsChecked] = useState(checked);
+    const internal_id = crypto.randomUUID();
     
     useEffect(() => {
         console.log(isChecked);
@@ -29,8 +31,8 @@ const Checkbox = ({
 
 
     return (
-        <>
-            <input type="checkbox" className="sr-only" checked={isChecked} onChange={() => setIsChecked(!isChecked)}/>
+        <div className="capybara-checkbox-container ">
+            <input type="checkbox" className="sr-only" id={internal_id} checked={isChecked} onChange={() => setIsChecked(!isChecked)}/>
             <div 
                 className={clsx(
                     "capybara-checkbox",
@@ -45,7 +47,10 @@ const Checkbox = ({
                 style={style}
                 onClick={handleClick}
             />
-        </>
+            {label &&
+            <label htmlFor={internal_id} style={{}}>{label}</label>
+            }
+        </div>
     );
 }
 

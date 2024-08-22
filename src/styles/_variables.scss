@@ -2,44 +2,50 @@ $colors: (
   red: (
     bg: #F7C5C5,
     border: #E5A3A3,
-    text: #8B3D3D,
+    text: #462020,
     hover: #F9D7D7
   ),
   orange: (
     bg: #FFDAB9,
     border: #EFBA89,
-    text: #A45E00,
+    text: #522E00,
     hover: #FFE4CB
   ),
   yellow: (
     bg: #FFF1B8,
     border: #F0DC86,
-    text: #8B7D1A,
+    text: #413B0B,
     hover: #FFF6D1
   ),
   green: (
     bg: #C1E1C1,
     border: #9FC99F,
-    text: #2E5E2E,
+    text: #183418,
     hover: #D1E9D1
   ),
   blue: (
     bg: #B5D8E9,
     border: #93BAD7,
-    text: #1C4966,
+    text: #133044,
     hover: #C7E2F0
   ),
   indigo: (
     bg: #C5C6E5,
     border: #A3A4D3,
-    text: #363784,
+    text: #212254,
     hover: #D5D6ED
   ),
   violet: (
     bg: #E5CFE5,
     border: #D3ADD3,
-    text: #693369,
+    text: #492249,
     hover: #EDDEED
+  ),
+  gray: (
+    bg:#EEEEEE,
+    border:#E0E0E0,
+    text:#000000,
+    hover:#E5E5E5
   )
 );
 
