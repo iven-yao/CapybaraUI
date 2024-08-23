@@ -90,3 +90,18 @@ export const _rounded = [
         label:'circle'
     }
 ];
+
+export const _variant = [
+    {
+        value:'minimal',
+        label:'minimal'
+    },
+    {
+        value:'outline',
+        label:'outline'
+    },
+    {
+        value:'fill',
+        label:'fill'
+    }
+]

@@ -6,7 +6,7 @@ import { color } from "../../types/propTypes";
 import { _color } from "../../constants/propConstants";
 import Checkbox from "../Checkbox";
 
-const SelectDocs = () => {
+const NavbarDocs = () => {
     const [color, setColor] = useState<color>();
     const [disabled, setDisabled] = useState<boolean>();
     const [multiple, setMultiple] = useState<boolean>();
@@ -15,7 +15,7 @@ const SelectDocs = () => {
 
     return (
         <>
-            <div className="title">Select</div>
+            <div className="title">Navbar</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
@@ -49,7 +49,7 @@ const SelectDocs = () => {
 
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
-                        <Select color={color} onChange={(s) => console.log(s)} width={250} options={selectDocData} multiple={multiple} disabled={disabled}/>
+                        
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>
@@ -57,4 +57,4 @@ const SelectDocs = () => {
     );
 }
 
-export default SelectDocs;
+export default NavbarDocs;

@@ -7,6 +7,7 @@ import Docs from './components/Docs/Docs';
 import ButtonDocs from './components/Docs/ButtonDocs';
 import DropdownMenuDocs from './components/Docs/DropdownMenuDocs';
 import SelectDocs from './components/Docs/SelectDocs';
+import NavbarDocs from './components/Docs/NavbarDocs';
 
 function AppRouter() {
 
@@ -33,7 +34,7 @@ function AppRouter() {
             },
             {
               path:'navbar',
-              element: <div>Navbar</div>
+              element: <NavbarDocs />
             },
             {
               path:'select',

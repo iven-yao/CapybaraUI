@@ -4,41 +4,33 @@ import { SelectContext } from "./SelectContext";
 import clsx from "clsx";
 
 const SelectOption = ({
-    children,
-    value,
-    label,
+    option,
     className,
     style
-}:PropsWithChildren<SelectOptionProps>) => {
+}:SelectOptionProps) => {
     
-    const {color, setSelectedValue, setSelectedLabel, selectedValue, multiple} = useContext(SelectContext);
-
-    useEffect(() => {
-        if(selectedValue === value) {
-            setSelectedLabel(label);
-        }
-    }, [selectedValue]);
+    const {color, selectedOption, setSelectedOption, multiple} = useContext(SelectContext);
 
     const handleClick = () => {
         if(multiple) {
-            if(Array.isArray(selectedValue) && selectedValue.includes(value)) {
+            if(Array.isArray(selectedOption) && selectedOption.some(o => o.value == option.value)) {
                 // remove
-                setSelectedValue(selectedValue.filter((v) => v !== value));
+                setSelectedOption(selectedOption.filter(o => o.value !== option.value));
             } else {
                 // append
-                if(Array.isArray(selectedValue)) {
-                    setSelectedValue([...selectedValue, value]);
+                if(Array.isArray(selectedOption)) {
+                    setSelectedOption([...selectedOption, option]);
                 } else {
-                    setSelectedValue([value]);
+                    setSelectedOption([option]);
                 }
             }   
         } else {
-            setSelectedValue(value);
+            setSelectedOption(option);
         }
     }
 
     return(
-        <option 
+        <div 
         className={clsx(
             "option",
             `bg-${color}`,
@@ -47,8 +39,8 @@ const SelectOption = ({
         style={style}
         onClick={handleClick}
         >
-            {label}
-        </option>
+            {option.label}
+        </div>
     );
 }
 

@@ -11,33 +11,36 @@ import { DropdownIcon } from "../Icon/Icons";
 const DropdownMenu = ({
     children,
     className,
+    variant,
     color='white',
     label='Label',
     size,
     rounded,
-    border,
     shadow,
 }:PropsWithChildren<DropdownMenuProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    const getIconStyle = () => {
+        const iconStyle:React.CSSProperties = {
+            marginLeft: '8px'
+        };
+
+        return iconStyle;
+    }
+
     return (
-        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color}}>
+        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color, variant}}>
             <div className={clsx(
                 "capybara-dropdown", 
-                `bg-${color}`,
-                {
-                    "active":isOpen
-                },
                 className,
                 )} 
-
                 onMouseEnter={() => setIsOpen(true)}
                 onMouseLeave={() => setIsOpen(false)}
             >
-                <Button color={color} size={size} rounded={rounded} border={border} shadow={shadow}>
+                <Button variant={variant} color={color} size={size} rounded={rounded} shadow={shadow}>
                     {label}
-                    <DropdownIcon style={color==='black'?{color:'white'}:{}}/>
+                    <DropdownIcon style={getIconStyle()}/>
                 </Button>
                 {children}
             </div>

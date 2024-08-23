@@ -1,18 +1,19 @@
 import { useState } from "react";
 import Button from "../Button";
-import { size, color, rounded } from "../../types/propTypes";
+import { size, color, rounded, variant } from "../../types/propTypes";
 import Select from "../Select";
-import { _rounded, _size, _color } from "../../constants/propConstants";
+import { _rounded, _size, _color, _variant } from "../../constants/propConstants";
 import Checkbox from "../Checkbox";
 import { HandPointUpIcon, RotateIcon } from "../Icon/Icons";
+import QuickViewResult from "./QuickViewResult";
 
 const ButtonDocs = () => {
+    const [variant, setVariant] = useState<variant>();
     const [color, setColor] = useState<color>('gray');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
-    const [border, setBorder] = useState(false);
     const [shadow, setShadow] = useState(false);
-    const [showCode, setShowCode] = useState(false);
+    const [disabled, setDisabled] = useState(false);
 
     return (
         <div>
@@ -22,14 +23,18 @@ const ButtonDocs = () => {
                     <div className="second-title" id="quick-view">Quick View</div>
                     <div className="select-panel">
                         <div className="label">
+                            variant
+                        </div>
+                        <div className="control">
+                            <Select onChange={(value) => setVariant(value as variant)} value={variant} options={_variant}/>
+                        </div>
+                    </div>
+                    <div className="select-panel">
+                        <div className="label">
                             color
                         </div>
                         <div className="control">
-                            <Select onChange={(value) => setColor(value as color)} value={color}>
-                                {_color.map(v => 
-                                    <Select.Option value={v.value} key={v.value} label={v.label} />
-                                )}
-                            </Select>
+                            <Select onChange={(value) => setColor(value as color)} value={color} options={_color}/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -37,11 +42,7 @@ const ButtonDocs = () => {
                             size
                         </div>
                         <div className="control">
-                            <Select onChange={(value) => setSize(value as size)} value={size}>
-                                {_size.map(v => 
-                                    <Select.Option value={v.value} key={v.value} label={v.label} />
-                                )}
-                            </Select>
+                            <Select onChange={(value) => setSize(value as size)} value={size} options={_size}/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -49,19 +50,7 @@ const ButtonDocs = () => {
                             rounded
                         </div>
                         <div className="control">
-                            <Select onChange={(value) => setRounded(value as rounded)} value={rounded}>
-                                {_rounded.map(v => 
-                                    <Select.Option value={v.value} key={v.value} label={v.label} />
-                                )}
-                            </Select>
-                        </div>
-                    </div>
-                    <div className="select-panel">
-                        <div className="label">
-                            border
-                        </div>
-                        <div className="control">
-                            <Checkbox checked={border} onChange={(v) => setBorder(v)}/>
+                            <Select onChange={(value) => setRounded(value as rounded)} value={rounded} options={_rounded}/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -72,48 +61,44 @@ const ButtonDocs = () => {
                             <Checkbox checked={shadow} onChange={(v) => setShadow(v)}/>
                         </div>
                     </div>
-                </div>
-                <div className="result">
-                    <Button 
-                        className="switch-code-btn" 
-                        size="xs"
-                        rounded="none"
-                        onClick={() => setShowCode(!showCode)}
-                        style={{width:'100px'}}
-                    >
-                        <div style={{display:'flex', justifyContent:'space-between'}}>
-                            <RotateIcon/>
-                            {showCode?"Preview":"Code"}
+                    <div className="select-panel">
+                        <div className="label">
+                            disabled
                         </div>
-                    </Button>
-                    {showCode ?
-                        <code className="code-snippet">
-    {`
+                        <div className="control">
+                            <Checkbox checked={disabled} onChange={(v) => setDisabled(v)}/>
+                        </div>
+                    </div>
+                </div>
+                <QuickViewResult>
+                    <QuickViewResult.Code>
+{`
     <Button
-        color="${color || "white"}"
+        ${variant ? `variant="${variant}"\n\t`:''}color="${color || "white"}"
         size="${size || "md"}"
-        rounded="${rounded || "sm"}"${border?"\n\tborder":''}${shadow?"\n\tshadow":''}
+        rounded="${rounded || "sm"}"${shadow?"\n\tshadow":''}
     >
         Click Me 
         <HandPointUpIcon/>
     </Button>
-    `}
-                        </code>
-                        :
+`}
+                    </QuickViewResult.Code>
+                    <QuickViewResult.Preview>
                         <Button 
+                            variant={variant}
                             color={color} 
                             size={size} 
                             rounded={rounded} 
-                            border={border}
                             shadow={shadow}
+                            disabled={disabled}
                         >
                             Click Me 
-                            <HandPointUpIcon/>
+                            <HandPointUpIcon style={{marginLeft:"0.5rem"}}/>
                         </Button>
-                    }
-                </div>
+                    </QuickViewResult.Preview>
+                </QuickViewResult>
             </div>
-            <div className="section" style={{height:"50rem"}}>
+            <div className="section">
                 <div className="second-title" id="full-apis">Full APIs</div>
             </div>
         </div>

@@ -17,7 +17,6 @@ const Checkbox = ({
     const internal_id = crypto.randomUUID();
     
     useEffect(() => {
-        console.log(isChecked);
         if(onChange) {
             onChange(isChecked);
         }
@@ -48,7 +47,7 @@ const Checkbox = ({
                 onClick={handleClick}
             />
             {label &&
-            <label htmlFor={internal_id} style={{}}>{label}</label>
+            <label htmlFor={internal_id}>{label}</label>
             }
         </div>
     );

@@ -1,5 +1,5 @@
-import { PropsWithChildren, useEffect, useState } from "react";
-import { SelectProps } from "./SelectProps";
+import { MouseEventHandler, PropsWithChildren, useEffect, useState } from "react";
+import { option, SelectProps } from "./SelectProps";
 import { SelectContext } from "./SelectContext";
 import './Select.scss';
 import clsx from "clsx";
@@ -9,7 +9,7 @@ import SelectOption from "./SelectOption";
 import { createPortal } from "react-dom";
 
 const Select = ({
-    children,
+    options,
     value,
     onChange,
     placeholder="Choose...",
@@ -18,22 +18,54 @@ const Select = ({
     color='white',
     multiple=false,
     className,
-    style
-}:PropsWithChildren<SelectProps>) => {
+    style,
+}:SelectProps) => {
 
-    const [selectedValue, setSelectedValue] = useState<string|string[]|undefined>(value);
-    const [selectedLabel, setSelectedLabel] = useState<string>(placeholder);
+    const [selectedOption, setSelectedOption] = useState<option|Array<option>|undefined>();
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const handleClickOutside = (e:MouseEvent) => {
+            const target = e.target as Element;
+            if(!target.classList.contains('capybara-select') &&
+               !target.classList.contains('option') 
+            ) {
+                setIsOpen(false);
+            }
+        }
+
+        window.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            window.removeEventListener("mousedown", handleClickOutside);
+        }
+    }, []);
+
+    useEffect(() => {
+        const option = options.find(o => o.value === value);
+        if(multiple) {
+            if(option) {
+                setSelectedOption([option]);
+            } else {
+                setSelectedOption([]);
+            }
+        } else {
+            setSelectedOption(option);
+        }
+    },[value, multiple]);
     
     useEffect(() => {
-        if(onChange && selectedValue) {
-            onChange(selectedValue);
+        if(onChange && selectedOption) {
+            if(Array.isArray(selectedOption)) {
+                onChange(selectedOption.map(o => o.value));
+            } else {
+                onChange(selectedOption.value);
+            }
         }
-    },[selectedValue]);
+    },[selectedOption]);
 
     return (
-        <SelectContext.Provider value={{selectedValue, setSelectedValue, setSelectedLabel, color, multiple}}>
-            {isOpen && createPortal(<div className="overlay" onClick={() => setIsOpen(false)}/>, document.body)}
+        <SelectContext.Provider value={{selectedOption, setSelectedOption, color, multiple}}>
             <div 
                 className={clsx(
                     "capybara-select",
@@ -52,18 +84,27 @@ const Select = ({
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <div className="selected-value">
-                    {selectedLabel}
+                    {selectedOption?
+                        Array.isArray(selectedOption) ?
+                            selectedOption.length > 0 ?
+                                <div>{selectedOption.map(o => o.label).join(',')}</div>
+                                :
+                                <div>{placeholder}</div>
+                            :
+                            <div>{selectedOption.label}</div>
+                        :
+                        <div>{placeholder}</div>
+                    }
                 </div>
                 <div className="select-dropdown-icon">
-                    <DropdownIcon />
+                    <DropdownIcon style={{marginLeft:'8px'}}/>
                 </div>
                 <div className={clsx(
-                    "options",
-                    `border-${color}`,
+                    "capybara-options",
                 )}
                     hidden={!isOpen}
                 >
-                    {children}
+                    {options.map(o => <SelectOption option={o} key={`${o.label}_${o.value}`}/>)}
                 </div>
             </div>
         </SelectContext.Provider>

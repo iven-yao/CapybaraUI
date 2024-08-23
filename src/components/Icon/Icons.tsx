@@ -1,23 +1,24 @@
-import { FaChevronDown, FaRegHandPointUp } from "react-icons/fa"
-import { FaRotate } from "react-icons/fa6"
+import { PiCursorClick } from "react-icons/pi";
+import { IoChevronDownOutline } from "react-icons/io5";
+import { HiArrowPath } from "react-icons/hi2";
 import { componentBasics } from "../../types/propTypes"
 
 const DropdownIcon = ({className, style}:componentBasics) => {
-    return <FaChevronDown 
+    return <IoChevronDownOutline  
         className={className}
-        style={{transform:"translateY(2px)", marginLeft:"0.5rem", color:"rgba(0,0,0,0.25)", ...style}}
+        style={{transform:"translateY(2px)", ...style}}
     />
 }
 
 const RotateIcon = ({className, style}:componentBasics) => {
-    return <FaRotate 
+    return <HiArrowPath 
         className={className}
-        style={{transform:"translateY(2px)", marginRight:"0.5rem", color:"rgba(0,0,0,0.25)", ...style}}
+        style={{transform:"translateY(2px)", marginRight:"0.5rem", ...style}}
     />
 }
 
 const HandPointUpIcon = ({className, style}:componentBasics) => {
-    return <FaRegHandPointUp 
+    return <PiCursorClick 
         className={className}        
         style={{transform:"translateY(2px)", ...style}}
     />

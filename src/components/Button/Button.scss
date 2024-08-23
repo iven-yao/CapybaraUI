@@ -25,12 +25,12 @@
     }
 
     &.size-xs {
-        font-size: 1rem;
+        font-size: 0.8rem;
         padding: 4px 8px;
     }
 
     &.size-sm {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 8px 12px;
     }
 
@@ -53,8 +53,28 @@
         opacity: 0;
     }
 
+    @include rounded;
     @include preset-background;
     @include preset-border;
-    @include preset-hover-background;
-    @include rounded;
+    &:not(.disabled) {
+        @include preset-hover-background;
+    }
+
+    &.minimal {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    &.fill {
+        border-color: transparent;
+    }
+
+    &.outline {
+        background-color: transparent;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.8;
+    }
 }

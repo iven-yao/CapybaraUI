@@ -7,6 +7,7 @@ import Ripple from "../Ripple/Ripple";
 const Button = ( {
     children, 
     className, 
+    variant,
     color = 'gray', 
     size='md', 
     isLoading, 
@@ -15,19 +16,22 @@ const Button = ( {
     onClick, 
     onMouseEnter,
     onMouseLeave,
-    border=false,
     shadow=false,
+    border=false,
+    disabled=false,
 }: PropsWithChildren<ButtonProps>) => {
     
     return (
         <button className={clsx(
             'capybara-button',
             {
+                [`${variant}`]:variant,
+                [`border`]:variant === 'outline' || border,
                 [`size-${size}`]: size,
                 [`rounded-${rounded}`]: rounded && rounded !== 'none',
-                [`bg-${color}`]:color,
-                [`border-${color} border`]:border,
-                'shadow':shadow
+                [`border-${color} bg-${color}`]:color,
+                'shadow':shadow,
+                'disabled':disabled
             },
             className,
             )}
@@ -36,6 +40,7 @@ const Button = ( {
             onClick={onClick}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            disabled={disabled}
         >
             <div className={clsx({'hide':isLoading})}>
                 {children}
