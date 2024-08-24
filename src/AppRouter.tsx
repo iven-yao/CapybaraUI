@@ -8,6 +8,8 @@ import ButtonDocs from './components/Docs/ButtonDocs';
 import DropdownMenuDocs from './components/Docs/DropdownMenuDocs';
 import SelectDocs from './components/Docs/SelectDocs';
 import NavbarDocs from './components/Docs/NavbarDocs';
+import ImageTextDocs from './components/Docs/ImageTextDocs';
+import NeonTextDocs from './components/Docs/NeonTextDocs';
 
 function AppRouter() {
 
@@ -40,6 +42,14 @@ function AppRouter() {
               path:'select',
               element: <SelectDocs />
             },
+            {
+              path:'image-text',
+              element: <ImageTextDocs />
+            },
+            {
+              path:'neon-text',
+              element: <NeonTextDocs />
+            }
           ]
         }
       ]

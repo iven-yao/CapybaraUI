@@ -12,14 +12,6 @@
         box-shadow: 2.5px 2.5px 5px rgba(black, 0.25);
     }
 
-    &:hover {
-        background-color: rgb(224, 224, 224);
-    }
-
-    &:active {
-        box-shadow: 0px 0px 0px;
-    }
-
     &.border {
         border: 1px solid rgba(lightgray,0.5);
     }
@@ -57,6 +49,14 @@
     @include preset-background;
     @include preset-border;
     &:not(.disabled) {
+        &:hover {
+            background-color: rgb(224, 224, 224);
+        }
+    
+        &:active {
+            box-shadow: 0px 0px 0px;
+        }
+
         @include preset-hover-background;
     }
 

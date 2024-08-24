@@ -10,6 +10,7 @@ const SelectDocs = () => {
     const [color, setColor] = useState<color>();
     const [disabled, setDisabled] = useState<boolean>();
     const [multiple, setMultiple] = useState<boolean>();
+    const [searchable, setSearchable] = useState<boolean>();
     const [width, setWidth] = useState<number|string>();
     const [placeholder, setPlaceholder] = useState<string>();
 
@@ -37,6 +38,14 @@ const SelectDocs = () => {
                     </div>
                     <div className="select-panel">
                         <div className="label">
+                            searchable
+                        </div>
+                        <div className="control">
+                            <Checkbox checked={searchable} onChange={(v) => setSearchable(v)} />
+                        </div>
+                    </div>
+                    <div className="select-panel">
+                        <div className="label">
                             disabled
                         </div>
                         <div className="control">
@@ -49,7 +58,15 @@ const SelectDocs = () => {
 
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
-                        <Select color={color} onChange={(s) => console.log(s)} width={250} options={selectDocData} multiple={multiple} disabled={disabled}/>
+                        <Select 
+                            color={color} 
+                            onChange={(s) => console.log(s)} 
+                            width={250} 
+                            options={selectDocData} 
+                            multiple={multiple} 
+                            disabled={disabled} 
+                            searchable={searchable}
+                        />
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>

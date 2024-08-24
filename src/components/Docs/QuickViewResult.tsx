@@ -1,16 +1,18 @@
 import { PropsWithChildren, useState, createContext, useContext } from "react";
 import Button from "../Button";
 import { RotateIcon } from "../Icon/Icons";
+import { componentBasics } from "../../types/propTypes";
+import clsx from "clsx";
 
 type QuickViewShared = {showCode:boolean};
 const QuickViewContext = createContext<QuickViewShared>({} as QuickViewShared);
 
-const QuickViewResult = ({children}:PropsWithChildren) => {
+const QuickViewResult = ({children, style, className}:PropsWithChildren<componentBasics>) => {
     const [showCode, setShowCode] = useState(false);
 
     return (
         <QuickViewContext.Provider value={{showCode}}>
-            <div className="result">
+            <div className="result" style={style}>
                 <Button 
                     className="switch-code-btn" 
                     size="xs"
@@ -19,9 +21,9 @@ const QuickViewResult = ({children}:PropsWithChildren) => {
                     style={{width:'100px'}}
                 >
                     <div style={{display:'flex', justifyContent:'space-between'}}>
-                        <span className="rotate-icon">
+                        <div className="rotate-icon">
                             <RotateIcon/>
-                        </span>
+                        </div>
                         {showCode?"Preview":"Code"}
                     </div>
                 </Button>
@@ -31,13 +33,13 @@ const QuickViewResult = ({children}:PropsWithChildren) => {
     );
 }
 
-QuickViewResult.Preview = ({children}:PropsWithChildren) => {
+QuickViewResult.Preview = ({children, className, style}:PropsWithChildren<componentBasics>) => {
 
     const {showCode} = useContext(QuickViewContext);
 
     return (
         !showCode ? 
-        <div className="preview" hidden={showCode}>
+        <div className={clsx("preview", className)} style={style} hidden={showCode}>
             {children}
         </div>
         :

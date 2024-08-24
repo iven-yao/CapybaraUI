@@ -82,13 +82,16 @@ const DropdownMenuDocs = () => {
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
                         <DropdownMenu 
-                            label="Action" 
                             variant={variant}
                             color={color}
-                            size={size}
-                            rounded={rounded}
-                            shadow={shadow}
                         >
+                            <DropdownMenu.Button
+                                shadow={shadow}
+                                rounded={rounded}
+                                size={size}
+                            >
+                                Action
+                            </DropdownMenu.Button>
                             <DropdownMenu.Items>
                                 <DropdownMenu.Item onClick={() => {console.log('Save')}}>Save</DropdownMenu.Item>
                                 <DropdownMenu.Item onClick={() => {console.log('Edit')}}>Edit</DropdownMenu.Item>

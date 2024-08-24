@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Button from "../Button";
 import { size, color, rounded, variant } from "../../types/propTypes";
 import Select from "../Select";
@@ -14,6 +14,21 @@ const ButtonDocs = () => {
     const [rounded, setRounded] = useState<rounded>('sm');
     const [shadow, setShadow] = useState(false);
     const [disabled, setDisabled] = useState(false);
+    const [buttonPropsStr, setButtonPropsStr] = useState('');
+
+    useLayoutEffect(() => {
+        let props = '';
+        props += (variant ? `\n\tvariant="${variant}"`:'');
+        props += (color? `\n\tcolor="${color}"`:'')
+        props += (size? `\n\tsize="${size}"`:'');
+        props += (rounded? `\n\trounded="${rounded}"`:'');
+        props += (shadow?"\n\tshadow":'');
+        props += (disabled?"\n\tdisabled":'');
+
+        setButtonPropsStr(props);
+
+    },[variant, color, size, rounded, shadow, disabled])
+
 
     return (
         <div>
@@ -72,16 +87,16 @@ const ButtonDocs = () => {
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
+                        <pre>
+                            <code>
 {`
-    <Button
-        ${variant ? `variant="${variant}"\n\t`:''}color="${color || "white"}"
-        size="${size || "md"}"
-        rounded="${rounded || "sm"}"${shadow?"\n\tshadow":''}
-    >
+    <Button${buttonPropsStr}>
         Click Me 
         <HandPointUpIcon/>
     </Button>
 `}
+                            </code>
+                        </pre>
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
                         <Button 

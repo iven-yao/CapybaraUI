@@ -11,10 +11,12 @@ export type DropdownMenuShared = {
 export type DropdownMenuProps = componentBasics & {
     variant?: variant,
     color?: color,
+}
+
+export type DropdownButtonProps = componentBasics & {
     size?: size,
     rounded?: rounded,
     shadow?:boolean,
-    label: string,
 }
 
 export type ItemProps = componentBasics & {

@@ -8,13 +8,25 @@ export type SelectShared = {
 }
 
 export type SelectProps = componentBasics & {
+    // value that being selected
     value?: string|string[],
-    onChange?: (value:string|string[]) => void,
+    // callback function when value changes
+    onChange?: (value:string|string[]|undefined) => void,
+    // placeholder when no value is selected
     placeholder?: string,
+    // identifier to disable the component
     disabled?: boolean,
+    // identifier to make multiple selection
     multiple?: boolean,
+    // identifier to search options by label
+    searchable?:boolean,
+    // identifier to show clear selection button
+    clearBtn?:boolean,
+    // component width
     width?: number|string
+    // preset color
     color?: color,
+    // option data
     options:Array<option>
 }
 

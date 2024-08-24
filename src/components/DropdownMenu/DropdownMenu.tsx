@@ -7,16 +7,13 @@ import Items from "./Items";
 import Item from "./Item";
 import Button from "../Button";
 import { DropdownIcon } from "../Icon/Icons";
+import DropdownButton from "./DropdownButton";
 
 const DropdownMenu = ({
     children,
     className,
     variant,
     color='white',
-    label='Label',
-    size,
-    rounded,
-    shadow,
 }:PropsWithChildren<DropdownMenuProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -38,16 +35,13 @@ const DropdownMenu = ({
                 onMouseEnter={() => setIsOpen(true)}
                 onMouseLeave={() => setIsOpen(false)}
             >
-                <Button variant={variant} color={color} size={size} rounded={rounded} shadow={shadow}>
-                    {label}
-                    <DropdownIcon style={getIconStyle()}/>
-                </Button>
                 {children}
             </div>
         </DropdownMenuContext.Provider>
     );
 }
 
+DropdownMenu.Button = DropdownButton;
 DropdownMenu.Items = Items;
 DropdownMenu.Item = Item;
 

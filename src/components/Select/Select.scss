@@ -3,7 +3,6 @@
 .capybara-select {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
     background-color: white;
     border: 1px solid rgba(black, 0.1);
     border-radius: 0.25rem;
@@ -18,9 +17,48 @@
     .selected-value {
         min-width: 0;
         text-overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        margin-right: 0.25rem;
+        margin-left: 0.5rem;
+
+        .placeholder {
+            color: rgba(0,0,0,0.5);
+        }
+
+        .value-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.75rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            opacity: 0.5;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                background-color: rgba(black, 0.1);
+                opacity: 1;
+            }
+
+
+        }
     }
     
     .select-dropdown-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
         cursor: pointer;
         border-left: 1px solid rgba(lightgray, 0.5);
         color: rgba(0,0,0,0.5);

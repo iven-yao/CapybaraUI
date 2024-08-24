@@ -4,32 +4,38 @@ import { SelectContext } from "./SelectContext";
 import './Select.scss';
 import clsx from "clsx";
 import { FaCaretDown } from "react-icons/fa";
-import { DropdownIcon } from "../Icon/Icons";
+import { DropdownIcon, XIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
 import { createPortal } from "react-dom";
+import Ripple from "../Ripple/Ripple";
 
 const Select = ({
     options,
     value,
-    onChange,
-    placeholder="Choose...",
-    disabled,
     width,
     color='white',
+    placeholder="Choose...",
+    onChange,
+    disabled=false,
     multiple=false,
+    searchable=false,
+    clearBtn=true,
     className,
     style,
 }:SelectProps) => {
 
     const [selectedOption, setSelectedOption] = useState<option|Array<option>|undefined>();
     const [isOpen, setIsOpen] = useState(false);
+    const [filterString, setFilterString] = useState('');
 
     useEffect(() => {
         const handleClickOutside = (e:MouseEvent) => {
-            const target = e.target as Element;
-            if(!target.classList.contains('capybara-select') &&
-               !target.classList.contains('option') 
-            ) {
+            let target = e.target as Element;
+            while(target.parentElement != null && !target.classList.contains('capybara-select')) {
+                target = target.parentElement;
+            }
+
+            if(!target.classList.contains('capybara-select')) {
                 setIsOpen(false);
             }
         }
@@ -55,14 +61,23 @@ const Select = ({
     },[value, multiple]);
     
     useEffect(() => {
-        if(onChange && selectedOption) {
-            if(Array.isArray(selectedOption)) {
-                onChange(selectedOption.map(o => o.value));
-            } else {
-                onChange(selectedOption.value);
-            }
+        if(onChange) {
+            if(selectedOption){
+                if(Array.isArray(selectedOption)) {
+                    onChange(selectedOption.map(o => o.value));
+                } else {
+                    onChange(selectedOption.value);
+                }
+            } 
         }
+        setFilterString('');
     },[selectedOption]);
+
+    const handleClearSelect = (e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        e.stopPropagation();
+        setSelectedOption(undefined); 
+        if(onChange) onChange(undefined);
+    }
 
     return (
         <SelectContext.Provider value={{selectedOption, setSelectedOption, color, multiple}}>
@@ -84,27 +99,33 @@ const Select = ({
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <div className="selected-value">
-                    {selectedOption?
-                        Array.isArray(selectedOption) ?
-                            selectedOption.length > 0 ?
-                                <div>{selectedOption.map(o => o.label).join(',')}</div>
-                                :
-                                <div>{placeholder}</div>
+                    {!selectedOption || (Array.isArray(selectedOption) && selectedOption.length === 0)?
+                        searchable?
+                            <input type="text" placeholder={placeholder} onChange={e => setFilterString(e.target.value)} style={{border:'none', outline:'none'}}/>
                             :
-                            <div>{selectedOption.label}</div>
+                            <div className="placeholder">{placeholder}</div>
                         :
-                        <div>{placeholder}</div>
+                        Array.isArray(selectedOption)?
+                            <>
+                                <div className="value-wrapper">{selectedOption.map(o => o.label).join(',')}</div>
+                                {clearBtn && <div className="icon-wrapper"><XIcon className="xicon"/><Ripple/></div>}
+                            </>
+                            :
+                            <>
+                                <div className="value-wrapper">{selectedOption.label}</div>
+                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect}><XIcon className="xicon"/><Ripple/></div>}
+                            </>
                     }
                 </div>
                 <div className="select-dropdown-icon">
-                    <DropdownIcon style={{marginLeft:'8px'}}/>
+                    <DropdownIcon />
                 </div>
                 <div className={clsx(
                     "capybara-options",
                 )}
                     hidden={!isOpen}
                 >
-                    {options.map(o => <SelectOption option={o} key={`${o.label}_${o.value}`}/>)}
+                    {options.filter(o => o.label.indexOf(filterString) != -1).map(o => <SelectOption option={o} key={`${o.label}_${o.value}`}/>)}
                 </div>
             </div>
         </SelectContext.Provider>
