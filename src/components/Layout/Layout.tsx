@@ -13,7 +13,7 @@ const Layout = () => {
         <LayoutContext.Provider value={{darkMode}}>
             <div className="container">
                 <Navbar height={'80px'}>
-                    <Navbar.Logo src={logo}></Navbar.Logo>
+                    <Navbar.Logo src={logo} circle></Navbar.Logo>
                     <Navbar.Items justify="end">
                         <Navbar.Item><Link to={'./docs'} className="navbar-link">DOCS</Link></Navbar.Item>
                         <Navbar.Item>ABOUT</Navbar.Item>

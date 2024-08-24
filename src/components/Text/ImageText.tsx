@@ -9,7 +9,8 @@ const ImageText = (props:PropsWithChildren<ImageTextProps>) => {
         children,
         className,
         style,
-        src
+        src,
+        fontSize=120
     } = {...props};
 
     return (
@@ -20,6 +21,7 @@ const ImageText = (props:PropsWithChildren<ImageTextProps>) => {
             )}
             style={{
                 backgroundImage:`url(${src})`,
+                fontSize:`${fontSize}px`,
                 ...style
             }}
         >

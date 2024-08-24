@@ -108,7 +108,7 @@ const Select = ({
                         Array.isArray(selectedOption)?
                             <>
                                 <div className="value-wrapper">{selectedOption.map(o => o.label).join(',')}</div>
-                                {clearBtn && <div className="icon-wrapper"><XIcon className="xicon"/><Ripple/></div>}
+                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect}><XIcon className="xicon"/><Ripple/></div>}
                             </>
                             :
                             <>

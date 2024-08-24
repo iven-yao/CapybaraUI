@@ -1,0 +1,15 @@
+@import '../../styles/mixin';
+
+.capybara-input {
+    font-size: 1rem;
+    border: 1px solid rgba(black, 0.1);
+    border-radius: 0.25rem;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+
+    &.active {
+        @include preset-border;
+    }
+}

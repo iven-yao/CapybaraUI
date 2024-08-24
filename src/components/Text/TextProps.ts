@@ -1,9 +1,11 @@
 import { componentBasics } from "../../types/propTypes";
 
 export type ImageTextProps = componentBasics & {
-    src: string
+    src: string,
+    fontSize?: number
 }
 
 export type NeonTextProps = componentBasics & {
-    color: string
+    color: string,
+    fontSize?: number
 }

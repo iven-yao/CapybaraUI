@@ -5,9 +5,9 @@ import { componentBasics } from "../../types/propTypes";
 
 const Items = ({
     children,
-    className
+    className,
 }:PropsWithChildren<componentBasics>) => {
-    const {isOpen, color, variant} = useContext(DropdownMenuContext);
+    const {isOpen, color, variant, shadow} = useContext(DropdownMenuContext);
 
     return (
         isOpen?
@@ -17,6 +17,7 @@ const Items = ({
             {  
                 [`${variant}`]:variant,
                 [`border`]:variant === 'outline',
+                "shadow":shadow
             },
             className,
             )} role="menu" aria-orientation="vertical" aria-labelledby="options-menu">

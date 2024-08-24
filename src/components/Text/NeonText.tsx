@@ -9,19 +9,20 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
         children,
         className,
         style,
-        color
+        color,
+        fontSize=20
     } = {...props};
 
     const [neonStyle, setNeonStyle] = useState<React.CSSProperties>();
 
     useEffect(() => {
         const inlineStyle = (colorCode:string):React.CSSProperties => ({
-            fontSize: '3rem',
+            fontSize: `${fontSize}px`,
             fontWeight:'100',
             color: 'white',
             textShadow: `
-                0 0 .125rem #fff,
-                0 0 .2rem ${colorCode},
+                0 0 .15rem #fff,
+                0 0 .3rem #fff,
                 0 0 .3rem ${colorCode},
                 0 0 .5rem ${colorCode},
                 0 0 .75rem ${colorCode},
@@ -35,7 +36,7 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
 
         setNeonStyle(inlineStyle(color));
 
-    },[color])
+    },[color, fontSize])
 
     return (
         <span 

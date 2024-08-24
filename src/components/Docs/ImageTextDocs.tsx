@@ -1,10 +1,12 @@
 import { useState } from "react";
 import QuickViewResult from "./QuickViewResult";
 import ImageText from "../Text/ImageText";
+import Input from "../Input";
 
 const ImageTextDocs = () => {
-    const [src, setSrc] = useState('https://img.freepik.com/premium-photo/there-are-lot-capybaras-that-are-standing-together-generative-ai_1034973-86457.jpg?w=826');
-    const [text, setText] = useState('CAPYBARA');
+    const [src, setSrc] = useState('https://www.pbs.org/wnet/nature/files/2023/07/pexels-pixabay-160583-scaled-e1689259491194-1280x720.jpg');
+    const [text, setText] = useState('Capybara');
+    const [fontSize, setFontSize] = useState(120);
 
     return (
         <>
@@ -17,7 +19,7 @@ const ImageTextDocs = () => {
                             src
                         </div>
                         <div className="control">
-                            <input type="text" value={src} onChange={(e) => setSrc(e.target.value)} />
+                            <Input type="text" value={src} onChange={v => setSrc(v)} />
                         </div>
                     </div>
                     <div className="select-panel">
@@ -25,7 +27,15 @@ const ImageTextDocs = () => {
                             text
                         </div>
                         <div className="control">
-                            <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                            <Input type="text" value={text} onChange={(v) => setText(v)} />
+                        </div>
+                    </div>
+                    <div className="select-panel">
+                        <div className="label">
+                            font size
+                        </div>
+                        <div className="control">
+                            <Input type="number" value={fontSize} onChange={(v) => setFontSize(Number(v))} />
                         </div>
                     </div>
                 </div>
@@ -34,7 +44,7 @@ const ImageTextDocs = () => {
 
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
-                        <ImageText src={src}>
+                        <ImageText src={src} fontSize={fontSize}>
                             {text}
                         </ImageText>
                     </QuickViewResult.Preview>

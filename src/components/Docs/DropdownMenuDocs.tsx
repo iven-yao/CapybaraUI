@@ -84,9 +84,9 @@ const DropdownMenuDocs = () => {
                         <DropdownMenu 
                             variant={variant}
                             color={color}
+                            shadow={shadow}
                         >
                             <DropdownMenu.Button
-                                shadow={shadow}
                                 rounded={rounded}
                                 size={size}
                             >

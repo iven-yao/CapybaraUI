@@ -13,6 +13,7 @@ export type NavbarProps = componentBasics & {
 
 export type LogoProps = componentBasics & {
     src?:string,
+    circle?:boolean
 }
 
 export type ItemsProps = componentBasics & {

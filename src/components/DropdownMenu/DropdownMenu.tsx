@@ -14,6 +14,7 @@ const DropdownMenu = ({
     className,
     variant,
     color='white',
+    shadow
 }:PropsWithChildren<DropdownMenuProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ const DropdownMenu = ({
     }
 
     return (
-        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color, variant}}>
+        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color, variant, shadow}}>
             <div className={clsx(
                 "capybara-dropdown", 
                 className,

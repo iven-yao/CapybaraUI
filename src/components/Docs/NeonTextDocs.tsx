@@ -1,12 +1,12 @@
 import { useState } from "react";
 import QuickViewResult from "./QuickViewResult";
-import ImageText from "../Text/ImageText";
 import NeonText from "../Text/NeonText";
-import { StarIcon } from "../Icon/Icons";
+import Input from "../Input";
 
 const NeonTextDocs = () => {
     const [color, setColor] = useState('violet');
-    const [text, setText] = useState('capybara');
+    const [text, setText] = useState('Capybara');
+    const [fontSize, setFontSize] = useState(60);
 
     return (
         <>
@@ -19,7 +19,7 @@ const NeonTextDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <input type="text" value={color} onChange={(e) => setColor(e.target.value)} />
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} />
                         </div>
                     </div>
                     <div className="select-panel">
@@ -27,16 +27,24 @@ const NeonTextDocs = () => {
                             text
                         </div>
                         <div className="control">
-                            <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                            <Input type="text" value={text} onChange={(v) => setText(v)} />
+                        </div>
+                    </div>
+                    <div className="select-panel">
+                        <div className="label">
+                            font size
+                        </div>
+                        <div className="control">
+                            <Input type="number" value={fontSize} onChange={(v) => setFontSize(Number(v))} />
                         </div>
                     </div>
                 </div>
-                <QuickViewResult style={{backgroundColor:'black'}}>
+                <QuickViewResult>
                     <QuickViewResult.Code>
 
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
-                        <NeonText color={color}>
+                        <NeonText color={color} fontSize={fontSize}>
                             {text}
                         </NeonText>
                     </QuickViewResult.Preview>
