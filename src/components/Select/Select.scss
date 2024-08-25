@@ -1,10 +1,11 @@
 @import '../../styles/mixin';
+@import '../../styles/variables';
 
 .capybara-select {
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
-    border: 1px solid rgba(black, 0.1);
+    border: 1px solid $border-color;
     border-radius: 0.25rem;
     position: relative;
     width: 100%;
@@ -61,7 +62,7 @@
         margin: 0.25rem 0rem;
         padding: 0.25rem 0.5rem;
         cursor: pointer;
-        border-left: 1px solid rgba(lightgray, 0.5);
+        border-left: 1px solid $border-color;
         color: rgba(0,0,0,0.5);
         &:hover {
             color: rgba(0,0,0);
@@ -80,7 +81,7 @@
     border-radius: 0.25rem;
     background-color: white;
     box-shadow: 0px 2.5px 2.5px rgba(black, 0.25);
-    border: 1px solid rgba(black, 0.1);
+    border: 1px solid $border-color;
     box-sizing: border-box;
     @include preset-border;
     

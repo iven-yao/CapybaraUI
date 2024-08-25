@@ -14,11 +14,12 @@ const QuickViewResult = ({children, style, className}:PropsWithChildren<componen
         <QuickViewContext.Provider value={{showCode}}>
             <div className="result" style={style}>
                 <Button 
+                    variant="three-d"
                     className="switch-code-btn" 
                     size="xs"
                     rounded="none"
                     onClick={() => setShowCode(!showCode)}
-                    style={{width:'100px'}}
+                    style={{width:'100px', borderTopRightRadius:'0.2rem', borderBottomLeftRadius:'0.25rem'}}
                 >
                     <div style={{display:'flex', justifyContent:'space-between'}}>
                         <div className="rotate-icon">

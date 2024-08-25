@@ -9,7 +9,7 @@ const Docs = () => {
                     <div>Component</div>
                     <ul style={{listStyle:'none'}}>
                         <li><NavLink to={"./button"}>Button</NavLink></li>
-                        <li><NavLink to={"./dropdown-menu"}>Dropdown Menu</NavLink></li>
+                        <li><NavLink to={"./dropdown"}>Dropdown</NavLink></li>
                         <li><NavLink to={"./navbar"}>Navbar</NavLink></li>
                         <li><NavLink to={"./select"}>Select</NavLink></li>
                     </ul>
@@ -17,6 +17,7 @@ const Docs = () => {
                     <ul style={{listStyle:'none'}}>
                         <li><NavLink to={"./image-text"}>Image Text</NavLink></li>
                         <li><NavLink to={"./neon-text"}>Neon Text</NavLink></li>
+                        <li><NavLink to={"./3d-text"}>3D Text</NavLink></li>
                     </ul>
                 </nav>
             </div>

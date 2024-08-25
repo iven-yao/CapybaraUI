@@ -3,7 +3,7 @@ import { PropsWithChildren, useEffect, useState } from "react";
 import { NeonTextProps } from "./TextProps";
 import './Text.scss';
 
-const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
+const ThreeDText = (props:PropsWithChildren<NeonTextProps>) => {
 
     const {
         children,
@@ -18,20 +18,13 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
     useEffect(() => {
         const inlineStyle = (colorCode:string):React.CSSProperties => ({
             fontSize: `${fontSize}px`,
-            fontWeight:'100',
-            color: 'white',
+            color: colorCode,
             textShadow: `
-                0 0 .1rem ${colorCode},
-                0 0 .3rem ${colorCode},
-                0 0 .5rem ${colorCode},
-                0 0 .75rem ${colorCode},
-                0 0 1.5rem ${colorCode},
-                0 0 2.5rem ${colorCode},
-                0 0 3.5rem ${colorCode}
+                2px 2px 5px ${colorCode === 'black' || colorCode === '#000000' || colorCode === '#000' ? '#FFFFFF20' : '#00000020'},
+                0 ${fontSize/20}px 0px #FFFFFF40,
+                2px ${fontSize/15}px 0px #00000020
             `,
         })
-
-        console.log(inlineStyle(color));
 
         setNeonStyle(inlineStyle(color));
 
@@ -40,7 +33,7 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
     return (
         <span 
             className={clsx(
-                'capybara-neon-text',
+                'capybara-3d-text',
                 className
             )}
             style={{...neonStyle, ...style}}
@@ -50,4 +43,4 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
     );
 }
 
-export default NeonText;
+export default ThreeDText;

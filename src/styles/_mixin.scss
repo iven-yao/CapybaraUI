@@ -137,6 +137,51 @@
     }
 }
 
+@mixin preset-active-outline {
+    &:active {
+        &.border-red {
+            outline: 0.5rem color(red, border);
+        }
+    
+        &.border-orange {
+            border-color: color(orange, border);
+        }
+    
+        &.border-yellow {
+            border-color: color(yellow, border);
+        }
+    
+        &.border-green {
+            border-color: color(green, border);
+        }
+    
+        &.border-blue {
+            border-color: color(blue, border);
+        }
+    
+        &.border-indigo {
+            border-color: color(indigo, border);
+        }
+    
+        &.border-violet {
+            border-color: color(violet, border);
+        }
+    
+        &.border-gray {
+            border-color: color(gray, border);
+        }
+    
+        &.border-white {
+            border-color: rgba(lightgray,0.5);
+        }
+    
+        &.border-black {
+            border-color: black;
+        }
+    }
+}
+
+
 @mixin rounded {
     &.rounded-sm {
         border-radius: 0.25rem;

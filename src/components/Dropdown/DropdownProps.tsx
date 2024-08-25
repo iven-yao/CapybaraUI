@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react"
 import { componentBasics, color, size, rounded, variant } from "../../types/propTypes"
 
-export type DropdownMenuShared = {
+export type DropdownShared = {
     isOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
     color: color,
@@ -9,7 +9,7 @@ export type DropdownMenuShared = {
     shadow?:boolean
 }
 
-export type DropdownMenuProps = componentBasics & {
+export type DropdownProps = componentBasics & {
     variant?: variant,
     color?: color,
     shadow?: boolean

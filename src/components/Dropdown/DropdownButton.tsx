@@ -1,7 +1,7 @@
 import { PropsWithChildren, useContext } from "react";
 import Button from "../Button";
-import { DropdownButtonProps } from "./DropdownMenuProps";
-import { DropdownMenuContext } from "./DropdownMenuContext";
+import { DropdownButtonProps } from "./DropdownProps";
+import { DropdownContext } from "./DropdownContext";
 
 const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
 
@@ -13,7 +13,7 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
         rounded,
     } = {...props}
 
-    const {color, variant, shadow} = useContext(DropdownMenuContext);
+    const {color, variant, shadow} = useContext(DropdownContext);
 
     return (
         <Button 

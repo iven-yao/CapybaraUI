@@ -1,4 +1,5 @@
 @import '../../styles/mixin';
+@import '../../styles/variables';
 
 .overlay {
     position: absolute;
@@ -12,7 +13,7 @@
     position: relative;
     display: inline-block;
 
-    .menu {
+    .list {
         position: absolute;
         left: 0;
         margin-top: 0rem;
@@ -22,7 +23,7 @@
         overflow: hidden;
         
         &.border {
-            border: 1px solid rgba(lightgray,0.5);
+            border: 1px solid $border-color;
         }
 
         @include preset-border;
@@ -42,12 +43,12 @@
         }
     }
     
-    .menu-item {
+    .list-item {
         padding: 10px;
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        border-bottom: 1px solid rgba(lightgray,0.5);
+        border-top: 1px solid $border-color;
         
         &:hover {
             background-color: rgba(black, 0.1);

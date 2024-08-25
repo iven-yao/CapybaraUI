@@ -1,5 +1,5 @@
 import { PropsWithChildren, useContext } from "react";
-import { DropdownMenuContext } from "./DropdownMenuContext";
+import { DropdownContext } from "./DropdownContext";
 import clsx from "clsx";
 import { componentBasics } from "../../types/propTypes";
 
@@ -7,12 +7,12 @@ const Items = ({
     children,
     className,
 }:PropsWithChildren<componentBasics>) => {
-    const {isOpen, color, variant, shadow} = useContext(DropdownMenuContext);
+    const {isOpen, color, variant, shadow} = useContext(DropdownContext);
 
     return (
         isOpen?
         <div className={clsx(
-            "menu",
+            "list",
             `bg-${color} border-${color}`,
             {  
                 [`${variant}`]:variant,
@@ -20,7 +20,7 @@ const Items = ({
                 "shadow":shadow
             },
             className,
-            )} role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+            )} role="list" aria-orientation="vertical" aria-labelledby="options-menu">
             {children}
         </div>
         :

@@ -42,8 +42,8 @@ $colors: (
     hover: #EDDEED
   ),
   gray: (
-    bg:#F8F8F8,
-    border:#E0E0E0,
+    bg:#ececec,
+    border:#cacaca,
     text:#000000,
     hover:#F0F0F0
   )
@@ -54,4 +54,4 @@ $colors: (
   @return map-get(map-get($colors, $color-name), $color-variant);
 }
 
-$border-color: rgba(lightgray,0.5);
+$border-color: rgba(black,0.3);

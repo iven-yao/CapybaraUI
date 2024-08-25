@@ -2,13 +2,13 @@ import { useState } from "react";
 import { _color, _size, _rounded, _variant } from "../../constants/propConstants";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
-import DropdownMenu from "../DropdownMenu";
+import Dropdown from "../Dropdown";
 import { RotateIcon } from "../Icon/Icons";
 import Select from "../Select";
 import { color, rounded, size, variant } from "../../types/propTypes";
 import QuickViewResult from "./QuickViewResult";
 
-const DropdownMenuDocs = () => {
+const DropdownDocs = () => {
     const [variant, setVariant] = useState<variant>();
     const [color, setColor] = useState<color>('gray');
     const [size, setSize] = useState<size>('md');
@@ -18,7 +18,7 @@ const DropdownMenuDocs = () => {
 
     return (
         <div>
-            <div className="title">Dropdown Menu</div>
+            <div className="title">Dropdown</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
@@ -66,38 +66,38 @@ const DropdownMenuDocs = () => {
                 <QuickViewResult>
                     <QuickViewResult.Code>
     {`
-    <DropdownMenu 
+    <Dropdown 
         label="Action" 
         ${variant ? `variant="${variant}"\n\t`:''}color="${color || "gray"}"
         size="${size || "md"}"
         rounded="${rounded || "sm"}"${shadow?"\n\tshadow":''}
     >
-        <DropdownMenu.Items>
-            <DropdownMenu.Item>Save</DropdownMenu.Item>
-            <DropdownMenu.Item>Edit</DropdownMenu.Item>
-            <DropdownMenu.Item>Delete</DropdownMenu.Item>
-        </DropdownMenu.Items>
-    </DropdownMenu>
+        <Dropdown.Items>
+            <Dropdown.Item>Save</Dropdown.Item>
+            <Dropdown.Item>Edit</Dropdown.Item>
+            <Dropdown.Item>Delete</Dropdown.Item>
+        </Dropdown.Items>
+    </Dropdown>
     `}
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
-                        <DropdownMenu 
+                        <Dropdown 
                             variant={variant}
                             color={color}
                             shadow={shadow}
                         >
-                            <DropdownMenu.Button
+                            <Dropdown.Button
                                 rounded={rounded}
                                 size={size}
                             >
                                 Action
-                            </DropdownMenu.Button>
-                            <DropdownMenu.Items>
-                                <DropdownMenu.Item onClick={() => {console.log('Save')}}>Save</DropdownMenu.Item>
-                                <DropdownMenu.Item onClick={() => {console.log('Edit')}}>Edit</DropdownMenu.Item>
-                                <DropdownMenu.Item onClick={() => {console.log('Delete')}}>Delete</DropdownMenu.Item>
-                            </DropdownMenu.Items>
-                        </DropdownMenu>
+                            </Dropdown.Button>
+                            <Dropdown.Items>
+                                <Dropdown.Item onClick={() => {console.log('Save')}}>Save</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {console.log('Edit')}}>Edit</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {console.log('Delete')}}>Delete</Dropdown.Item>
+                            </Dropdown.Items>
+                        </Dropdown>
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>
@@ -108,4 +108,4 @@ const DropdownMenuDocs = () => {
     );
 }
 
-export default DropdownMenuDocs;
+export default DropdownDocs;

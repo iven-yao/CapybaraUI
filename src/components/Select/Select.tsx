@@ -13,7 +13,7 @@ const Select = ({
     options,
     value,
     width,
-    color='white',
+    color='gray',
     placeholder="Choose...",
     onChange,
     disabled=false,
@@ -101,7 +101,7 @@ const Select = ({
                 <div className="selected-value">
                     {!selectedOption || (Array.isArray(selectedOption) && selectedOption.length === 0)?
                         searchable?
-                            <input type="text" placeholder={placeholder} onChange={e => setFilterString(e.target.value)} style={{border:'none', outline:'none'}}/>
+                            <input type="text" placeholder={placeholder} onChange={e => setFilterString(e.target.value)} style={{border:'none', outline:'none', backgroundColor:'transparent'}}/>
                             :
                             <div className="placeholder">{placeholder}</div>
                         :

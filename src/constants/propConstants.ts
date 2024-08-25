@@ -103,5 +103,9 @@ export const _variant = [
     {
         value:'fill',
         label:'fill'
+    },
+    {
+        value:'three-d',
+        label:'3d'
     }
 ]

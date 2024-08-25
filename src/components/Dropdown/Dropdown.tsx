@@ -1,21 +1,19 @@
 import { PropsWithChildren, useState } from "react";
-import { DropdownMenuProps } from "./DropdownMenuProps";
-import { DropdownMenuContext } from "./DropdownMenuContext";
+import { DropdownProps } from "./DropdownProps";
+import { DropdownContext } from "./DropdownContext";
 import clsx from "clsx";
-import './DropdownMenu.scss';
+import './Dropdown.scss';
 import Items from "./Items";
 import Item from "./Item";
-import Button from "../Button";
-import { DropdownIcon } from "../Icon/Icons";
 import DropdownButton from "./DropdownButton";
 
-const DropdownMenu = ({
+const Dropdown = ({
     children,
     className,
     variant,
     color='white',
     shadow
-}:PropsWithChildren<DropdownMenuProps>) => {
+}:PropsWithChildren<DropdownProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -28,7 +26,7 @@ const DropdownMenu = ({
     }
 
     return (
-        <DropdownMenuContext.Provider value={{isOpen, setIsOpen, color, variant, shadow}}>
+        <DropdownContext.Provider value={{isOpen, setIsOpen, color, variant, shadow}}>
             <div className={clsx(
                 "capybara-dropdown", 
                 className,
@@ -38,12 +36,12 @@ const DropdownMenu = ({
             >
                 {children}
             </div>
-        </DropdownMenuContext.Provider>
+        </DropdownContext.Provider>
     );
 }
 
-DropdownMenu.Button = DropdownButton;
-DropdownMenu.Items = Items;
-DropdownMenu.Item = Item;
+Dropdown.Button = DropdownButton;
+Dropdown.Items = Items;
+Dropdown.Item = Item;
 
-export default DropdownMenu;
+export default Dropdown;
