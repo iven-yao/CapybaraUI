@@ -9,11 +9,9 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
         children,
         className,
         style,
-        size,
-        rounded,
     } = {...props}
 
-    const {color, variant, shadow} = useContext(DropdownContext);
+    const {color, variant, shadow, rounded, size, disabled} = useContext(DropdownContext);
 
     return (
         <Button 
@@ -24,6 +22,7 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
             shadow={shadow}
             className={className}
             style={style}
+            disabled={disabled}
         >
             {children}
         </Button>

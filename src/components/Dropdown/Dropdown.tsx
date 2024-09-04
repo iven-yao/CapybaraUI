@@ -12,27 +12,26 @@ const Dropdown = ({
     className,
     variant,
     color='white',
-    shadow
+    shadow,
+    rounded='sm',
+    size='md',
+    disabled
 }:PropsWithChildren<DropdownProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const getIconStyle = () => {
-        const iconStyle:React.CSSProperties = {
-            marginLeft: '8px'
-        };
-
-        return iconStyle;
-    }
-
     return (
-        <DropdownContext.Provider value={{isOpen, setIsOpen, color, variant, shadow}}>
+        <DropdownContext.Provider value={{isOpen, setIsOpen, color, variant, shadow, rounded, size, disabled}}>
             <div className={clsx(
                 "capybara-dropdown", 
                 className,
                 )} 
-                onMouseEnter={() => setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
+                onMouseEnter={() => {
+                    if(!disabled) setIsOpen(true);
+                }}
+                onMouseLeave={() => {
+                    if(!disabled) setIsOpen(false);
+                }}
             >
                 {children}
             </div>

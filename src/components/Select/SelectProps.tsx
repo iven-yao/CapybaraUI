@@ -1,8 +1,8 @@
 import { componentBasics, color } from "../../types/propTypes"
 
 export type SelectShared = {
-    selectedOption: option|Array<option>|undefined,
-    setSelectedOption: React.Dispatch<React.SetStateAction<option | option[] | undefined>>,
+    selectedOption: option|Array<option>|undefined|null,
+    setSelectedOption: React.Dispatch<React.SetStateAction<option | option[] | undefined | null>>,
     color: color,
     multiple: boolean
 }
@@ -11,7 +11,7 @@ export type SelectProps = componentBasics & {
     // value that being selected
     value?: string|string[],
     // callback function when value changes
-    onChange?: (value:string|string[]|undefined) => void,
+    onChange?: (value:string|string[]|null) => void,
     // placeholder when no value is selected
     placeholder?: string,
     // identifier to disable the component
@@ -30,7 +30,7 @@ export type SelectProps = componentBasics & {
     options:Array<option>
 }
 
-export type option = componentBasics & {
+export type option = {
     label: string,
     value: string,
 }
@@ -38,4 +38,8 @@ export type option = componentBasics & {
 export type SelectOptionProps = componentBasics & {
     option:option,
     disabled?: boolean,
+}
+
+export type SelectMultipleButtonProps = componentBasics & {
+    option: option
 }

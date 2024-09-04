@@ -8,6 +8,7 @@ const Input = (props:InputProps) => {
         style,
         type = 'text',
         value,
+        color = 'gray',
         defaultValue,
         onChange,
         max,
@@ -34,12 +35,16 @@ const Input = (props:InputProps) => {
         <input 
             className={clsx(
                 "capybara-input",
+                {
+                    [`border-${color}`]:color,
+                },
                 className
             )}
             style={style}
             type={type}
             value={value}
             onChange={handleChange}
+            placeholder={placeholder}
         />
     );
 }

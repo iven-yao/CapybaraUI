@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { _color, _size, _rounded, _variant } from "../../constants/propConstants";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
@@ -14,7 +14,21 @@ const DropdownDocs = () => {
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
     const [shadow, setShadow] = useState(false);
-    const [showCode, setShowCode] = useState(false);
+    const [disabled, setDisabled] = useState(false);
+    const [propsStr, setPropsStr] = useState("");
+
+    useLayoutEffect(() => {
+        let props = '';
+        props += (variant ? `\n\tvariant="${variant}"`:'');
+        props += (color? `\n\tcolor="${color}"`:'')
+        props += (size? `\n\tsize="${size}"`:'');
+        props += (rounded? `\n\trounded="${rounded}"`:'');
+        props += (shadow?"\n\tshadow":'');
+        props += (disabled?"\n\tdisabled":'');
+
+        setPropsStr(props);
+
+    },[variant, color, size, rounded, shadow, disabled])
 
     return (
         <div>
@@ -62,16 +76,22 @@ const DropdownDocs = () => {
                             <Checkbox checked={shadow} onChange={(v) => setShadow(v)} />
                         </div>
                     </div>
+                    <div className="select-panel">
+                        <div className="label">
+                            disabled
+                        </div>
+                        <div className="control">
+                            <Checkbox checked={disabled} onChange={(v) => setDisabled(v)}/>
+                        </div>
+                    </div>
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
     {`
-    <Dropdown 
-        label="Action" 
-        ${variant ? `variant="${variant}"\n\t`:''}color="${color || "gray"}"
-        size="${size || "md"}"
-        rounded="${rounded || "sm"}"${shadow?"\n\tshadow":''}
-    >
+    <Dropdown${propsStr}>
+        <Dropdown.Button>
+            Action
+        </Dropdown.Button>
         <Dropdown.Items>
             <Dropdown.Item>Save</Dropdown.Item>
             <Dropdown.Item>Edit</Dropdown.Item>
@@ -85,11 +105,11 @@ const DropdownDocs = () => {
                             variant={variant}
                             color={color}
                             shadow={shadow}
+                            rounded={rounded}
+                            size={size}
+                            disabled={disabled}
                         >
-                            <Dropdown.Button
-                                rounded={rounded}
-                                size={size}
-                            >
+                            <Dropdown.Button>
                                 Action
                             </Dropdown.Button>
                             <Dropdown.Items>

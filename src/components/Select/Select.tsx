@@ -8,6 +8,7 @@ import { DropdownIcon, XIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
 import { createPortal } from "react-dom";
 import Ripple from "../Ripple/Ripple";
+import SelectMultipleButton from "./SelectMultipleButton";
 
 const Select = ({
     options,
@@ -24,7 +25,7 @@ const Select = ({
     style,
 }:SelectProps) => {
 
-    const [selectedOption, setSelectedOption] = useState<option|Array<option>|undefined>();
+    const [selectedOption, setSelectedOption] = useState<option|Array<option>|null>();
     const [isOpen, setIsOpen] = useState(false);
     const [filterString, setFilterString] = useState('');
 
@@ -62,21 +63,24 @@ const Select = ({
     
     useEffect(() => {
         if(onChange) {
-            if(selectedOption){
+            if(selectedOption !== undefined) {
                 if(Array.isArray(selectedOption)) {
-                    onChange(selectedOption.map(o => o.value));
+                    if(selectedOption.length > 0) {
+                        onChange(selectedOption.map(o => o.value));
+                    } else {
+                        onChange(null);
+                    }
                 } else {
-                    onChange(selectedOption.value);
+                    onChange(selectedOption?.value || null);
                 }
-            } 
+            }
         }
         setFilterString('');
     },[selectedOption]);
 
     const handleClearSelect = (e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.stopPropagation();
-        setSelectedOption(undefined); 
-        if(onChange) onChange(undefined);
+        setSelectedOption(null); 
     }
 
     return (
@@ -96,24 +100,36 @@ const Select = ({
                     width: typeof width === 'number'? `${width}px`:width,
                     ...style
                 }}
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                    if(!disabled) setIsOpen(!isOpen);
+                }}
             >
                 <div className="selected-value">
                     {!selectedOption || (Array.isArray(selectedOption) && selectedOption.length === 0)?
-                        searchable?
-                            <input type="text" placeholder={placeholder} onChange={e => setFilterString(e.target.value)} style={{border:'none', outline:'none', backgroundColor:'transparent'}}/>
+                        searchable && !disabled?
+                            <input 
+                                type="text" 
+                                placeholder={placeholder} 
+                                disabled={disabled}
+                                onChange={e => setFilterString(e.target.value)} style={{
+                                    border:'none', 
+                                    outline:'none', 
+                                    backgroundColor:'transparent', 
+                                    width:'100%',
+                                }}
+                            />
                             :
                             <div className="placeholder">{placeholder}</div>
                         :
                         Array.isArray(selectedOption)?
                             <>
-                                <div className="value-wrapper">{selectedOption.map(o => o.label).join(',')}</div>
-                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect}><XIcon className="xicon"/><Ripple/></div>}
+                                <div className="value-wrapper">{selectedOption.map(o => <SelectMultipleButton option={o}/>)}</div>
+                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear All"><XIcon className="xicon"/></div>}
                             </>
                             :
                             <>
                                 <div className="value-wrapper">{selectedOption.label}</div>
-                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect}><XIcon className="xicon"/><Ripple/></div>}
+                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear"><XIcon className="xicon"/></div>}
                             </>
                     }
                 </div>

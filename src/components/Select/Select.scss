@@ -13,6 +13,7 @@
 
     &.active {
         @include preset-border;
+        @include preset-outline;
     }
 
     .selected-value {
@@ -32,7 +33,30 @@
         .value-wrapper {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+
+            .multiple-button {
+                display: flex;
+                border-radius: 0.25rem;
+                align-items: center;
+                padding: 0.25rem 0rem 0.25rem 0.5rem;
+                margin: 0 0.25rem 0 0;
+                line-height: 1;
+
+                @include preset-background;
+
+    
+                .icon-wrapper{
+                    margin: 0 0.125rem;
+                    font-size: 0.75rem;
+                    width: 1rem;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
         }
+
 
         .icon-wrapper {
             display: flex;
@@ -41,17 +65,14 @@
             width: 1.75rem;
             aspect-ratio: 1;
             border-radius: 50%;
-            opacity: 0.5;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-
+            opacity: 0.5;
             &:hover {
                 background-color: rgba(lightgray, 0.3);
                 opacity: 1;
             }
-
-
         }
     }
     
@@ -67,6 +88,10 @@
         &:hover {
             color: rgba(0,0,0);
         }
+    }
+
+    &.disabled {
+        cursor:not-allowed;
     }
 
 }

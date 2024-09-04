@@ -43,7 +43,7 @@ const NeonTextDocs = () => {
                     <QuickViewResult.Code>
 
                     </QuickViewResult.Code>
-                    <QuickViewResult.Preview>
+                    <QuickViewResult.Preview style={{backgroundColor:'black', width:'100%', height:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
                         <NeonText color={color} fontSize={fontSize}>
                             {text}
                         </NeonText>

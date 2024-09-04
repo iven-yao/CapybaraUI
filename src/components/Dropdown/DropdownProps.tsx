@@ -7,17 +7,21 @@ export type DropdownShared = {
     color: color,
     variant?:variant,
     shadow?:boolean
+    size?: size,
+    rounded?: rounded,
+    disabled?: boolean,
 }
 
 export type DropdownProps = componentBasics & {
     variant?: variant,
     color?: color,
-    shadow?: boolean
+    shadow?: boolean,
+    size?: size,
+    rounded?: rounded,
+    disabled?: boolean,
 }
 
 export type DropdownButtonProps = componentBasics & {
-    size?: size,
-    rounded?: rounded,
 }
 
 export type ItemProps = componentBasics & {

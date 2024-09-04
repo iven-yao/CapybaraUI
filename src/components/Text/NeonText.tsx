@@ -18,17 +18,6 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
     useEffect(() => {
         const inlineStyle = (colorCode:string):React.CSSProperties => ({
             fontSize: `${fontSize}px`,
-            fontWeight:'100',
-            color: 'white',
-            textShadow: `
-                0 0 .1rem ${colorCode},
-                0 0 .3rem ${colorCode},
-                0 0 .5rem ${colorCode},
-                0 0 .75rem ${colorCode},
-                0 0 1.5rem ${colorCode},
-                0 0 2.5rem ${colorCode},
-                0 0 3.5rem ${colorCode}
-            `,
         })
 
         console.log(inlineStyle(color));

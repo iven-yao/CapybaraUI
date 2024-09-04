@@ -4,7 +4,7 @@ import ImageText from "../Text/ImageText";
 import Input from "../Input";
 
 const ImageTextDocs = () => {
-    const [src, setSrc] = useState('https://www.pbs.org/wnet/nature/files/2023/07/pexels-pixabay-160583-scaled-e1689259491194-1280x720.jpg');
+    const [src, setSrc] = useState('https://tinyurl.com/3pjr5jdt');
     const [text, setText] = useState('Capybara');
     const [fontSize, setFontSize] = useState(120);
 
@@ -41,7 +41,14 @@ const ImageTextDocs = () => {
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
-
+{`
+    <ImageText 
+        src="${src}" 
+        fontSize="${fontSize}"
+    >
+        ${text}
+    </ImageText>
+`}
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
                         <ImageText src={src} fontSize={fontSize}>
