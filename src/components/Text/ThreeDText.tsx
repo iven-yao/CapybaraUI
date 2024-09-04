@@ -9,7 +9,7 @@ const ThreeDText = (props:PropsWithChildren<NeonTextProps>) => {
         children,
         className,
         style,
-        color,
+        color='violet',
         fontSize=20
     } = {...props};
 

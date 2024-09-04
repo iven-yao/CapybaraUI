@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+
+.error-page-container {
+    
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-position-x: center;
+    background-image: url('https://img.freepik.com/free-photo/black-textured-brick-wall-background_53876-63583.jpg?w=1380&t=st=1725480845~exp=1725481445~hmac=5e9fe3627d3fe89ad4600a40fe24904f05a136c591fbb1a079a6ed9aa47b0f53');
+}
+
+.error-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    font-family: "Neonderthaw", cursive;
+    margin: 5rem;
+}

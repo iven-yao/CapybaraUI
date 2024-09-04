@@ -6,6 +6,6 @@ export type ImageTextProps = componentBasics & {
 }
 
 export type NeonTextProps = componentBasics & {
-    color: string,
+    color?: string,
     fontSize?: number
 }

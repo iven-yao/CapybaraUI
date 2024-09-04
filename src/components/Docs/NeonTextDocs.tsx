@@ -4,7 +4,7 @@ import NeonText from "../Text/NeonText";
 import Input from "../Input";
 
 const NeonTextDocs = () => {
-    const [color, setColor] = useState('violet');
+    const [color, setColor] = useState('');
     const [text, setText] = useState('Capybara');
     const [fontSize, setFontSize] = useState(60);
 
@@ -19,7 +19,7 @@ const NeonTextDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} />
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: violet"/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -44,7 +44,7 @@ const NeonTextDocs = () => {
 
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview style={{backgroundColor:'black', width:'100%', height:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
-                        <NeonText color={color} fontSize={fontSize}>
+                        <NeonText color={color || 'violet'} fontSize={fontSize}>
                             {text}
                         </NeonText>
                     </QuickViewResult.Preview>

@@ -11,6 +11,7 @@ import NavbarDocs from './components/Docs/NavbarDocs';
 import ImageTextDocs from './components/Docs/ImageTextDocs';
 import NeonTextDocs from './components/Docs/NeonTextDocs';
 import ThreeDTextDocs from './components/Docs/ThreeDText';
+import ErrorPage from './components/Error';
 
 function AppRouter() {
 
@@ -18,10 +19,11 @@ function AppRouter() {
     {
       path:'/',
       element: <Layout />,
+      errorElement:<ErrorPage />,
       children: [
         {
           index:true,
-          element:<Home/>
+          element:<Home/>,
         },
         {
           path:'docs',

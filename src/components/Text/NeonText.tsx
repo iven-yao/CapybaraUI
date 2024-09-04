@@ -9,18 +9,17 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
         children,
         className,
         style,
-        color,
-        fontSize=20
+        color='violet',
+        fontSize=60
     } = {...props};
 
     const [neonStyle, setNeonStyle] = useState<React.CSSProperties>();
 
     useEffect(() => {
-        const inlineStyle = (colorCode:string):React.CSSProperties => ({
+        const inlineStyle = (neonColor:string):React.CSSProperties => ({
             fontSize: `${fontSize}px`,
+            "--neonColor": neonColor
         })
-
-        console.log(inlineStyle(color));
 
         setNeonStyle(inlineStyle(color));
 
