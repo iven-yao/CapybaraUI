@@ -92,7 +92,7 @@ const Select = ({
                     `border-${color}`,
                     {
                         "active":isOpen,
-                        "disabled":disabled
+                        "disabled":disabled,
                     },
                     className
                 )} 
@@ -104,7 +104,12 @@ const Select = ({
                     if(!disabled) setIsOpen(!isOpen);
                 }}
             >
-                <div className="selected-value">
+                <div className={clsx(
+                    "selected-value",
+                    {
+                        "multiple": multiple
+                    }
+                )}>
                     {!selectedOption || (Array.isArray(selectedOption) && selectedOption.length === 0)?
                         searchable && !disabled?
                             <input 

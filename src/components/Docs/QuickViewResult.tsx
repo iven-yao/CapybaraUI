@@ -17,9 +17,9 @@ const QuickViewResult = ({children, style, className}:PropsWithChildren<componen
                     variant="three-d"
                     className="switch-code-btn" 
                     size="xs"
-                    rounded="none"
+                    rounded="pill"
                     onClick={() => setShowCode(!showCode)}
-                    style={{width:'100px', borderTopRightRadius:'0.2rem', borderBottomLeftRadius:'0.25rem'}}
+                    style={{width:'100px'}}
                 >
                     <div style={{display:'flex', justifyContent:'space-between'}}>
                         <div className="rotate-icon">

@@ -10,7 +10,7 @@ const ThreeDText = (props:PropsWithChildren<NeonTextProps>) => {
         className,
         style,
         color='violet',
-        fontSize=20
+        fontSize=120
     } = {...props};
 
     const [neonStyle, setNeonStyle] = useState<React.CSSProperties>();

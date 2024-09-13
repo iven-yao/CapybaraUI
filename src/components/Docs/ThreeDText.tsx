@@ -6,7 +6,7 @@ import ThreeDText from "../Text/ThreeDText";
 const ThreeDTextDocs = () => {
     const [color, setColor] = useState('white');
     const [text, setText] = useState('Capybara');
-    const [fontSize, setFontSize] = useState(60);
+    const [fontSize, setFontSize] = useState(120);
 
     return (
         <>

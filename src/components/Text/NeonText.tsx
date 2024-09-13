@@ -10,7 +10,7 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
         className,
         style,
         color='violet',
-        fontSize=60
+        fontSize=120
     } = {...props};
 
     const [neonStyle, setNeonStyle] = useState<React.CSSProperties>();

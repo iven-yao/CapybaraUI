@@ -6,7 +6,7 @@ import Input from "../Input";
 const NeonTextDocs = () => {
     const [color, setColor] = useState('');
     const [text, setText] = useState('Capybara');
-    const [fontSize, setFontSize] = useState(60);
+    const [fontSize, setFontSize] = useState(120);
 
     return (
         <>

@@ -9,7 +9,7 @@ const ErrorPage = () => {
                 <NeonText fontSize={120} color='red'>404 not found</NeonText>
                 <NeonText fontSize={50} color='red'>
                     <Link to={'/'} style={{textDecoration:'none', color:'inherit'}}>
-                        Back
+                        -Back-
                     </Link>
                 </NeonText>
             </div>

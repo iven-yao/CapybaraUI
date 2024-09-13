@@ -2,13 +2,14 @@
 @import '../../styles/variables';
 
 .capybara-input {
-    font-size: 1rem;
     border: 1px solid $border-color;
     border-radius: 0.25rem;
     position: relative;
     box-sizing: border-box;
     width: 100%;
     padding: 0.5rem;
+    font-size: inherit;
+    font-family: inherit;
 
     &:focus-visible {
         @include preset-border;

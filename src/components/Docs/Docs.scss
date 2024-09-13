@@ -94,8 +94,8 @@
 
         .switch-code-btn {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 0.5rem;
+            right: 0.5rem;
         }
 
         .code-snippet {
@@ -113,6 +113,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .preview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
         }
     }
 }
