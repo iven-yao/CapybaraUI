@@ -3,13 +3,13 @@ import { PropsWithChildren, useState } from "react";
 import clsx from "clsx";
 import './Button.scss';
 import Ripple from "../Ripple/Ripple";
-import { hexToRGB } from "../../utils/colorHelper";
+import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
 
 const Button = ( {
     children, 
     className, 
     variant = 'outline',
-    color = 'lightgray', 
+    color = 'gray', 
     size='md', 
     isLoading, 
     rounded='sm', 
@@ -37,8 +37,9 @@ const Button = ( {
             )}
             
             style={{
-                "--btnColor": color || 'lightgray',
-                "--btnColorRGB": hexToRGB(color || 'lightgray').join(','),
+                "--btnColor": color || 'gray',
+                "--btnColorRGB": hexToRGB(color || 'gray').join(','),
+                "--textColor": contrastTextColor(color || 'gray'),
                 ...style}}
 
             onClick={onClick}

@@ -15,7 +15,7 @@ const NavbarDocs = () => {
 
     return (
         <>
-            <div className="title">Navbar</div>
+            <div className="title">Navbar (Not Ready)</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
@@ -29,7 +29,7 @@ const NavbarDocs = () => {
                     </div>
                     <div className="select-panel">
                         <div className="label">
-                            multiple
+                            option1
                         </div>
                         <div className="control">
                             <Checkbox checked={multiple} onChange={(v) => setMultiple(v)} />
@@ -37,7 +37,7 @@ const NavbarDocs = () => {
                     </div>
                     <div className="select-panel">
                         <div className="label">
-                            disabled
+                            option2
                         </div>
                         <div className="control">
                             <Checkbox checked={disabled} onChange={(v) => setDisabled(v)} />

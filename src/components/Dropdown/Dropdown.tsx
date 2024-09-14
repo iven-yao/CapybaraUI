@@ -6,13 +6,13 @@ import './Dropdown.scss';
 import Items from "./Items";
 import Item from "./Item";
 import DropdownButton from "./DropdownButton";
-import { hexToRGB } from "../../utils/colorHelper";
+import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
 
 const Dropdown = ({
     children,
     className,
     variant='outline',
-    color='lightgray',
+    color='gray',
     shadow,
     rounded='sm',
     size='md',
@@ -30,8 +30,9 @@ const Dropdown = ({
                 )} 
 
                 style={{
-                    "--dropdownColor": color || 'lightgray',
-                    "--dropdownColorRGB": hexToRGB(color || 'lightgray').join(','),
+                    "--dropdownColor": color || 'gray',
+                    "--dropdownColorRGB": hexToRGB(color || 'gray').join(','),
+                    "--textColor": contrastTextColor(color || 'gray'),
                     ...style
                 }}
 

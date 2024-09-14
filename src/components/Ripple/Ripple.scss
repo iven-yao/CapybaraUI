@@ -12,7 +12,7 @@
         border-radius: 50%;
         position: absolute;
         opacity: 0.35;
-        background-color: gray;
+        background-color: rgba(white, 0.8);
         animation: ripple;
 
         @include preset-background;

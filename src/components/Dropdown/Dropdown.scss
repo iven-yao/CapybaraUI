@@ -12,6 +12,7 @@
 .capybara-dropdown {
     position: relative;
     display: inline-block;
+    color: var(--textColor);
 
     .dropdown-btn {
         &.open {
@@ -30,6 +31,8 @@
         border-bottom-right-radius: 0.25rem;
         box-sizing: border-box;
         overflow: hidden;
+        background-color: white;
+
         &.border {
             border: 1px solid var(--dropdownColor);
             border-top: none;
@@ -37,6 +40,7 @@
         
         &.minimal {
             border-color: transparent;
+            background-color: transparent;
         }
         
         &.outline {
@@ -57,6 +61,7 @@
         
         &.minimal {
             background-color: transparent;
+            color: var(--dropdownColor);
         }
         
         &.fill {
@@ -65,6 +70,7 @@
         
         &.outline {
             background-color: transparent;
+            color: var(--dropdownColor);
         }
 
         &.three-d {
@@ -76,14 +82,11 @@
                 box-shadow: inset -2px -2px 3px rgba(white, 0.75),
                             inset 3px 3px 5px rgba(black, 0.2);
             }
-    
-            // &:hover {
-            //     background-color: var(--dropdownColor);
-            // }
         }
 
         &:hover {
             background-color: rgba( var(--dropdownColorRGB), 0.75);
+            color: var(--textColor);
         }
     }
 }

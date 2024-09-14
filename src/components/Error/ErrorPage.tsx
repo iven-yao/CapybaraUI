@@ -8,8 +8,8 @@ const ErrorPage = () => {
     return (
         <div className="error-page-container">
             <div className='error-text'>
-                <ThreeDText fontSize={120} color='white'>404 not found</ThreeDText>
-                <ThreeDText fontSize={50} color='white' className='back-btn'>
+                <ThreeDText fontSize={60} color='white'>something went wrong</ThreeDText>
+                <ThreeDText fontSize={30} color='white' className='back-btn'>
                     <Link to={'/'} style={{textDecoration:'none', color:'inherit'}}>
                         -Back-
                     </Link>

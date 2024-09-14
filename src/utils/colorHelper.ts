@@ -22,6 +22,20 @@ export const convertToHex = (color: string) => {
     return cssNamedColor[color.toLowerCase()] || color;
 }
 
+export const contrastTextColor = (color:string) => {
+    let rgb = hexToRGB(color);
+    
+    return brightness(rgb) < 130 ? "white" : "black";
+}
+
+const brightness = (rgb:number[]) => {
+    return Math.round(Math.sqrt(
+        rgb[0]*rgb[0]*0.241 +
+        rgb[1]*rgb[1]*0.691 +
+        rgb[2]*rgb[2]*0.068
+    ));
+}
+
 const cssNamedColor:{[key: string]: string} = {
     "aliceblue":"#f0f8ff",
     "antiquewhite":"#faebd7",

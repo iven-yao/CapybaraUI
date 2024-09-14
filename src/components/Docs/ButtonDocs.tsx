@@ -51,8 +51,8 @@ const ButtonDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray" width={"74%"}/>
-                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color)}/>
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: gray" width={"74%"}/>
+                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color||'gray')}/>
                         </div>
                     </div>
                     <div className="select-panel">
