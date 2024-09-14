@@ -3,7 +3,7 @@ import { componentBasics, rounded, size, color, variant } from "../../types/prop
 
 export type ButtonProps = componentBasics & {
     variant?: variant,
-    color?: color,
+    color?: string,
     size?: size,
     rounded?: rounded,
     shadow?: boolean,

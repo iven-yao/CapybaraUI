@@ -18,6 +18,7 @@ const QuickViewResult = ({children, style, className}:PropsWithChildren<componen
                     className="switch-code-btn" 
                     size="xs"
                     rounded="pill"
+                    color="white"
                     onClick={() => setShowCode(!showCode)}
                     style={{width:'100px'}}
                 >

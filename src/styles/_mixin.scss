@@ -182,15 +182,15 @@
 
 @mixin rounded {
     &.rounded-sm {
-        border-radius: 0.25rem;
+        border-radius: 5px;
     }
 
     &.rounded-md {
-        border-radius: 0.5rem;
+        border-radius: 7.5px;
     }
 
     &.rounded-lg {
-        border-radius: 0.75rem;
+        border-radius: 10px;
     }
 
     &.rounded-pill {

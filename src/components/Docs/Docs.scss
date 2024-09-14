@@ -7,21 +7,23 @@
     .side-bar {
         padding: 20px;
         width: 250px;
-        font-size: 1.5rem;
-        border-right: 1px solid $border-color;
+        font-size: 1.2rem;
+        font-weight: bold;
         overflow: auto;
         min-height: 0;
 
         ul {
-            font-size: 1.2rem;
-            margin: .5rem;
+            font-size: 1rem;
+            margin-left: .5rem;
+            margin-top: 0;
             padding: 0;
         }
         li {
             a {
+                padding-left: .5rem;
                 color: rgba(0,0,0,0.3);
-                font-weight: bold;
                 text-decoration: none;
+                border-left: 3px solid;
             }
 
             :hover {
@@ -30,7 +32,6 @@
 
             .active {
                 color: rgba(0,0,0,1);
-                text-decoration: underline;
             }
         }
     }
@@ -46,7 +47,6 @@
     font-size: 50px;
     font-weight: bold;
     padding: 10px;
-    margin-bottom: 10px;
 }
 
 .second-title {

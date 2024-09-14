@@ -6,10 +6,11 @@ import { _rounded, _size, _color, _variant } from "../../constants/propConstants
 import Checkbox from "../Checkbox";
 import { HandPointUpIcon, RotateIcon } from "../Icon/Icons";
 import QuickViewResult from "./QuickViewResult";
+import Input from "../Input";
 
 const ButtonDocs = () => {
     const [variant, setVariant] = useState<variant>();
-    const [color, setColor] = useState<color>('gray');
+    const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
     const [shadow, setShadow] = useState(false);
@@ -49,7 +50,7 @@ const ButtonDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Select onChange={(value) => setColor(value as color)} value={color} options={_color}/>
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray"/>
                         </div>
                     </div>
                     <div className="select-panel">

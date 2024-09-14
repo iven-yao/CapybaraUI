@@ -13,25 +13,13 @@ const NeonText = (props:PropsWithChildren<NeonTextProps>) => {
         fontSize=120
     } = {...props};
 
-    const [neonStyle, setNeonStyle] = useState<React.CSSProperties>();
-
-    useEffect(() => {
-        const inlineStyle = (neonColor:string):React.CSSProperties => ({
-            fontSize: `${fontSize}px`,
-            "--neonColor": neonColor
-        })
-
-        setNeonStyle(inlineStyle(color));
-
-    },[color, fontSize])
-
     return (
         <span 
             className={clsx(
                 'capybara-neon-text',
                 className
             )}
-            style={{...neonStyle, ...style}}
+            style={{"--neonColor": color, fontSize: `${fontSize}px`, ...style}}
         >
             {children}
         </span>

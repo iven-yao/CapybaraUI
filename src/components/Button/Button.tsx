@@ -3,12 +3,13 @@ import { PropsWithChildren, useState } from "react";
 import clsx from "clsx";
 import './Button.scss';
 import Ripple from "../Ripple/Ripple";
+import { hexToRGB } from "../../utils/colorHelper";
 
 const Button = ( {
     children, 
     className, 
     variant,
-    color = 'gray', 
+    color = 'lightgray', 
     size='md', 
     isLoading, 
     rounded='sm', 
@@ -29,14 +30,17 @@ const Button = ( {
                 [`border`]:variant === 'outline' || border,
                 [`size-${size}`]: size,
                 [`rounded-${rounded}`]: rounded && rounded !== 'none',
-                [`border-${color} bg-${color}`]:color,
                 'shadow':shadow,
                 'disabled':disabled
             },
             className,
             )}
             
-            style={style}
+            style={{
+                "--btnColor": color || 'lightgray',
+                "--btnColorRGB": hexToRGB(color || 'lightgray').join(','),
+                ...style}}
+
             onClick={onClick}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
