@@ -2,6 +2,7 @@ import { useState } from "react";
 import QuickViewResult from "./QuickViewResult";
 import NeonText from "../Text/NeonText";
 import Input from "../Input";
+import { convertToHex } from "../../utils/colorHelper";
 
 const NeonTextDocs = () => {
     const [color, setColor] = useState('');
@@ -19,7 +20,8 @@ const NeonTextDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: violet"/>
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray" width={"74%"}/>
+                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color)}/>
                         </div>
                     </div>
                     <div className="select-panel">

@@ -15,4 +15,11 @@
         @include preset-border;
         @include preset-outline;
     }
+
+    &[type=color] {
+        padding: 0 2px;
+        block-size: 37px;
+        background-color: white;
+        
+    }
 }

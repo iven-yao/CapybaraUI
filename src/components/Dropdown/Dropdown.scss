@@ -13,24 +13,29 @@
     position: relative;
     display: inline-block;
 
+    .dropdown-btn {
+        &.open {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+        }
+    }
+
     .list {
         position: absolute;
         left: 0;
-        margin-top: 0rem;
+        margin-top: 0;
         min-width: 100%;
-        border-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
         box-sizing: border-box;
         overflow: hidden;
-        
         &.border {
-            border: 1px solid $border-color;
+            border: 1px solid var(--dropdownColor);
+            border-top: none;
         }
-
-        @include preset-border;
-
         
         &.minimal {
-            background-color: transparent;
             border-color: transparent;
         }
         
@@ -50,18 +55,35 @@
         overflow: hidden;
         border-top: 1px solid $border-color;
         
-        &:hover {
-            background-color: rgba(black, 0.1);
-        }
-        @include preset-background;
-        @include preset-hover-background;
-
         &.minimal {
             background-color: transparent;
         }
         
+        &.fill {
+            background-color: var(--dropdownColor);
+        }
+        
         &.outline {
             background-color: transparent;
+        }
+
+        &.three-d {
+            background-color: var(--dropdownColor);
+            box-shadow: inset 3px 3px 5px rgba(white, 0.75),
+                        inset -2px -2px 3px rgba(black, 0.2),
+                        1px 1px 2px rgba(black, 0.2);
+            &:hover {
+                box-shadow: inset -2px -2px 3px rgba(white, 0.75),
+                            inset 3px 3px 5px rgba(black, 0.2);
+            }
+    
+            // &:hover {
+            //     background-color: var(--dropdownColor);
+            // }
+        }
+
+        &:hover {
+            background-color: rgba( var(--dropdownColorRGB), 0.75);
         }
     }
 }

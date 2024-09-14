@@ -2,6 +2,7 @@ import { PropsWithChildren, useContext } from "react";
 import Button from "../Button";
 import { DropdownButtonProps } from "./DropdownProps";
 import { DropdownContext } from "./DropdownContext";
+import clsx from "clsx";
 
 const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
 
@@ -11,7 +12,7 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
         style,
     } = {...props}
 
-    const {color, variant, shadow, rounded, size, disabled} = useContext(DropdownContext);
+    const {color, variant, shadow, rounded, size, disabled, isOpen} = useContext(DropdownContext);
 
     return (
         <Button 
@@ -20,7 +21,13 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
             size={size} 
             rounded={rounded} 
             shadow={shadow}
-            className={className}
+            className={clsx(
+                "dropdown-btn",
+                {
+                    "open":isOpen
+                },
+                className
+            )}
             style={style}
             disabled={disabled}
         >

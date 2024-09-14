@@ -8,7 +8,7 @@ import { hexToRGB } from "../../utils/colorHelper";
 const Button = ( {
     children, 
     className, 
-    variant,
+    variant = 'outline',
     color = 'lightgray', 
     size='md', 
     isLoading, 

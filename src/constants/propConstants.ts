@@ -31,14 +31,6 @@ export const _color = [
         value:'gray',
         label:'gray (default)'
     },
-    { 
-        value:'black',
-        label:'black'
-    }, 
-    { 
-        value:'white',
-        label:'white'
-    }
 ];
 
 export const _size = [
@@ -81,6 +73,9 @@ export const _rounded = [
         value:'lg',
         label:'large'
     }, 
+];
+
+export const _shape = [
     { 
         value:'pill',
         label:'pill'
@@ -98,7 +93,7 @@ export const _variant = [
     },
     {
         value:'outline',
-        label:'outline'
+        label:'outline (default)'
     },
     {
         value:'fill',

@@ -40,7 +40,10 @@ const Input = (props:InputProps) => {
                 },
                 className
             )}
-            style={style}
+            style={{
+                width: typeof width === 'number'? `${width}px`:width,
+                ...style
+            }}
             type={type}
             value={value}
             onChange={handleChange}

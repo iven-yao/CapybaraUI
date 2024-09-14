@@ -18,7 +18,7 @@ export const hexToRGB = (color: string) => {
     ] : [255,255,255];
 }
 
-const convertToHex = (color: string) => {
+export const convertToHex = (color: string) => {
     return cssNamedColor[color.toLowerCase()] || color;
 }
 

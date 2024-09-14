@@ -19,5 +19,5 @@ export type InputProps = componentBasics & {
     size?: number,
     step?: number,
     value?: string|number,
-    width?: number
+    width?: number|string
 }

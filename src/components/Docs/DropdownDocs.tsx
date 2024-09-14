@@ -7,10 +7,12 @@ import { RotateIcon } from "../Icon/Icons";
 import Select from "../Select";
 import { color, rounded, size, variant } from "../../types/propTypes";
 import QuickViewResult from "./QuickViewResult";
+import Input from "../Input";
+import { convertToHex } from "../../utils/colorHelper";
 
 const DropdownDocs = () => {
-    const [variant, setVariant] = useState<variant>();
-    const [color, setColor] = useState<color>('gray');
+    const [variant, setVariant] = useState<variant>('outline');
+    const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
     const [shadow, setShadow] = useState(false);
@@ -49,7 +51,8 @@ const DropdownDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Select onChange={(value) => setColor(value as color)} value={color} options={_color}/>
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray" width={"74%"}/>
+                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color)}/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -90,7 +93,7 @@ const DropdownDocs = () => {
     {`
     <Dropdown${propsStr}>
         <Dropdown.Button>
-            Action
+            Hover Me
         </Dropdown.Button>
         <Dropdown.Items>
             <Dropdown.Item>Save</Dropdown.Item>
@@ -110,7 +113,7 @@ const DropdownDocs = () => {
                             disabled={disabled}
                         >
                             <Dropdown.Button>
-                                Action
+                                Hover Me
                             </Dropdown.Button>
                             <Dropdown.Items>
                                 <Dropdown.Item onClick={() => {console.log('Save')}}>Save</Dropdown.Item>

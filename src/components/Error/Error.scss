@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .error-page-container {
     position: relative;
@@ -6,18 +7,6 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(black,0.9);
-    
-
-    &:before {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 100%;
-        z-index: -10;
-        background-position-x: center;
-        background-image: url('https://img.freepik.com/free-photo/black-textured-brick-wall-background_53876-63583.jpg?w=1380&t=st=1725480845~exp=1725481445~hmac=5e9fe3627d3fe89ad4600a40fe24904f05a136c591fbb1a079a6ed9aa47b0f53');
-    }
 }
 
 .error-text {
@@ -25,6 +14,13 @@
     flex-direction: column;
     align-items: center;
     gap: 5rem;
-    font-family: "Neonderthaw", cursive;
+    font-family: "Roboto", sans-serif;
     margin: 5rem;
+}
+
+.back-btn {
+    transition: transform 0.5s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
 }

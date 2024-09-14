@@ -6,16 +6,18 @@ import './Dropdown.scss';
 import Items from "./Items";
 import Item from "./Item";
 import DropdownButton from "./DropdownButton";
+import { hexToRGB } from "../../utils/colorHelper";
 
 const Dropdown = ({
     children,
     className,
-    variant,
-    color='white',
+    variant='outline',
+    color='lightgray',
     shadow,
     rounded='sm',
     size='md',
-    disabled
+    disabled,
+    style
 }:PropsWithChildren<DropdownProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +28,17 @@ const Dropdown = ({
                 "capybara-dropdown", 
                 className,
                 )} 
+
+                style={{
+                    "--dropdownColor": color || 'lightgray',
+                    "--dropdownColorRGB": hexToRGB(color || 'lightgray').join(','),
+                    ...style
+                }}
+
                 onMouseEnter={() => {
                     if(!disabled) setIsOpen(true);
                 }}
+
                 onMouseLeave={() => {
                     if(!disabled) setIsOpen(false);
                 }}

@@ -13,7 +13,6 @@ const Items = ({
         isOpen?
         <div className={clsx(
             "list",
-            `bg-${color} border-${color}`,
             {  
                 [`${variant}`]:variant,
                 [`border`]:variant === 'outline',

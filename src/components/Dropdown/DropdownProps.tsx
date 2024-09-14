@@ -4,7 +4,7 @@ import { componentBasics, color, size, rounded, variant } from "../../types/prop
 export type DropdownShared = {
     isOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
-    color: color,
+    color: string,
     variant?:variant,
     shadow?:boolean
     size?: size,
@@ -14,7 +14,7 @@ export type DropdownShared = {
 
 export type DropdownProps = componentBasics & {
     variant?: variant,
-    color?: color,
+    color?: string,
     shadow?: boolean,
     size?: size,
     rounded?: rounded,

@@ -1,18 +1,19 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Button from "../Button";
-import { size, color, rounded, variant } from "../../types/propTypes";
+import { size, color, rounded, variant, shape } from "../../types/propTypes";
 import Select from "../Select";
-import { _rounded, _size, _color, _variant } from "../../constants/propConstants";
+import { _rounded, _size, _color, _variant, _shape } from "../../constants/propConstants";
 import Checkbox from "../Checkbox";
 import { HandPointUpIcon, RotateIcon } from "../Icon/Icons";
 import QuickViewResult from "./QuickViewResult";
 import Input from "../Input";
+import { convertToHex } from "../../utils/colorHelper";
 
 const ButtonDocs = () => {
-    const [variant, setVariant] = useState<variant>();
+    const [variant, setVariant] = useState<variant>('outline');
     const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
-    const [rounded, setRounded] = useState<rounded>('sm');
+    const [rounded, setRounded] = useState<rounded|shape>('sm');
     const [shadow, setShadow] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [buttonPropsStr, setButtonPropsStr] = useState('');
@@ -50,7 +51,8 @@ const ButtonDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray"/>
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray" width={"74%"}/>
+                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color)}/>
                         </div>
                     </div>
                     <div className="select-panel">
@@ -66,7 +68,7 @@ const ButtonDocs = () => {
                             rounded
                         </div>
                         <div className="control">
-                            <Select onChange={(value) => setRounded(value as rounded)} value={rounded} options={_rounded}/>
+                            <Select onChange={(value) => setRounded(value as rounded)} value={rounded} options={[..._rounded,..._shape]}/>
                         </div>
                     </div>
                     <div className="select-panel">

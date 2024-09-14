@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import { selectDocData } from "../../constants/data";
+import { selectDocData } from "../../constants/mockData";
 import Select from "../Select/Select";
 import QuickViewResult from "./QuickViewResult";
 import { color } from "../../types/propTypes";
