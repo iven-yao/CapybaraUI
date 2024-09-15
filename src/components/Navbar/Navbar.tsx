@@ -7,14 +7,15 @@ import Item from "./Item";
 import Logo from "./Logo";
 import { NavbarContext } from "./NavbarContext";
 
-const Navbar = ({
-    children,
-    className,
-    style,
-    color = 'white',
-    position = 'sticky',
-    height = 50,
-}: PropsWithChildren<NavbarProps>) => {
+const Navbar = (props: PropsWithChildren<NavbarProps>) => {
+    const {
+        children,
+        className,
+        style,
+        color = 'white',
+        position = 'sticky',
+        height = 50,
+    } = {...props};
 
     return (
         <NavbarContext.Provider value={{color, height}}>

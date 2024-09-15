@@ -16,7 +16,7 @@ const Layout = () => {
     return (
         <LayoutContext.Provider value={{darkMode:false}}>
             <div className="container">
-                <Navbar height={'80px'} style={{borderBottom:'1px solid'}}>
+                <Navbar height={'60px'} style={{borderBottom:'1px solid'}}>
                     <Navbar.Logo src={logo} circle></Navbar.Logo>
                     <Navbar.Items justify="end">
                         <Navbar.Item><Link to={'./docs'} className="navbar-link">DOCS</Link></Navbar.Item>
