@@ -1,3 +1,4 @@
+import React from "react";
 import { PiCursorClick, PiXBold } from "react-icons/pi";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { HiArrowPath } from "react-icons/hi2";

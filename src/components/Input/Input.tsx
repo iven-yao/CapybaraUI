@@ -1,3 +1,4 @@
+import React from "react";
 import clsx from "clsx";
 import { InputProps } from "./InputProps";
 import './Input.scss';
@@ -9,19 +10,19 @@ const Input = (props:InputProps) => {
         type = 'text',
         value,
         color = 'gray',
-        defaultValue,
+        // defaultValue,
         onChange,
-        max,
-        maxLength,
-        min,
-        minLength,
-        pattern,
+        // max,
+        // maxLength,
+        // min,
+        // minLength,
+        // pattern,
         placeholder,
-        name,
-        readonly,
-        required,
-        size,
-        step,
+        // name,
+        // readonly,
+        // required,
+        // size,
+        // step,
         width
     } = {...props}
 

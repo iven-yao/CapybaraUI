@@ -1,4 +1,5 @@
-import { useLayoutEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useLayoutEffect, useState } from "react";
 import { selectDocData } from "../../constants/mockData";
 import Select from "../Select/Select";
 import QuickViewResult from "./QuickViewResult";
@@ -52,7 +53,7 @@ const SelectDocs = () => {
                                 value={width} 
                                 placeholder="eg: 250, 400px, default: 100%"
                                 onChange={(v) => {
-                                    if(v.length === 0 || isNaN(v as any)) {
+                                    if(v.length === 0 || isNaN(Number(v))) {
                                         setWidth(v)
                                     } else {
                                         setWidth(parseInt(v));
@@ -105,6 +106,7 @@ const SelectDocs = () => {
                             multiple={multiple} 
                             disabled={disabled} 
                             searchable={searchable}
+                            placeholder={placeholder}
                         />
                     </QuickViewResult.Preview>
                 </QuickViewResult>

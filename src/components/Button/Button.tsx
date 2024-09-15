@@ -1,5 +1,5 @@
+import React ,{ PropsWithChildren } from "react";
 import { ButtonProps } from "./ButtonProps";
-import { PropsWithChildren, useState } from "react";
 import clsx from "clsx";
 import './Button.scss';
 import Ripple from "../Ripple/Ripple";
@@ -8,6 +8,8 @@ import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
 const Button = ( {
     children, 
     className, 
+    id,
+    testid,
     variant = 'outline',
     color = 'gray', 
     size='md', 
@@ -18,7 +20,6 @@ const Button = ( {
     onMouseEnter,
     onMouseLeave,
     shadow=false,
-    border=false,
     disabled=false,
 }: PropsWithChildren<ButtonProps>) => {
     
@@ -27,7 +28,6 @@ const Button = ( {
             'capybara-button',
             {
                 [`${variant}`]:variant,
-                [`border`]:variant === 'outline' || border,
                 [`size-${size}`]: size,
                 [`rounded-${rounded}`]: rounded && rounded !== 'none',
                 'shadow':shadow,
@@ -46,6 +46,8 @@ const Button = ( {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             disabled={disabled}
+            id={id}
+            data-testid={testid}
         >
             <div className={clsx({'hide':isLoading})}>
                 {children}

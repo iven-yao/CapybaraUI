@@ -1,5 +1,5 @@
 export const hexToRGB = (color: string) => {
-    let hex = convertToHex(color);
+    const hex = convertToHex(color);
     let result = null;
     if(hex.length === 4) {
         result = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(hex);
@@ -23,7 +23,7 @@ export const convertToHex = (color: string) => {
 }
 
 export const contrastTextColor = (color:string) => {
-    let rgb = hexToRGB(color);
+    const rgb = hexToRGB(color);
     
     return brightness(rgb) < 130 ? "white" : "black";
 }

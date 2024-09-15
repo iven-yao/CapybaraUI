@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import QuickViewResult from "./QuickViewResult";
 import NeonText from "../Text/NeonText";
 import Input from "../Input";
@@ -20,8 +20,8 @@ const NeonTextDocs = () => {
                             color
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: lightgray" width={"74%"}/>
-                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color)}/>
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: violet" width={"74%"}/>
+                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color || 'violet')}/>
                         </div>
                     </div>
                     <div className="select-panel">

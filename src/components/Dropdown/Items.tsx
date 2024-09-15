@@ -1,4 +1,4 @@
-import { PropsWithChildren, useContext } from "react";
+import React, { PropsWithChildren, useContext } from "react";
 import { DropdownContext } from "./DropdownContext";
 import clsx from "clsx";
 import { componentBasics } from "../../types/propTypes";
@@ -7,7 +7,7 @@ const Items = ({
     children,
     className,
 }:PropsWithChildren<componentBasics>) => {
-    const {isOpen, color, variant, shadow} = useContext(DropdownContext);
+    const {isOpen, variant, shadow} = useContext(DropdownContext);
 
     return (
         isOpen?

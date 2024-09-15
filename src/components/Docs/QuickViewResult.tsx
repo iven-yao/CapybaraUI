@@ -1,4 +1,4 @@
-import { PropsWithChildren, useState, createContext, useContext } from "react";
+import React, { PropsWithChildren, useState, createContext, useContext } from "react";
 import Button from "../Button";
 import { RotateIcon } from "../Icon/Icons";
 import { componentBasics } from "../../types/propTypes";
@@ -12,7 +12,13 @@ const QuickViewResult = ({children, style, className}:PropsWithChildren<componen
 
     return (
         <QuickViewContext.Provider value={{showCode}}>
-            <div className="result" style={style}>
+            <div 
+                className={clsx(
+                    "result",
+                    className
+                )} 
+                style={style}
+            >
                 <Button 
                     variant="three-d"
                     className="switch-code-btn" 
@@ -35,7 +41,7 @@ const QuickViewResult = ({children, style, className}:PropsWithChildren<componen
     );
 }
 
-QuickViewResult.Preview = ({children, className, style}:PropsWithChildren<componentBasics>) => {
+const Preview = ({children, className, style}:PropsWithChildren<componentBasics>) => {
 
     const {showCode} = useContext(QuickViewContext);
 
@@ -49,7 +55,7 @@ QuickViewResult.Preview = ({children, className, style}:PropsWithChildren<compon
     );
 }
 
-QuickViewResult.Code = ({children}:PropsWithChildren) => {
+const Code = ({children}:PropsWithChildren) => {
 
     const {showCode} = useContext(QuickViewContext);
 
@@ -62,5 +68,9 @@ QuickViewResult.Code = ({children}:PropsWithChildren) => {
         null
     );
 }
+
+QuickViewResult.Preview = Preview;
+
+QuickViewResult.Code = Code;
 
 export default QuickViewResult;

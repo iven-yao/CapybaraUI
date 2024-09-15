@@ -1,4 +1,4 @@
-import { PropsWithChildren, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { SelectOptionProps } from "./SelectProps";
 import { SelectContext } from "./SelectContext";
 import clsx from "clsx";

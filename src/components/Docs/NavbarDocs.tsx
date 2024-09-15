@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { selectDocData } from "../../constants/mockData";
+import React, { useState } from "react";
 import Select from "../Select/Select";
 import QuickViewResult from "./QuickViewResult";
 import { color } from "../../types/propTypes";
@@ -10,8 +9,8 @@ const NavbarDocs = () => {
     const [color, setColor] = useState<color>();
     const [disabled, setDisabled] = useState<boolean>();
     const [multiple, setMultiple] = useState<boolean>();
-    const [width, setWidth] = useState<number|string>();
-    const [placeholder, setPlaceholder] = useState<string>();
+    // const [width, setWidth] = useState<number|string>();
+    // const [placeholder, setPlaceholder] = useState<string>();
 
     return (
         <>

@@ -1,10 +1,10 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Button from "../Button";
-import { size, color, rounded, variant, shape } from "../../types/propTypes";
+import { size, rounded, variant, shape } from "../../types/propTypes";
 import Select from "../Select";
-import { _rounded, _size, _color, _variant, _shape } from "../../constants/propConstants";
+import { _rounded, _size, _variant, _shape } from "../../constants/propConstants";
 import Checkbox from "../Checkbox";
-import { HandPointUpIcon, RotateIcon } from "../Icon/Icons";
+import { HandPointUpIcon } from "../Icon/Icons";
 import QuickViewResult from "./QuickViewResult";
 import Input from "../Input";
 import { convertToHex } from "../../utils/colorHelper";

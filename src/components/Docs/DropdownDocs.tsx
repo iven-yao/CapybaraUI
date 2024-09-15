@@ -1,11 +1,9 @@
-import { useLayoutEffect, useState } from "react";
-import { _color, _size, _rounded, _variant } from "../../constants/propConstants";
-import Button from "../Button";
+import React, { useLayoutEffect, useState } from "react";
+import { _size, _rounded, _variant } from "../../constants/propConstants";
 import Checkbox from "../Checkbox";
 import Dropdown from "../Dropdown";
-import { RotateIcon } from "../Icon/Icons";
 import Select from "../Select";
-import { color, rounded, size, variant } from "../../types/propTypes";
+import { rounded, size, variant } from "../../types/propTypes";
 import QuickViewResult from "./QuickViewResult";
 import Input from "../Input";
 import { convertToHex } from "../../utils/colorHelper";

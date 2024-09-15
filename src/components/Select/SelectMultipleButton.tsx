@@ -1,4 +1,4 @@
-import { PropsWithChildren, useContext } from "react";
+import React, { PropsWithChildren, useContext } from "react";
 import { SelectMultipleButtonProps } from "./SelectProps";
 import { XIcon } from "../Icon/Icons";
 import { SelectContext } from "./SelectContext";

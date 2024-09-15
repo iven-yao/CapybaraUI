@@ -1,3 +1,4 @@
+import React from "react";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { CheckboxProps } from "./CheckboxProps";
@@ -6,6 +7,7 @@ import './Checkbox.scss';
 const Checkbox = ({
     className,
     style,
+    id,
     onChange,
     checked = false,
     disabled,
@@ -31,7 +33,7 @@ const Checkbox = ({
 
     return (
         <div className="capybara-checkbox-container ">
-            <input type="checkbox" className="sr-only" id={internal_id} checked={isChecked} onChange={() => setIsChecked(!isChecked)}/>
+            <input type="checkbox" className="sr-only" id={id||internal_id} checked={isChecked} onChange={() => setIsChecked(!isChecked)}/>
             <div 
                 className={clsx(
                     "capybara-checkbox",
@@ -47,7 +49,7 @@ const Checkbox = ({
                 onClick={handleClick}
             />
             {label &&
-            <label htmlFor={internal_id}>{label}</label>
+            <label htmlFor={id||internal_id}>{label}</label>
             }
         </div>
     );

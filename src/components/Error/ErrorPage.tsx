@@ -1,7 +1,6 @@
+import React from "react";
 import { Link } from 'react-router-dom';
-import NeonText from '../Text/NeonText';
 import './Error.scss';
-import ImageText from '../Text/ImageText';
 import ThreeDText from '../Text/ThreeDText';
 
 const ErrorPage = () => {

@@ -1,3 +1,4 @@
+import React from "react";
 import fullLogo from '../../assets/fullLogo1000x250.png'
 import './Home.scss';
 

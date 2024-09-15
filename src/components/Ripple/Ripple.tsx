@@ -1,9 +1,10 @@
-import { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { color } from "../../types/propTypes";
 import './Ripple.scss';
 import clsx from "clsx";
+import { hexToRGB } from "../../utils/colorHelper";
 
-const useDebouncedRippleCleanUp = (rippleCount:number, duration:number, callBack:Function) => {
+const useDebouncedRippleCleanUp = (rippleCount:number, duration:number, callBack:()=>void) => {
     useLayoutEffect(() => {
         let timeoutId:NodeJS.Timeout = {} as NodeJS.Timeout;
         if(rippleCount > 0) {
@@ -58,7 +59,8 @@ const Ripple = ({duration=1500, color}:{duration?:number, color?:color}) => {
                             top:ripple.y, 
                             left:ripple.x, 
                             width:ripple.size, 
-                            height:ripple.size
+                            height:ripple.size,
+                            "--rippleColor": hexToRGB(color || 'white').join(','),
                         }}
                     />
                 )

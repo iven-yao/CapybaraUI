@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react"
-import { componentBasics, color, size, rounded, variant } from "../../types/propTypes"
+import { componentBasics, size, rounded, variant } from "../../types/propTypes"
 
 export type DropdownShared = {
     isOpen: boolean,

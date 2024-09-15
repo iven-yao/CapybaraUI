@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import QuickViewResult from "./QuickViewResult";
 import Input from "../Input";

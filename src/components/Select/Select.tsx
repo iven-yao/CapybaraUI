@@ -1,13 +1,10 @@
-import { MouseEventHandler, PropsWithChildren, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { option, SelectProps } from "./SelectProps";
 import { SelectContext } from "./SelectContext";
 import './Select.scss';
 import clsx from "clsx";
-import { FaCaretDown } from "react-icons/fa";
 import { DropdownIcon, XIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
-import { createPortal } from "react-dom";
-import Ripple from "../Ripple/Ripple";
 import SelectMultipleButton from "./SelectMultipleButton";
 
 const Select = ({
@@ -128,7 +125,7 @@ const Select = ({
                         :
                         Array.isArray(selectedOption)?
                             <>
-                                <div className="value-wrapper">{selectedOption.map(o => <SelectMultipleButton option={o}/>)}</div>
+                                <div className="value-wrapper">{selectedOption.map(o => <SelectMultipleButton option={o} key={`key_${o.value}`}/>)}</div>
                                 {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear All"><XIcon className="xicon"/></div>}
                             </>
                             :

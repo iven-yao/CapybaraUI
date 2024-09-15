@@ -6,5 +6,7 @@ export type shape = 'pill'|'circle';
 export type inputTypes = 'text'|'number'|'email'|'password'|'tel'|'url'|'color';
 export type componentBasics = {
     className?: string,
-    style?: React.CSSProperties
+    style?: React.CSSProperties,
+    id?: string,
+    testid?: string
 }

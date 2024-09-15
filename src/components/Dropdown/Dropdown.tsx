@@ -1,4 +1,4 @@
-import { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import { DropdownProps } from "./DropdownProps";
 import { DropdownContext } from "./DropdownContext";
 import clsx from "clsx";

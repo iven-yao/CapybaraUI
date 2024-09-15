@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import { NeonTextProps } from "./TextProps";
 import './Text.scss';
 

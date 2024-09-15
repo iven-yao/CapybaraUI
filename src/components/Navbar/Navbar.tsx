@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import { NavbarProps } from "./NavbarProps";
 import './Navbar.scss';
 import clsx from "clsx";
@@ -10,6 +10,7 @@ import { NavbarContext } from "./NavbarContext";
 const Navbar = ({
     children,
     className,
+    style,
     color = 'white',
     position = 'sticky',
     height = 50,
@@ -25,8 +26,10 @@ const Navbar = ({
                 className,
             )}
                 style={{
+                    position: position,
                     height:`${typeof height === 'number' ? `${height}px`:height}`,
-                    fontSize:`${typeof height === 'number'? `${height/3}px`: `${parseInt(height)/3}px`}`
+                    fontSize:`${typeof height === 'number'? `${height/3}px`: `${parseInt(height)/3}px`}`,
+                    ...style
                 }}
             >
                 {children}

@@ -6,7 +6,7 @@
 
     .side-bar {
         padding: 20px;
-        width: 250px;
+        flex: 0 1 200px;
         font-size: 1.2rem;
         font-weight: bold;
         overflow: auto;
@@ -37,7 +37,7 @@
     }
 
     .content {
-        flex-grow:1;
+        flex:1 1 800px;
         overflow: auto;
         min-height: 0;
     }
