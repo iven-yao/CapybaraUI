@@ -75,7 +75,7 @@ export const _rounded = [
     }, 
 ];
 
-export const _shape = [
+export const _button_shape = [
     { 
         value:'pill',
         label:'pill'
@@ -86,7 +86,7 @@ export const _shape = [
     }
 ];
 
-export const _variant = [
+export const _button_variant = [
     {
         value:'minimal',
         label:'minimal'
@@ -103,4 +103,30 @@ export const _variant = [
         value:'three-d',
         label:'3d'
     }
-]
+];
+
+export const _radio_variant = [
+    {
+        value: 'circle',
+        label: 'circle (default)'
+    }, 
+    {
+        value: 'square',
+        label: 'square'
+    },
+    {
+        value: 'hollow-circle',
+        label: 'hollow-circle'
+    }
+];
+
+export const _orientation = [
+    {
+        value: 'vertical',
+        label: 'vertical'
+    },
+    {
+        value: 'horizontal',
+        label: 'horizontal'
+    }
+];

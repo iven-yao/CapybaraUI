@@ -6,21 +6,23 @@ import clsx from "clsx";
 import { DropdownIcon, XIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
 import SelectMultipleButton from "./SelectMultipleButton";
+import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
 
-const Select = ({
-    options,
-    value,
-    width,
-    color='gray',
-    placeholder="Choose...",
-    onChange,
-    disabled=false,
-    multiple=false,
-    searchable=false,
-    clearBtn=true,
-    className,
-    style,
-}:SelectProps) => {
+const Select = (props:SelectProps) => {
+    const {
+        options,
+        value,
+        width,
+        color,
+        placeholder="Choose...",
+        onChange,
+        disabled=false,
+        multiple=false,
+        searchable=false,
+        clearBtn=true,
+        className,
+        style,
+    } = {...props}
 
     const [selectedOption, setSelectedOption] = useState<option|Array<option>|null>();
     const [isOpen, setIsOpen] = useState(false);
@@ -81,12 +83,10 @@ const Select = ({
     }
 
     return (
-        <SelectContext.Provider value={{selectedOption, setSelectedOption, color, multiple}}>
+        <SelectContext.Provider value={{selectedOption, setSelectedOption, multiple}}>
             <div 
                 className={clsx(
                     "capybara-select",
-                    `bg-${color}`,
-                    `border-${color}`,
                     {
                         "active":isOpen,
                         "disabled":disabled,
@@ -94,6 +94,9 @@ const Select = ({
                     className
                 )} 
                 style={{
+                    "--selectColor": color || "gray",
+                    "--selectColorRGB": hexToRGB(color || "gray").join(','),
+                    "--textColor": contrastTextColor(color || "gray"),
                     width: typeof width === 'number'? `${width}px`:width,
                     ...style
                 }}
@@ -113,7 +116,8 @@ const Select = ({
                                 type="text" 
                                 placeholder={placeholder} 
                                 disabled={disabled}
-                                onChange={e => setFilterString(e.target.value)} style={{
+                                onChange={e => setFilterString(e.target.value)} 
+                                style={{
                                     border:'none', 
                                     outline:'none', 
                                     backgroundColor:'transparent', 

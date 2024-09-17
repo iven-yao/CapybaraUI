@@ -1,30 +1,29 @@
-import React, { useState } from "react";
-import QuickViewResult from "./QuickViewResult";
-import NeonText from "../Text/NeonText";
+import React from "react";
+import { useState } from "react";
+import QuickViewResult from "../Docs/QuickViewResult";
+import ImageText from "./ImageText";
 import Input from "../Input";
-import { convertToHex } from "../../utils/colorHelper";
 
-const NeonTextDocs = () => {
-    const [color, setColor] = useState('');
+const ImageTextDocs = () => {
+    const [src, setSrc] = useState('https://tinyurl.com/3pjr5jdt');
     const [text, setText] = useState('Capybara');
     const [fontSize, setFontSize] = useState(120);
 
     return (
         <>
-            <div className="title">Neon Text</div>
+            <div className="title">Image Text</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
-                            color
+                            src
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: violet" width={"74%"}/>
-                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color || 'violet')}/>
+                            <Input type="text" value={src} onChange={v => setSrc(v)} />
                         </div>
                     </div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             text
                         </div>
@@ -32,7 +31,7 @@ const NeonTextDocs = () => {
                             <Input type="text" value={text} onChange={(v) => setText(v)} />
                         </div>
                     </div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             font size
                         </div>
@@ -43,12 +42,19 @@ const NeonTextDocs = () => {
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
-
+{`
+    <ImageText 
+        src="${src}" 
+        fontSize="${fontSize}"
+    >
+        ${text}
+    </ImageText>
+`}
                     </QuickViewResult.Code>
-                    <QuickViewResult.Preview style={{backgroundColor:'black', width:'100%', height:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
-                        <NeonText color={color || 'violet'} fontSize={fontSize}>
+                    <QuickViewResult.Preview>
+                        <ImageText src={src} fontSize={fontSize}>
                             {text}
-                        </NeonText>
+                        </ImageText>
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>
@@ -56,4 +62,4 @@ const NeonTextDocs = () => {
     );
 }
 
-export default NeonTextDocs;
+export default ImageTextDocs;

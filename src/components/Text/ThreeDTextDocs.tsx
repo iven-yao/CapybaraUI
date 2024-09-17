@@ -1,29 +1,29 @@
 import React from "react";
 import { useState } from "react";
-import QuickViewResult from "./QuickViewResult";
-import ImageText from "../Text/ImageText";
+import QuickViewResult from "../Docs/QuickViewResult";
 import Input from "../Input";
+import ThreeDText from "./ThreeDText";
 
-const ImageTextDocs = () => {
-    const [src, setSrc] = useState('https://tinyurl.com/3pjr5jdt');
+const ThreeDTextDocs = () => {
+    const [color, setColor] = useState('white');
     const [text, setText] = useState('Capybara');
     const [fontSize, setFontSize] = useState(120);
 
     return (
         <>
-            <div className="title">Image Text</div>
+            <div className="title">3D Text</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
-                            src
+                            color
                         </div>
                         <div className="control">
-                            <Input type="text" value={src} onChange={v => setSrc(v)} />
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} />
                         </div>
                     </div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             text
                         </div>
@@ -31,7 +31,7 @@ const ImageTextDocs = () => {
                             <Input type="text" value={text} onChange={(v) => setText(v)} />
                         </div>
                     </div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             font size
                         </div>
@@ -42,19 +42,12 @@ const ImageTextDocs = () => {
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
-{`
-    <ImageText 
-        src="${src}" 
-        fontSize="${fontSize}"
-    >
-        ${text}
-    </ImageText>
-`}
+
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
-                        <ImageText src={src} fontSize={fontSize}>
+                        <ThreeDText color={color} fontSize={fontSize}>
                             {text}
-                        </ImageText>
+                        </ThreeDText>
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>
@@ -62,4 +55,4 @@ const ImageTextDocs = () => {
     );
 }
 
-export default ImageTextDocs;
+export default ThreeDTextDocs;

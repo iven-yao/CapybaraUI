@@ -9,7 +9,7 @@ const SelectOption = ({
     style
 }:SelectOptionProps) => {
     
-    const {color, selectedOption, setSelectedOption, multiple} = useContext(SelectContext);
+    const {selectedOption, setSelectedOption, multiple} = useContext(SelectContext);
 
     const handleClick = () => {
         if(multiple) {
@@ -33,7 +33,6 @@ const SelectOption = ({
         <div 
         className={clsx(
             "option",
-            `bg-${color}`,
             className
         )}
         style={style}
