@@ -12,6 +12,7 @@ const Docs = () => {
                         <li><NavLink to={"./button"}>Button</NavLink></li>
                         <li><NavLink to={"./dropdown"}>Dropdown</NavLink></li>
                         {/* <li><NavLink to={"./navbar"}>Navbar</NavLink></li> */}
+                        <li><NavLink to={"./radio-group"}>Radio Group</NavLink></li>
                         <li><NavLink to={"./select"}>Select</NavLink></li>
                     </ul>
                     <div>Effect</div>

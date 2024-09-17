@@ -9,7 +9,7 @@ const SelectMultipleButton = (props:PropsWithChildren<SelectMultipleButtonProps>
         option
     } = {...props};
 
-    const {setSelectedOption, selectedOption, color} = useContext(SelectContext);
+    const {setSelectedOption, selectedOption} = useContext(SelectContext);
 
     const handleRemoveOption = (e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.stopPropagation();
@@ -22,7 +22,6 @@ const SelectMultipleButton = (props:PropsWithChildren<SelectMultipleButtonProps>
         <div 
             className={clsx(
                 "multiple-button",
-                `bg-${color}`,
             )}>
             <div>{option.label}</div>
             <div className="icon-wrapper" onClick={handleRemoveOption} title="Remove"><XIcon className="xicon" /></div>

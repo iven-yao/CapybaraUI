@@ -1,29 +1,30 @@
-import React from "react";
-import { useState } from "react";
-import QuickViewResult from "./QuickViewResult";
+import React, { useState } from "react";
+import QuickViewResult from "../Docs/QuickViewResult";
+import NeonText from "./NeonText";
 import Input from "../Input";
-import ThreeDText from "../Text/ThreeDText";
+import { convertToHex } from "../../utils/colorHelper";
 
-const ThreeDTextDocs = () => {
-    const [color, setColor] = useState('white');
+const NeonTextDocs = () => {
+    const [color, setColor] = useState('');
     const [text, setText] = useState('Capybara');
     const [fontSize, setFontSize] = useState(120);
 
     return (
         <>
-            <div className="title">3D Text</div>
+            <div className="title">Neon Text</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             color
                         </div>
                         <div className="control">
-                            <Input type="text" value={color} onChange={(v) => setColor(v)} />
+                            <Input type="text" value={color} onChange={(v) => setColor(v)} placeholder="Color code or css named color, default: violet" width={"74%"}/>
+                            <Input type="color" width={"24%"} onChange={(v) => setColor(v)} value={convertToHex(color || 'violet')}/>
                         </div>
                     </div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             text
                         </div>
@@ -31,7 +32,7 @@ const ThreeDTextDocs = () => {
                             <Input type="text" value={text} onChange={(v) => setText(v)} />
                         </div>
                     </div>
-                    <div className="select-panel">
+                    <div className="control-panel">
                         <div className="label">
                             font size
                         </div>
@@ -44,10 +45,10 @@ const ThreeDTextDocs = () => {
                     <QuickViewResult.Code>
 
                     </QuickViewResult.Code>
-                    <QuickViewResult.Preview>
-                        <ThreeDText color={color} fontSize={fontSize}>
+                    <QuickViewResult.Preview style={{backgroundColor:'black', width:'100%', height:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+                        <NeonText color={color || 'violet'} fontSize={fontSize}>
                             {text}
-                        </ThreeDText>
+                        </NeonText>
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>
@@ -55,4 +56,4 @@ const ThreeDTextDocs = () => {
     );
 }
 
-export default ThreeDTextDocs;
+export default NeonTextDocs;

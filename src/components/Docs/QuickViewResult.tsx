@@ -62,7 +62,9 @@ const Code = ({children}:PropsWithChildren) => {
     return (
         showCode ?
         <div className="code-snippet">
-            {children}
+            <code>
+                {children}
+            </code>
         </div>
         :
         null
