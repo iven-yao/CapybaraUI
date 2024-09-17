@@ -44,16 +44,12 @@ const ButtonDocs = () => {
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
-                        <pre>
-                            <code>
 {`
     <Button${buttonPropsStr}>
         Click Me 
         <HandPointUpIcon/>
     </Button>
 `}
-                            </code>
-                        </pre>
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
                         <Button 

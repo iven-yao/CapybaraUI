@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import QuickViewResult from "../Docs/QuickViewResult";
 import { orientation, radio_variant } from "../../types/propTypes";
 import { _orientation, _radio_variant } from "../../constants/propConstants";
@@ -10,6 +10,18 @@ const RadioGroupDocs = () => {
     const [disabled, setDisabled] = useState(false);
     const [orientation, setOrientation] = useState<orientation>("vertical");
     const [variant, setVariant] = useState<radio_variant>("circle");
+    const [propsStr, setPropsStr] = useState("");
+
+    useLayoutEffect(() => {
+        let props = '';
+        props += (color? `\n\tcolor="${color}"`:'')
+        props += (orientation? `\n\torientation="${orientation}"`:'')
+        props += (variant? `\n\tvariant="${variant}"`:'')
+        props += (disabled?"\n\tdisabled":'');
+
+        setPropsStr(props);
+
+    },[color, variant, orientation, disabled])
 
     const handleChange = (value:string) => {
         console.log(value);
@@ -17,7 +29,7 @@ const RadioGroupDocs = () => {
 
     return (
         <>
-            <div className="title">RadioGroup (In Progress)</div>
+            <div className="title">RadioGroup</div>
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
@@ -28,7 +40,17 @@ const RadioGroupDocs = () => {
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
-
+{`
+    <RadioGroup${propsStr}
+        name="test"
+        onChange={(v) => console.log(v)}
+    >
+        <RadioGroup.Radio label="test1" value="test1"/>
+        <RadioGroup.Radio label="test2" value="test2"/>
+        <RadioGroup.Radio label="test3" value="test3"/>
+        <RadioGroup.Radio label="test4" value="test4"/>
+    </RadioGroup>
+`}
                     </QuickViewResult.Code>
                     <QuickViewResult.Preview>
                         <RadioGroup 
