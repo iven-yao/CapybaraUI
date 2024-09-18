@@ -14,6 +14,7 @@ const Docs = () => {
                         {/* <li><NavLink to={"./navbar"}>Navbar</NavLink></li> */}
                         <li><NavLink to={"./radio-group"}>Radio Group</NavLink></li>
                         <li><NavLink to={"./select"}>Select</NavLink></li>
+                        <li><NavLink to={"./switch"}>Switch</NavLink></li>
                     </ul>
                     <div>Effect</div>
                     <ul style={{listStyle:'none'}}>
