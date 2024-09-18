@@ -10,7 +10,6 @@ const DropdownDocs = () => {
     const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
-    const [shadow, setShadow] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [propsStr, setPropsStr] = useState("");
 
@@ -20,12 +19,11 @@ const DropdownDocs = () => {
         props += (color? `\n\tcolor="${color}"`:'')
         props += (size? `\n\tsize="${size}"`:'');
         props += (rounded? `\n\trounded="${rounded}"`:'');
-        props += (shadow?"\n\tshadow":'');
         props += (disabled?"\n\tdisabled":'');
 
         setPropsStr(props);
 
-    },[variant, color, size, rounded, shadow, disabled])
+    },[variant, color, size, rounded, disabled])
 
     return (
         <div>
@@ -37,7 +35,6 @@ const DropdownDocs = () => {
                     <ColorControl value={color} onChange={(value:string) => setColor(value)}/>
                     <SelectControl label="size" onChange={(value) => setSize(value as size)} value={size} options={_size}/>
                     <SelectControl label="rounded" onChange={(value) => setRounded(value as rounded)} value={rounded} options={_rounded}/>
-                    <CheckControl label="shadow" checked={shadow} onChange={(v) => setShadow(v)} />
                     <CheckControl label="disabled" checked={disabled} onChange={(v) => setDisabled(v)}/>
                 </div>
                 <QuickViewResult>
@@ -59,7 +56,6 @@ const DropdownDocs = () => {
                         <Dropdown 
                             variant={variant}
                             color={color}
-                            shadow={shadow}
                             rounded={rounded}
                             size={size}
                             disabled={disabled}

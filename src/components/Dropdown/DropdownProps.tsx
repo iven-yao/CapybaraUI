@@ -6,7 +6,6 @@ export type DropdownShared = {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
     color: string,
     variant?:button_variant,
-    shadow?:boolean
     size?: size,
     rounded?: rounded,
     disabled?: boolean,
@@ -15,7 +14,6 @@ export type DropdownShared = {
 export type DropdownProps = componentBasics & {
     variant?: button_variant,
     color?: string,
-    shadow?: boolean,
     size?: size,
     rounded?: rounded,
     disabled?: boolean,

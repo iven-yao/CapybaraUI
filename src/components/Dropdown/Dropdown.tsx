@@ -14,7 +14,6 @@ const Dropdown = ({
     className,
     variant='outline',
     color,
-    shadow,
     rounded='sm',
     size='md',
     disabled,
@@ -25,7 +24,7 @@ const Dropdown = ({
     const {primaryColor} = useContext(ThemeContext);
 
     return (
-        <DropdownContext.Provider value={{isOpen, setIsOpen, color:color || primaryColor, variant, shadow, rounded, size, disabled}}>
+        <DropdownContext.Provider value={{isOpen, setIsOpen, color:color || primaryColor, variant, rounded, size, disabled}}>
             <div className={clsx(
                 "capybara-dropdown", 
                 className,

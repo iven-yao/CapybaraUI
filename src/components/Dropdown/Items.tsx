@@ -7,7 +7,7 @@ const Items = ({
     children,
     className,
 }:PropsWithChildren<componentBasics>) => {
-    const {isOpen, variant, shadow} = useContext(DropdownContext);
+    const {isOpen, variant} = useContext(DropdownContext);
 
     return (
         isOpen?
@@ -16,7 +16,6 @@ const Items = ({
             {  
                 [`${variant}`]:variant,
                 [`border`]:variant === 'outline',
-                "shadow":shadow
             },
             className,
             )} role="list" aria-orientation="vertical" aria-labelledby="options-menu">

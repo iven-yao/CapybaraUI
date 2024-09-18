@@ -12,15 +12,14 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
         style,
     } = {...props}
 
-    const {color, variant, shadow, rounded, size, disabled, isOpen} = useContext(DropdownContext);
+    const {color, variant, rounded, size, disabled, isOpen} = useContext(DropdownContext);
 
     return (
         <Button 
             variant={variant} 
             color={color} 
             size={size} 
-            rounded={rounded} 
-            shadow={shadow}
+            rounded={rounded}
             className={clsx(
                 "dropdown-btn",
                 {
