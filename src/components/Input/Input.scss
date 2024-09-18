@@ -1,25 +1,24 @@
-@import '../../styles/mixin';
-@import '../../styles/variables';
+@import "../../styles/mixin";
+@import "../../styles/variables";
 
 .capybara-input {
-    border: 1px solid $border-color;
-    border-radius: 0.25rem;
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.5rem;
-    font-size: inherit;
-    font-family: inherit;
+  border: 1px solid $border-color;
+  border-radius: 0.25rem;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: transparent;
 
-    &:focus-visible {
-        @include preset-border;
-        @include preset-outline;
-    }
+  &:focus-visible {
+    border-color: var(--inputColor);
+    outline: 0.2rem solid rgba(var(--inputColorRGB), 0.5);
+  }
 
-    &[type=color] {
-        padding: 0 2px;
-        block-size: 37px;
-        background-color: white;
-        
-    }
+  &[type="color"] {
+    padding: 0 2px;
+    block-size: 37px;
+  }
 }

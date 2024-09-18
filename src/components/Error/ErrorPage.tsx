@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './Error.scss';
 import ThreeDText from '../Text/ThreeDText';
+import Nebula from "../Background/Nebula";
+import NeonText from "../Text/NeonText";
 
 const ErrorPage = () => {
     return (
         <div className="error-page-container">
+            <Nebula/>
             <div className='error-text'>
-                <ThreeDText fontSize={60} color='white'>something went wrong</ThreeDText>
+                <NeonText fontSize={60} color='#7befd0'>something went wrong</NeonText>
                 <ThreeDText fontSize={30} color='white' className='back-btn'>
                     <Link to={'/'} style={{textDecoration:'none', color:'inherit'}}>
                         -Back-

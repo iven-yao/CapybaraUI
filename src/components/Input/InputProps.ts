@@ -1,8 +1,8 @@
-import { color, componentBasics, inputTypes } from "../../types/propTypes";
+import { componentBasics, inputTypes } from "../../types/propTypes";
 
 export type InputProps = componentBasics & {
     type?: inputTypes,
-    color?: color,
+    color?: string,
     defaultValue?: string|number,
     disabled?: boolean,
     form?: string,

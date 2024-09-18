@@ -1,28 +1,32 @@
-import React ,{ PropsWithChildren } from "react";
+import React ,{ PropsWithChildren, useContext } from "react";
 import { ButtonProps } from "./ButtonProps";
 import clsx from "clsx";
 import './Button.scss';
 import Ripple from "../Ripple/Ripple";
 import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
+import ThemeContext from "../Theme/ThemeContext";
 
-const Button = ( {
-    children, 
-    className, 
-    id,
-    testid,
-    variant = 'outline',
-    color = 'gray', 
-    size='md', 
-    isLoading, 
-    rounded='sm', 
-    style, 
-    onClick, 
-    onMouseEnter,
-    onMouseLeave,
-    shadow=false,
-    disabled=false,
-}: PropsWithChildren<ButtonProps>) => {
-    
+const Button = ( props: PropsWithChildren<ButtonProps>) => {
+    const {
+        children, 
+        className, 
+        id,
+        testid,
+        variant = 'outline',
+        color, 
+        size='md', 
+        isLoading, 
+        rounded='sm', 
+        style, 
+        onClick, 
+        onMouseEnter,
+        onMouseLeave,
+        shadow=false,
+        disabled=false,
+    } = {...props}
+
+    const {primaryColor} = useContext(ThemeContext);
+
     return (
         <button className={clsx(
             'capybara-button',
@@ -37,9 +41,9 @@ const Button = ( {
             )}
             
             style={{
-                "--btnColor": color || 'gray',
-                "--btnColorRGB": hexToRGB(color || 'gray').join(','),
-                "--textColor": contrastTextColor(color || 'gray'),
+                "--btnColor": color || primaryColor,
+                "--btnColorRGB": hexToRGB(color || primaryColor).join(','),
+                "--textColor": contrastTextColor(color || primaryColor),
                 ...style}}
 
             onClick={onClick}

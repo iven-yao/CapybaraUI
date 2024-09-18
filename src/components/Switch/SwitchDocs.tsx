@@ -40,7 +40,7 @@ const SwitchDocs = () => {
                     <InputControl label="width" value={width} placeholder="eg: 50, 60px, default: 40px" onChange={(v) => setWidth(v)}/>
                     <InputControl label="toggleSize" value={toggleSize} placeholder="eg: 25, 30px, default: 15px" onChange={(v) => setToggleSize(v)}/>
                     <SelectControl label="shape" onChange={(value) => setShape(value as switch_shape)} value={shape} options={_switch_shape}/>
-                    <ColorControl value={color} onChange={(value) => setColor(value)} defaultValue="lightgreen"/>
+                    <ColorControl value={color} onChange={(value) => setColor(value)}/>
                     <CheckControl label="disabled" checked={disabled} onChange={(v) => setDisabled(v)} />
                 </div>
                 <QuickViewResult>
@@ -53,7 +53,7 @@ const SwitchDocs = () => {
     />
 `}
                     </QuickViewResult.Code>
-                    <QuickViewResult.Preview>
+                    <QuickViewResult.Preview style={{padding:0}}>
                         <div className={clsx(
                             "preview-container",
                             {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { option, SelectProps } from "./SelectProps";
 import { SelectContext } from "./SelectContext";
 import './Select.scss';
@@ -7,6 +7,7 @@ import { DropdownIcon, XIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
 import SelectMultipleButton from "./SelectMultipleButton";
 import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
+import ThemeContext from "../Theme/ThemeContext";
 
 const Select = (props:SelectProps) => {
     const {
@@ -23,6 +24,8 @@ const Select = (props:SelectProps) => {
         className,
         style,
     } = {...props}
+
+    const { primaryColor } = useContext(ThemeContext);
 
     const [selectedOption, setSelectedOption] = useState<option|Array<option>|null>();
     const [isOpen, setIsOpen] = useState(false);
@@ -94,9 +97,9 @@ const Select = (props:SelectProps) => {
                     className
                 )} 
                 style={{
-                    "--selectColor": color || "gray",
-                    "--selectColorRGB": hexToRGB(color || "gray").join(','),
-                    "--textColor": contrastTextColor(color || "gray"),
+                    "--selectColor": color || primaryColor,
+                    "--selectColorRGB": hexToRGB(color || primaryColor).join(','),
+                    "--textColor": contrastTextColor(color || primaryColor),
                     width: typeof width === 'number'? `${width}px`:width,
                     ...style
                 }}

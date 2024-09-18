@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../Input";
 import { convertToHex } from "../../utils/colorHelper";
 import { CheckControlProps, ColorControlProps, InputControlProps, SelectControlProps } from "./ControlPanelProps";
 import Select from "../Select";
 import Checkbox from "../Checkbox";
+import ThemeContext from "../Theme/ThemeContext";
 
 const ColorControl = (props:ColorControlProps) => {
     const {value, onChange, defaultValue} ={...props};
+    const {primaryColor} = useContext(ThemeContext);
 
     return (
         <div className="control-panel">
@@ -18,14 +20,14 @@ const ColorControl = (props:ColorControlProps) => {
                     type="text" 
                     value={value} 
                     onChange={(v) => onChange(v)} 
-                    placeholder={`Color code or css named color, default: ${defaultValue || "gray"}`} 
+                    placeholder={`Color code or css named color, default: ${defaultValue || primaryColor}`} 
                     width={"74%"}
                 />
                 <Input 
                     type="color" 
                     width={"24%"} 
                     onChange={(v) => onChange(v)} 
-                    value={convertToHex(value || defaultValue || "gray")}
+                    value={convertToHex(value || defaultValue || primaryColor)}
                 />
             </div>
         </div>

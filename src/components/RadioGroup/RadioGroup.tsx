@@ -1,10 +1,11 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren, useContext, useEffect, useState } from "react";
 import { RadioGroupProps } from "./RadioProps";
 import { RadioGroupContext } from "./RadioGroupContext";
 import clsx from "clsx";
 import './Radio.scss';
 import RadioButton from "./RadioButton";
 import { hexToRGB } from "../../utils/colorHelper";
+import ThemeContext from "../Theme/ThemeContext";
 
 const RadioGroup = (props: PropsWithChildren<RadioGroupProps>) => {
     const {
@@ -23,8 +24,11 @@ const RadioGroup = (props: PropsWithChildren<RadioGroupProps>) => {
         color,
         variant = "circle"
     } = {...props};
+    
+    const { primaryColor } = useContext(ThemeContext);
 
     const [selectedValue, setSelectedValue] = useState(value);
+
 
     useEffect(() => {
         if(selectedValue && onChange) {
@@ -44,8 +48,8 @@ const RadioGroup = (props: PropsWithChildren<RadioGroupProps>) => {
                     className
                 )}
                 style={{
-                    "--radioColor":color || "gray",
-                    "--radioColorRGB": hexToRGB(color || "gray").join(','),
+                    "--radioColor":color || primaryColor,
+                    "--radioColorRGB": hexToRGB(color || primaryColor).join(','),
                     ...style
                 }}
                 id={id}

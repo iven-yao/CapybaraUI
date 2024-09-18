@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { SwitchProps } from "./SwitchProps";
 import clsx from "clsx";
 import { hexToRGB } from "../../utils/colorHelper";
 import './Switch.scss';
+import ThemeContext from "../Theme/ThemeContext";
 
 const Switch = (props:SwitchProps) => {
     const {
@@ -21,6 +22,8 @@ const Switch = (props:SwitchProps) => {
         shape
     } = {...props};
 
+    const { primaryColor } = useContext(ThemeContext);
+
     const [internalId] = useState(crypto.randomUUID());
     const checkboxRef = useRef<HTMLInputElement>(null);
 
@@ -31,8 +34,8 @@ const Switch = (props:SwitchProps) => {
     }
 
     const inlineStyles = ():React.CSSProperties => {
-        const switchColor = color || "lightgreen";
-        const switchColorRGB = hexToRGB(color || "lightgreen").join(',');
+        const switchColor = color || primaryColor;
+        const switchColorRGB = hexToRGB(color || primaryColor).join(',');
         const switchWidth = typeof width === 'number'? `${width}px` : width || "40px";
         const switchToggleSize = typeof toggleSize === 'number'? `${toggleSize}px` : toggleSize || "15px";
         let switchHeight = '';

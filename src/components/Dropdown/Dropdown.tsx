@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useContext, useState } from "react";
 import { DropdownProps } from "./DropdownProps";
 import { DropdownContext } from "./DropdownContext";
 import clsx from "clsx";
@@ -7,12 +7,13 @@ import Items from "./Items";
 import Item from "./Item";
 import DropdownButton from "./DropdownButton";
 import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
+import ThemeContext from "../Theme/ThemeContext";
 
 const Dropdown = ({
     children,
     className,
     variant='outline',
-    color='gray',
+    color,
     shadow,
     rounded='sm',
     size='md',
@@ -21,18 +22,19 @@ const Dropdown = ({
 }:PropsWithChildren<DropdownProps>) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const {primaryColor} = useContext(ThemeContext);
 
     return (
-        <DropdownContext.Provider value={{isOpen, setIsOpen, color, variant, shadow, rounded, size, disabled}}>
+        <DropdownContext.Provider value={{isOpen, setIsOpen, color:color || primaryColor, variant, shadow, rounded, size, disabled}}>
             <div className={clsx(
                 "capybara-dropdown", 
                 className,
                 )} 
 
                 style={{
-                    "--dropdownColor": color || 'gray',
-                    "--dropdownColorRGB": hexToRGB(color || 'gray').join(','),
-                    "--textColor": contrastTextColor(color || 'gray'),
+                    "--dropdownColor": color || primaryColor,
+                    "--dropdownColorRGB": hexToRGB(color || primaryColor).join(','),
+                    "--textColor": contrastTextColor(color || primaryColor),
                     ...style
                 }}
 
