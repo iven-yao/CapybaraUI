@@ -9,6 +9,7 @@ const Input = (props:InputProps) => {
     const {
         className,
         style,
+        id,
         type = 'text',
         value,
         color,
@@ -61,6 +62,7 @@ const Input = (props:InputProps) => {
             required={required}
             step={step}
             defaultValue={defaultValue}
+            id={id}
         />
     );
 }

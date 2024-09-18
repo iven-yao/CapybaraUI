@@ -21,12 +21,12 @@
 
   .nebula {
     --speed: 100s;
-    width: 50%;
-    aspect-ratio: 1;
-    filter: blur(150px);
+    width: 70%;
+    height: 70%;
+    filter: blur(100px);
     background: linear-gradient(var(--nebulaColor1), var(--nebulaColor2));
     animation: rotate var(--speed) linear infinite;
-    border-radius: 20% 70% 10% 50%;
+    border-radius: 50% 20% 70% 10%;
     z-index: -10;
   }
 }

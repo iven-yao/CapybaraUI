@@ -6,7 +6,6 @@ export type ButtonProps = componentBasics & {
     color?: string,
     size?: size,
     rounded?: rounded | shape,
-    shadow?: boolean,
     isLoading?: boolean,
     disabled?: boolean,
     onClick?: MouseEventHandler<HTMLButtonElement>,

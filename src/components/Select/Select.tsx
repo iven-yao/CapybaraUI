@@ -30,6 +30,7 @@ const Select = (props:SelectProps) => {
     const [selectedOption, setSelectedOption] = useState<option|Array<option>|null>();
     const [isOpen, setIsOpen] = useState(false);
     const [filterString, setFilterString] = useState('');
+    const [internalId] = useState(crypto.randomUUID());
 
     useEffect(() => {
         const handleClickOutside = (e:MouseEvent) => {
@@ -38,7 +39,7 @@ const Select = (props:SelectProps) => {
                 target = target.parentElement;
             }
 
-            if(!target.classList.contains('capybara-select')) {
+            if(!target.classList.contains(internalId)) {
                 setIsOpen(false);
             }
         }
@@ -90,6 +91,7 @@ const Select = (props:SelectProps) => {
             <div 
                 className={clsx(
                     "capybara-select",
+                    internalId,
                     {
                         "active":isOpen,
                         "disabled":disabled,

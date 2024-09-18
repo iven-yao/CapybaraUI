@@ -11,7 +11,6 @@ const ButtonDocs = () => {
     const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded|shape>('sm');
-    const [shadow, setShadow] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [buttonPropsStr, setButtonPropsStr] = useState('');
 
@@ -21,12 +20,11 @@ const ButtonDocs = () => {
         props += (color? `\n\tcolor="${color}"`:'')
         props += (size? `\n\tsize="${size}"`:'');
         props += (rounded? `\n\trounded="${rounded}"`:'');
-        props += (shadow?"\n\tshadow":'');
         props += (disabled?"\n\tdisabled":'');
 
         setButtonPropsStr(props);
 
-    },[variant, color, size, rounded, shadow, disabled])
+    },[variant, color, size, rounded, disabled])
 
 
     return (
@@ -39,7 +37,6 @@ const ButtonDocs = () => {
                     <ColorControl value={color} onChange={(value:string) => setColor(value)}/>
                     <SelectControl label="size" onChange={(value) => setSize(value as size)} value={size} options={_size}/>
                     <SelectControl label="rounded" onChange={(value) => setRounded(value as rounded)} value={rounded} options={[..._rounded,..._button_shape]}/>
-                    <CheckControl label="shadow" checked={shadow} onChange={(v) => setShadow(v)}/>
                     <CheckControl label="disabled" checked={disabled} onChange={(v) => setDisabled(v)}/>
                 </div>
                 <QuickViewResult>
@@ -57,7 +54,6 @@ const ButtonDocs = () => {
                             color={color} 
                             size={size || "md"} 
                             rounded={rounded || "sm"} 
-                            shadow={shadow}
                             disabled={disabled}
                         >
                             Click Me 

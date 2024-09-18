@@ -21,7 +21,6 @@ const Button = ( props: PropsWithChildren<ButtonProps>) => {
         onClick, 
         onMouseEnter,
         onMouseLeave,
-        shadow=false,
         disabled=false,
     } = {...props}
 
@@ -34,7 +33,6 @@ const Button = ( props: PropsWithChildren<ButtonProps>) => {
                 [`${variant}`]:variant,
                 [`size-${size}`]: size,
                 [`rounded-${rounded}`]: rounded && rounded !== 'none',
-                'shadow':shadow,
                 'disabled':disabled
             },
             className,

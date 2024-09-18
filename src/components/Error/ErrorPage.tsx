@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './Error.scss';
-import ThreeDText from '../Text/ThreeDText';
 import Nebula from "../Background/Nebula";
 import NeonText from "../Text/NeonText";
 
@@ -11,11 +10,11 @@ const ErrorPage = () => {
             <Nebula/>
             <div className='error-text'>
                 <NeonText fontSize={60} color='#7befd0'>something went wrong</NeonText>
-                <ThreeDText fontSize={30} color='white' className='back-btn'>
+                <NeonText fontSize={30} color='#7befd0' className='back-btn'>
                     <Link to={'/'} style={{textDecoration:'none', color:'inherit'}}>
                         -Back-
                     </Link>
-                </ThreeDText>
+                </NeonText>
             </div>
         </div>
     )

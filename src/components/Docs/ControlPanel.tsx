@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Input from "../Input";
 import { convertToHex } from "../../utils/colorHelper";
 import { CheckControlProps, ColorControlProps, InputControlProps, SelectControlProps } from "./ControlPanelProps";
@@ -9,14 +9,18 @@ import ThemeContext from "../Theme/ThemeContext";
 const ColorControl = (props:ColorControlProps) => {
     const {value, onChange, defaultValue} ={...props};
     const {primaryColor} = useContext(ThemeContext);
+    const [internalId] = useState(crypto.randomUUID());
 
     return (
         <div className="control-panel">
             <div className="label">
-                color
+                <label htmlFor={internalId}>
+                    color
+                </label>
             </div>
             <div className="control">
                 <Input 
+                    id={internalId}
                     type="text" 
                     value={value} 
                     onChange={(v) => onChange(v)} 

@@ -1,17 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import fullLogo from '../../assets/fullLogo1000x250.png'
 import './Home.scss';
 import Nebula from "../Background/Nebula";
-import ThemeContext from "../Theme/ThemeContext";
 
 const Home = () => {
 
-    const {primaryColor} = useContext(ThemeContext);
-
     return (
         <div className='home-container'>
-            <Nebula color1={primaryColor} color2={"moccasin"}/>
-            <img src={fullLogo} alt="capybara ui"/>
+            <Nebula color1={"#f9b465"} color2={"blanchedalmond"}/>
+            <img src={fullLogo} alt="capybara ui" style={{maxWidth:"50%"}}/>
         </div>
     
     );
