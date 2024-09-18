@@ -4,7 +4,7 @@ import { selectDocData } from "../../constants/mockData";
 import Select from "./Select";
 import QuickViewResult from "../Docs/QuickViewResult";
 import Input from "../Input";
-import { CheckControl, ColorControl } from "../Docs/ControlPanel";
+import { CheckControl, ColorControl, InputControl } from "../Docs/ControlPanel";
 
 const SelectDocs = () => {
     const [color, setColor] = useState("");
@@ -34,25 +34,7 @@ const SelectDocs = () => {
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
                     <ColorControl value={color} onChange={(value:string) => setColor(value)} />
-                    <div className="control-panel">
-                        <div className="label">
-                            width
-                        </div>
-                        <div className="control">
-                            <Input 
-                                type="text" 
-                                value={width} 
-                                placeholder="eg: 250, 400px, default: 100%"
-                                onChange={(v) => {
-                                    if(v.length === 0 || isNaN(Number(v))) {
-                                        setWidth(v)
-                                    } else {
-                                        setWidth(parseInt(v));
-                                    }
-                                }} 
-                            />
-                        </div>
-                    </div>
+                    <InputControl label="width" value={width} placeholder="eg: 250, 400px, default: 100%" onChange={(v) => setWidth(v)}/>
                     <CheckControl label="multiple" checked={multiple} onChange={(v) => setMultiple(v)} />
                     <CheckControl label="searchable" checked={searchable} onChange={(v) => setSearchable(v)} />
                     <CheckControl label="disabled" checked={disabled} onChange={(v) => setDisabled(v)} />

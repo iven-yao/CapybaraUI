@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../Input";
 import { convertToHex } from "../../utils/colorHelper";
-import { CheckControlProps, ColorControlProps, SelectControlProps } from "./ControlPanelProps";
+import { CheckControlProps, ColorControlProps, InputControlProps, SelectControlProps } from "./ControlPanelProps";
 import Select from "../Select";
 import Checkbox from "../Checkbox";
 
@@ -60,8 +60,37 @@ const CheckControl = (props:CheckControlProps) => {
     );
 }
 
+const InputControl = (props:InputControlProps) => {
+    const {value, onChange, label, placeholder} = {...props};
+
+    const handleChange = (value:string) => {
+        if(value.length === 0 || isNaN(Number(value))) {
+            onChange(value);
+        } else {
+            onChange(parseInt(value));
+        }
+    }
+
+    return (
+        <div className="control-panel">
+            <div className="label">
+                {label}
+            </div>
+            <div className="control">
+                <Input 
+                    type="text" 
+                    value={value} 
+                    placeholder={placeholder}
+                    onChange={handleChange} 
+                />
+            </div>
+        </div>
+    );
+}
+
 export {
     ColorControl,
     SelectControl,
-    CheckControl
+    CheckControl,
+    InputControl
 }

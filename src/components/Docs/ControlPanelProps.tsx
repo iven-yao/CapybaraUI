@@ -18,3 +18,10 @@ export type CheckControlProps = {
     checked: boolean,
     onChange: (checked:boolean) => void,
 }
+
+export type InputControlProps = {
+    label: string, 
+    value: string|number|undefined,
+    onChange: (value:string|number) => void,
+    placeholder?: string
+}

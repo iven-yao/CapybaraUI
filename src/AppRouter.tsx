@@ -13,6 +13,7 @@ import NeonTextDocs from './components/Text/NeonTextDocs';
 import ThreeDTextDocs from './components/Text/ThreeDTextDocs';
 import ErrorPage from './components/Error';
 import RadioGroupDocs from './components/RadioGroup/RadioGroupDocs';
+import SwitchDocs from './components/Switch/SwitchDocs';
 
 function AppRouter() {
 
@@ -61,6 +62,10 @@ function AppRouter() {
             {
               path:'radio-group',
               element: <RadioGroupDocs />
+            },
+            {
+              path:'switch',
+              element: <SwitchDocs />
             }
           ]
         }

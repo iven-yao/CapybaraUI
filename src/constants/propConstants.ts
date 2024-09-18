@@ -130,3 +130,18 @@ export const _orientation = [
         label: 'horizontal'
     }
 ];
+
+export const _switch_shape = [
+    {
+        value: 'default',
+        label: 'default'
+    },
+    {
+        value: 'pill',
+        label: 'pill'
+    },
+    {
+        value: 'rectangle',
+        label: 'rectangle'
+    }
+]
