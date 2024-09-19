@@ -1,4 +1,4 @@
-import { componentBasics, inputTypes } from "../../types/propTypes";
+import { componentBasics, inputIcons, inputTypes, inputVariant } from "../../types/propTypes";
 
 export type InputProps = componentBasics & {
     type?: inputTypes,
@@ -19,5 +19,8 @@ export type InputProps = componentBasics & {
     size?: number,
     step?: number,
     value?: string|number,
-    width?: number|string
+    width?: number|string,
+    icon?: inputIcons,
+    variant?: inputVariant,
+    floatingLabel?: string,
 }
