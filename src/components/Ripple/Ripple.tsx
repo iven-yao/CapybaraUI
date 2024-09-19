@@ -1,7 +1,5 @@
 import React, { useLayoutEffect, useState } from "react";
-import { color } from "../../types/propTypes";
 import './Ripple.scss';
-import clsx from "clsx";
 import { hexToRGB } from "../../utils/colorHelper";
 
 const useDebouncedRippleCleanUp = (rippleCount:number, duration:number, callBack:()=>void) => {
@@ -22,7 +20,7 @@ const useDebouncedRippleCleanUp = (rippleCount:number, duration:number, callBack
 
 type rippleType = {x:number, y:number, size:number};
 
-const Ripple = ({duration=1500, color}:{duration?:number, color?:color}) => {
+const Ripple = ({duration=1500, color}:{duration?:number, color?:string}) => {
     const [rippleArray, setRippleArray] = useState<Array<rippleType>>([]);
 
     useDebouncedRippleCleanUp(rippleArray.length, duration, () => {setRippleArray([])});
@@ -47,13 +45,6 @@ const Ripple = ({duration=1500, color}:{duration?:number, color?:color}) => {
                 rippleArray.map((ripple, index) => 
                     <span 
                         key={`span${index}`}
-                        className={
-                            clsx(
-                                {
-                                    [`bg-${color}`]:color
-                                }
-                            )
-                        }
                         style={{
                             animationDuration:`${duration}ms`, 
                             top:ripple.y, 
