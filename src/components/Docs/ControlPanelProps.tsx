@@ -8,8 +8,8 @@ export type ColorControlProps = {
 
 export type SelectControlProps = {
     label: string,
-    value: string,
-    onChange: (value:string) => void,
+    value: string | null,
+    onChange: (value:string|null) => void,
     options: option[]
 }
 
@@ -22,6 +22,6 @@ export type CheckControlProps = {
 export type InputControlProps = {
     label: string, 
     value: string|number|undefined,
-    onChange: (value:string|number) => void,
+    onChange: (value:string) => void,
     placeholder?: string
 }

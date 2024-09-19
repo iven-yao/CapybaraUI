@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import QuickViewResult from "../Docs/QuickViewResult";
-import { orientation, radio_variant } from "../../types/propTypes";
+import { orientation, radioVariant } from "../../types/propTypes";
 import { _orientation, _radio_variant } from "../../constants/propConstants";
 import RadioGroup from ".";
 import { CheckControl, ColorControl, SelectControl } from "../Docs/ControlPanel";
@@ -9,7 +9,7 @@ const RadioGroupDocs = () => {
     const [color, setColor] = useState("");
     const [disabled, setDisabled] = useState(false);
     const [orientation, setOrientation] = useState<orientation>("vertical");
-    const [variant, setVariant] = useState<radio_variant>("circle");
+    const [variant, setVariant] = useState<radioVariant>("circle");
     const [propsStr, setPropsStr] = useState("");
 
     useLayoutEffect(() => {
@@ -33,7 +33,7 @@ const RadioGroupDocs = () => {
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <SelectControl label="variant" onChange={(value) => setVariant(value as radio_variant)} value={variant} options={_radio_variant}/>
+                    <SelectControl label="variant" onChange={(value) => setVariant(value as radioVariant)} value={variant} options={_radio_variant}/>
                     <SelectControl label="orientation" onChange={(value) => setOrientation(value as orientation)} value={orientation} options={_orientation}/>
                     <ColorControl value={color} onChange={(value) => setColor(value)} />
                     <CheckControl label="disabled" checked={disabled} onChange={(v) => setDisabled(v)} />

@@ -16,10 +16,10 @@ const DropdownButton = (props:PropsWithChildren<DropdownButtonProps>) => {
 
     return (
         <Button 
-            variant={variant} 
+            variant={variant || 'outline'} 
             color={color} 
-            size={size} 
-            rounded={rounded}
+            size={size || 'md'}
+            rounded={rounded || 'sm'}
             className={clsx(
                 "dropdown-btn",
                 {

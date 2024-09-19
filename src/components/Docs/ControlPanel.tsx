@@ -24,7 +24,7 @@ const ColorControl = (props:ColorControlProps) => {
                     type="text" 
                     value={value} 
                     onChange={(v) => onChange(v)} 
-                    placeholder={`Color code or css named color, default: ${defaultValue || primaryColor}`} 
+                    placeholder={`Hex color code or Name, default: ${defaultValue || primaryColor}`} 
                     width={"74%"}
                 />
                 <Input 
@@ -46,7 +46,7 @@ const SelectControl = (props:SelectControlProps) => {
                 {label}
             </div>
             <div className="control">
-                <Select onChange={(value) => onChange(value as string)} value={value} options={options}/>
+                <Select onChange={(value) => onChange(value as string|null)} value={value} options={options}/>
             </div>
         </div>
     );
@@ -70,11 +70,7 @@ const InputControl = (props:InputControlProps) => {
     const {value, onChange, label, placeholder} = {...props};
 
     const handleChange = (value:string) => {
-        if(value.length === 0 || isNaN(Number(value))) {
-            onChange(value);
-        } else {
-            onChange(parseInt(value));
-        }
+        onChange(value);
     }
 
     return (

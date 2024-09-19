@@ -1,4 +1,4 @@
-import { componentBasics, orientation, radio_variant } from "../../types/propTypes";
+import { componentBasics, orientation, radioVariant } from "../../types/propTypes";
 import { option } from "../Select/SelectProps";
 
 export type RadioGroupShared = {
@@ -6,7 +6,7 @@ export type RadioGroupShared = {
     setSelectedValue: React.Dispatch<React.SetStateAction<string|undefined>>,
     name: string,
     disabled: boolean,
-    variant: radio_variant
+    variant: radioVariant
 }
 
 export type RadioGroupProps = componentBasics & {
@@ -19,7 +19,7 @@ export type RadioGroupProps = componentBasics & {
     onChange?: (value: string) => void,
     orientation?: orientation,
     options?:option[]
-    variant?: radio_variant
+    variant?: radioVariant
 }
 
 export type RadioButtonProps = componentBasics & {

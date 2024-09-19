@@ -145,3 +145,23 @@ export const _switch_shape = [
         label: 'rectangle'
     }
 ]
+
+export const _input_types = [
+    { value: 'text', label: 'text (default)' },
+    { value: 'number', label: 'number' },
+    { value: 'email', label: 'email' },
+    { value: 'password', label: 'password' },
+    { value: 'tel', label: 'telephone' },
+    { value: 'url', label: 'url' },
+    { value: 'color', label: 'color' }
+];
+
+export const _input_icons = [
+    {value: 'search', label: 'search'},
+    {value: 'mail', label: 'mail'}
+]
+
+export const _input_variants = [
+    {value: 'box', label: 'box'},
+    {value: 'underline', label: 'underline'}
+]

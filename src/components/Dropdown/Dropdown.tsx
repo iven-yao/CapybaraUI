@@ -9,22 +9,31 @@ import DropdownButton from "./DropdownButton";
 import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
 import ThemeContext from "../Theme/ThemeContext";
 
-const Dropdown = ({
-    children,
-    className,
-    variant='outline',
-    color,
-    rounded='sm',
-    size='md',
-    disabled,
-    style
-}:PropsWithChildren<DropdownProps>) => {
+const Dropdown = (props:PropsWithChildren<DropdownProps>) => {
+    const {
+        children,
+        className,
+        variant='outline',
+        color,
+        rounded='sm',
+        size='md',
+        disabled,
+        style
+    } = {...props};
 
     const [isOpen, setIsOpen] = useState(false);
     const {primaryColor} = useContext(ThemeContext);
 
     return (
-        <DropdownContext.Provider value={{isOpen, setIsOpen, color:color || primaryColor, variant, rounded, size, disabled}}>
+        <DropdownContext.Provider value={{
+            isOpen, 
+            setIsOpen, 
+            color:color || primaryColor, 
+            variant: variant || 'outline', 
+            rounded:rounded || 'sm', 
+            size:size || 'md', 
+            disabled}}
+        >
             <div className={clsx(
                 "capybara-dropdown", 
                 className,

@@ -12,7 +12,7 @@
 
   &.active {
     border-color: var(--selectColor);
-    outline: 0.2rem solid rgba(var(--selectColorRGB), 0.5);
+    outline: 2px solid rgba(var(--selectColorRGB), 0.5);
   }
 
   .selected-value {
@@ -94,7 +94,8 @@
   }
 
   &.disabled {
-    cursor: not-allowed;
+    cursor: unset;
+    background-color: $disabled;
   }
 }
 

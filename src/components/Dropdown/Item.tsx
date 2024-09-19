@@ -9,16 +9,18 @@ const Item = ({
     className,
     onClick
 }:PropsWithChildren<ItemProps>) => {
-    const {variant} = useContext(DropdownContext);
+    const {variant, size} = useContext(DropdownContext);
     
     return (
         <div 
             className={clsx(
                 "list-item",
                 {
-                    [`${variant}`]:variant,
-                    [`border`]:variant === 'outline',
-                    
+                    "border outline":!variant || variant === 'outline',
+                    "minimal": variant === 'minimal',
+                    "fill": variant === 'fill',
+                    "three-d": variant === 'three-d',
+                    [`size-${size}`]: size,        
                 }, 
                 className
             )} 

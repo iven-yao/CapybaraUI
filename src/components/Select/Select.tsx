@@ -3,7 +3,7 @@ import { option, SelectProps } from "./SelectProps";
 import { SelectContext } from "./SelectContext";
 import './Select.scss';
 import clsx from "clsx";
-import { DropdownIcon, XIcon } from "../Icon/Icons";
+import { ChevronDownIcon, XIcon } from "../Icon/Icons";
 import SelectOption from "./SelectOption";
 import SelectMultipleButton from "./SelectMultipleButton";
 import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
@@ -145,7 +145,7 @@ const Select = (props:SelectProps) => {
                     }
                 </div>
                 <div className="select-dropdown-icon">
-                    <DropdownIcon />
+                    <ChevronDownIcon />
                 </div>
                 <div className={clsx(
                     "capybara-options",

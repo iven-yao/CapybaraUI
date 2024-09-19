@@ -1,12 +1,12 @@
 import React, { useLayoutEffect, useState } from "react";
 import { _size, _rounded, _button_variant } from "../../constants/propConstants";
 import Dropdown from ".";
-import { rounded, size, button_variant } from "../../types/propTypes";
+import { rounded, size, buttonVariant } from "../../types/propTypes";
 import QuickViewResult from "../Docs/QuickViewResult";
 import { CheckControl, ColorControl, SelectControl } from "../Docs/ControlPanel";
 
 const DropdownDocs = () => {
-    const [variant, setVariant] = useState<button_variant>('outline');
+    const [variant, setVariant] = useState<buttonVariant>('outline');
     const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded>('sm');
@@ -31,7 +31,7 @@ const DropdownDocs = () => {
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <SelectControl label="variant" onChange={(value) => setVariant(value as button_variant)} value={variant} options={_button_variant}/>
+                    <SelectControl label="variant" onChange={(value) => setVariant(value as buttonVariant)} value={variant} options={_button_variant}/>
                     <ColorControl value={color} onChange={(value:string) => setColor(value)}/>
                     <SelectControl label="size" onChange={(value) => setSize(value as size)} value={size} options={_size}/>
                     <SelectControl label="rounded" onChange={(value) => setRounded(value as rounded)} value={rounded} options={_rounded}/>

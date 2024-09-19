@@ -1,4 +1,4 @@
-import { componentBasics, size, switch_shape, switch_variant } from "../../types/propTypes";
+import { componentBasics, size, switchShape, switchVariant } from "../../types/propTypes";
 
 export type SwitchProps = componentBasics & {
     checked: boolean,
@@ -9,6 +9,6 @@ export type SwitchProps = componentBasics & {
     color?: string,
     width?: number|string,
     toggleSize?: number|string,
-    variant?: switch_variant,
-    shape?: switch_shape
+    variant?: switchVariant,
+    shape?: switchShape
 }

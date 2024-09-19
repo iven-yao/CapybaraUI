@@ -1,13 +1,12 @@
 import React, { useLayoutEffect, useState } from "react";
 import Button from ".";
-import { size, rounded, button_variant, shape } from "../../types/propTypes";
+import { size, rounded, buttonVariant, shape } from "../../types/propTypes";
 import { _rounded, _size, _button_variant, _button_shape } from "../../constants/propConstants";
-import { HandPointUpIcon } from "../Icon/Icons";
 import QuickViewResult from "../Docs/QuickViewResult";
 import { CheckControl, ColorControl, SelectControl } from "../Docs/ControlPanel";
 
 const ButtonDocs = () => {
-    const [variant, setVariant] = useState<button_variant>('outline');
+    const [variant, setVariant] = useState<buttonVariant>('outline');
     const [color, setColor] = useState('');
     const [size, setSize] = useState<size>('md');
     const [rounded, setRounded] = useState<rounded|shape>('sm');
@@ -33,7 +32,7 @@ const ButtonDocs = () => {
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <SelectControl label="variant" onChange={(value) => setVariant(value as button_variant)} value={variant} options={_button_variant}/>
+                    <SelectControl label="variant" onChange={(value) => setVariant(value as buttonVariant)} value={variant} options={_button_variant}/>
                     <ColorControl value={color} onChange={(value:string) => setColor(value)}/>
                     <SelectControl label="size" onChange={(value) => setSize(value as size)} value={size} options={_size}/>
                     <SelectControl label="rounded" onChange={(value) => setRounded(value as rounded)} value={rounded} options={[..._rounded,..._button_shape]}/>
@@ -44,7 +43,6 @@ const ButtonDocs = () => {
 {`
     <Button${buttonPropsStr}>
         Click Me 
-        <HandPointUpIcon/>
     </Button>
 `}
                     </QuickViewResult.Code>
@@ -57,7 +55,6 @@ const ButtonDocs = () => {
                             disabled={disabled}
                         >
                             Click Me 
-                            <HandPointUpIcon style={{marginLeft:"0.5rem"}}/>
                         </Button>
                     </QuickViewResult.Preview>
                 </QuickViewResult>

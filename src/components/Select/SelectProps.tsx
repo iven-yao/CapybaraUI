@@ -8,7 +8,7 @@ export type SelectShared = {
 
 export type SelectProps = componentBasics & {
     // value that being selected
-    value?: string|string[],
+    value?: string|string[]|null,
     // callback function when value changes
     onChange?: (value:string|string[]|null) => void,
     // placeholder when no value is selected

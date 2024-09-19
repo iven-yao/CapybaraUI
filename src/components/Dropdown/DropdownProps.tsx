@@ -1,18 +1,18 @@
 import { MouseEventHandler } from "react"
-import { componentBasics, size, rounded, button_variant } from "../../types/propTypes"
+import { componentBasics, size, rounded, buttonVariant } from "../../types/propTypes"
 
 export type DropdownShared = {
     isOpen: boolean,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
     color: string,
-    variant?:button_variant,
+    variant?:buttonVariant,
     size?: size,
     rounded?: rounded,
     disabled?: boolean,
 }
 
 export type DropdownProps = componentBasics & {
-    variant?: button_variant,
+    variant?: buttonVariant,
     color?: string,
     size?: size,
     rounded?: rounded,

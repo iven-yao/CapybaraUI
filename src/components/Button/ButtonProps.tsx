@@ -1,8 +1,8 @@
 import { MouseEventHandler } from "react";
-import { componentBasics, rounded, size, button_variant, shape } from "../../types/propTypes";
+import { componentBasics, rounded, size, buttonVariant, shape } from "../../types/propTypes";
 
 export type ButtonProps = componentBasics & {
-    variant?: button_variant,
+    variant?: buttonVariant,
     color?: string,
     size?: size,
     rounded?: rounded | shape,

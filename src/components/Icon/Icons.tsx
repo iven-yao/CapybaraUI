@@ -1,49 +1,102 @@
 import React from "react";
-import { PiCursorClick, PiXBold } from "react-icons/pi";
-import { IoChevronDownOutline } from "react-icons/io5";
-import { HiArrowPath } from "react-icons/hi2";
+import { IoCheckmark, IoChevronDown, IoChevronUp, IoClose, IoMailOutline, IoMoonOutline, IoRepeat, IoSearch, IoStar, IoStarHalf, IoStarOutline, IoSunnyOutline } from "react-icons/io5";
 import { componentBasics } from "../../types/propTypes"
-import { GoStar } from "react-icons/go";
 
-const DropdownIcon = ({className, style}:componentBasics) => {
-    return <IoChevronDownOutline  
+const ChevronDownIcon = ({className, style}:componentBasics) => {
+    return <IoChevronDown  
+        className={className}
+        style={style}
+    />
+}
+
+const ChevronUpIcon = ({className, style}:componentBasics) => {
+    return <IoChevronUp  
         className={className}
         style={style}
     />
 }
 
 const RotateIcon = ({className, style}:componentBasics) => {
-    return <HiArrowPath 
+    return <IoRepeat 
         className={className}
         style={style}
     />
 }
 
-const HandPointUpIcon = ({className, style}:componentBasics) => {
-    return <PiCursorClick 
-        className={className}        
-        style={style}
-    />
-}
-
 const XIcon = ({className, style}:componentBasics) => {
-    return <PiXBold
+    return <IoClose
         className={className}
         style={style}
     />
 }
 
 const StarIcon = ({className, style}:componentBasics) => {
-    return <GoStar
+    return <IoStarOutline
+        className={className}
+        style={style}
+    />
+}
+
+const StarFillIcon = ({className, style}:componentBasics) => {
+    return <IoStar
+        className={className}
+        style={style}
+    />
+}
+
+const StarHalfIcon = ({className, style}:componentBasics) => {
+    return <IoStarHalf
+        className={className}
+        style={style}
+    />
+}
+
+const MailIcon = ({className, style}:componentBasics) => {
+    return <IoMailOutline
+        className={className}
+        style={style}
+    />
+}
+
+const SearchIcon = ({className, style}:componentBasics) => {
+    return <IoSearch
+        className={className}
+        style={style}
+    />
+}
+
+const SunnyIcon = ({className, style}:componentBasics) => {
+    return <IoSunnyOutline
+        className={className}
+        style={style}
+    />
+}
+
+const MoonIcon = ({className, style}:componentBasics) => {
+    return <IoMoonOutline
+        className={className}
+        style={style}
+    />
+}
+
+const CheckIcon = ({className, style}:componentBasics) => {
+    return <IoCheckmark
         className={className}
         style={style}
     />
 }
 
 export {
-    DropdownIcon, 
+    ChevronDownIcon,
+    ChevronUpIcon,
     RotateIcon,
-    HandPointUpIcon,
     XIcon,
-    StarIcon
+    StarIcon,
+    StarFillIcon,
+    StarHalfIcon,
+    MailIcon,
+    SearchIcon,
+    SunnyIcon,
+    MoonIcon,
+    CheckIcon
 };
