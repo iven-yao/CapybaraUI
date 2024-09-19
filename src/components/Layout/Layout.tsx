@@ -5,6 +5,7 @@ import logo from '../../assets/logo500.png';
 import './Layout.scss';
 import { LayoutContext } from "./LayoutContext";
 import ThemeContext from "../Theme/ThemeContext";
+import { hexToRGB } from "../../utils/colorHelper";
 // Layout component
 const Layout = () => {
     const {primaryColor, lightBackgroundColor, lightTextColor, darkBackgroundColor, darkTextColor} = useContext(ThemeContext);
@@ -15,14 +16,13 @@ const Layout = () => {
     //     setDarkMode(!darkMode);
     // }
 
-    
-
     return (
         <LayoutContext.Provider value={{darkMode:false}}>
             <div 
                 className="container" 
                 style={{
                     "--primaryColor": primaryColor,
+                    "--primaryColorRGB": hexToRGB(primaryColor).join(','),
                     "--themeBgColor": lightBackgroundColor,
                     "--themeTextColor": lightTextColor,
                     "--themeDarkBgColor": darkBackgroundColor,
@@ -33,8 +33,6 @@ const Layout = () => {
                     <Navbar.Logo src={logo} circle></Navbar.Logo>
                     <Navbar.Items justify="end">
                         <Navbar.Item><Link to={'./docs'} className="navbar-link">DOCS</Link></Navbar.Item>
-                        <Navbar.Item>ABOUT</Navbar.Item>
-                        <Navbar.Item>BLOG</Navbar.Item>
                     </Navbar.Items>
                 </Navbar>
                 <div className="content">

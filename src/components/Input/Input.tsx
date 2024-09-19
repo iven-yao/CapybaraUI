@@ -55,16 +55,6 @@ const Input = (props:InputProps) => {
                 width: typeof width === 'number'? `${width}px`:width,
             }}
         >
-            {icon &&
-                <div className="icon-wrapper">
-                    {icon === 'search' &&
-                        <SearchIcon />
-                    }
-                    {icon === 'mail' &&
-                        <MailIcon />
-                    }
-                </div>
-            }
             <input       
                 className={clsx(
                     "capybara-input",
@@ -93,6 +83,16 @@ const Input = (props:InputProps) => {
                 disabled={disabled}
                 id={id}
             />
+            {icon &&
+                <div className="icon-wrapper">
+                    {icon === 'search' &&
+                        <SearchIcon />
+                    }
+                    {icon === 'mail' &&
+                        <MailIcon />
+                    }
+                </div>
+            }
             {floatingLabel &&
                 <div 
                     className={clsx(

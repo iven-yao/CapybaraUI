@@ -28,13 +28,11 @@
     font-family: inherit;
     line-height: normal;
     border: 1px solid transparent;
-    background-color: inherit;
-
-    transition: all 0.5s;
-
+    transition: all 0.2s;
+    color: $border-color;
     margin: 0;
     top: -1.25rem;
-    left: 0.25rem;
+    left: 0.5rem;
   }
 }
 
@@ -72,19 +70,20 @@
       left: 0;
       margin-top: 0.5rem;
       margin-left: 0.5rem;
-
       &.with-icon {
         margin-left: 2rem;
       }
     }
 
-    &:focus-visible ~ .floating-label {
-      margin: 0;
-      top: -1.25rem;
-      left: 0.25rem;
-
-      &.with-icon {
-        margin-left: 0;
+    &:focus-visible {
+      ~ .floating-label {
+        margin: 0;
+        top: -1.25rem;
+        left: 0.5rem;
+        color: var(--inputColor);
+        &.with-icon {
+          margin-left: 0;
+        }
       }
     }
   }

@@ -2,8 +2,8 @@ import { createContext } from "react";
 import { ThemeShared } from "./ThemeProps";
 
 const ThemeContext = createContext<ThemeShared>({
-    primaryColor: "#a96619",
-    secondaryColor: "",
+    primaryColor: "#3B82F6",
+    secondaryColor: "#10B981",
     lightBackgroundColor: "white",
     lightTextColor: "black",
     darkBackgroundColor: "#404040",
