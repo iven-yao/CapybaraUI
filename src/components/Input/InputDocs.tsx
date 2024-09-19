@@ -62,9 +62,6 @@ const InputDocs = () => {
                     </QuickViewResult.Preview>
                 </QuickViewResult>
             </div>
-            <div className="section">
-                <div className="second-title" id="full-apis">Full APIs</div>
-            </div>
         </div>
     );
 }

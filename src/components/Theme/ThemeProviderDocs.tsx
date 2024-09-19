@@ -11,7 +11,7 @@ import { ColorControl } from "../Docs/ControlPanel";
 
 const ThemeProviderDocs = () => {
     const [propsStr, setPropsStr] = useState("");
-    const [primaryColor, setPrimaryColor] = useState("blue");
+    const [primaryColor, setPrimaryColor] = useState("#3B82F6");
 
     useLayoutEffect(() => {
         let props = '';
