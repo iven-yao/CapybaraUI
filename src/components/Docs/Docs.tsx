@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import './Docs.scss';
+import { components, effects } from "../../constants/routerConstants";
 
 const Docs = () => {
     return (
@@ -9,18 +10,19 @@ const Docs = () => {
                 <nav>
                     <div>Component</div>
                     <ul style={{listStyle:'none'}}>
-                        <li><NavLink to={"./button"}>Button</NavLink></li>
-                        <li><NavLink to={"./dropdown"}>Dropdown</NavLink></li>
-                        {/* <li><NavLink to={"./navbar"}>Navbar</NavLink></li> */}
-                        <li><NavLink to={"./radio-group"}>Radio Group</NavLink></li>
-                        <li><NavLink to={"./select"}>Select</NavLink></li>
-                        <li><NavLink to={"./switch"}>Switch</NavLink></li>
+                        {components.map((component) => (
+                            <li key={component.label}>
+                                <NavLink to={component.link}>{component.label}</NavLink>
+                            </li>
+                        ))}
                     </ul>
                     <div>Effect</div>
                     <ul style={{listStyle:'none'}}>
-                        <li><NavLink to={"./image-text"}>Image Text</NavLink></li>
-                        <li><NavLink to={"./neon-text"}>Neon Text</NavLink></li>
-                        <li><NavLink to={"./3d-text"}>3D Text</NavLink></li>
+                        {effects.map((effect) => (
+                            <li key={effect.label}>
+                                <NavLink to={effect.link}>{effect.label}</NavLink>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </div>
