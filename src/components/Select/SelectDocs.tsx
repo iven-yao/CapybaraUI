@@ -27,6 +27,14 @@ const SelectDocs = () => {
 
     },[color, width, searchable, multiple, disabled])
 
+    const handleWidthChange = (value: string) => {
+        if(value.length === 0 || isNaN(Number(value))) {
+            setWidth(value);
+        } else {
+            setWidth(parseInt(value));
+        }
+    }
+
     return (
         <>
             <div className="title">Select</div>
@@ -34,7 +42,7 @@ const SelectDocs = () => {
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
                     <ColorControl value={color} onChange={(value:string) => setColor(value)} />
-                    <InputControl label="width" value={width} placeholder="eg: 250, 400px, default: 100%" onChange={(v) => setWidth(v)}/>
+                    <InputControl label="width" value={width} placeholder="eg: 250, 400px, default: 100%" onChange={handleWidthChange}/>
                     <CheckControl label="multiple" checked={multiple} onChange={(v) => setMultiple(v)} />
                     <CheckControl label="searchable" checked={searchable} onChange={(v) => setSearchable(v)} />
                     <CheckControl label="disabled" checked={disabled} onChange={(v) => setDisabled(v)} />
