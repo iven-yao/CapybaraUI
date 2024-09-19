@@ -8,6 +8,16 @@ import SwitchDocs from "../components/Switch/SwitchDocs";
 import ImageTextDocs from "../components/Text/ImageTextDocs";
 import NeonTextDocs from "../components/Text/NeonTextDocs";
 import ThreeDTextDocs from "../components/Text/ThreeDTextDocs";
+import ThemeProviderDocs from "../components/Theme/ThemeProviderDocs";
+
+export const providers = [
+    {
+        label:"ThemeProvider",
+        link: "/docs/theme-provider",
+        path: "theme-provider",
+        element: <ThemeProviderDocs/>
+    }
+]
 
 export const components = [
     {
@@ -68,3 +78,5 @@ export const effects = [
         element: <ThreeDTextDocs />
       },
 ]
+
+export const docs = [...providers, ...components, ...effects];

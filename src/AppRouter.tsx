@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import Docs from './components/Docs/Docs';
 import ErrorPage from './components/Error';
-import { components, effects } from './constants/routerConstants';
+import { docs } from './constants/routerConstants';
 
 function AppRouter() {
 
@@ -22,7 +22,7 @@ function AppRouter() {
         {
           path:'docs',
           element: <Docs />,
-          children: components.concat(effects).map((page):RouteObject => ({
+          children: docs.map((page):RouteObject => ({
             path: page.path,
             element: page.element
           }))

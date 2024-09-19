@@ -1,13 +1,21 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import './Docs.scss';
-import { components, effects } from "../../constants/routerConstants";
+import { components, effects, providers } from "../../constants/routerConstants";
 
 const Docs = () => {
     return (
         <div className="docs-container">
             <div className="side-bar">
                 <nav>
+                    <div>Provider</div>
+                    <ul style={{listStyle:'none'}}>
+                        {providers.map((provider) => (
+                            <li key={provider.label}>
+                                <NavLink to={provider.link}>{provider.label}</NavLink>
+                            </li>
+                        ))}
+                    </ul>
                     <div>Component</div>
                     <ul style={{listStyle:'none'}}>
                         {components.map((component) => (

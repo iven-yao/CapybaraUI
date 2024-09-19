@@ -3,7 +3,8 @@ import { option } from "../Select/SelectProps"
 export type ColorControlProps = {
     value: string, 
     onChange:(value:string) => void,
-    defaultValue?: string
+    defaultValue?: string,
+    label?:string
 }
 
 export type SelectControlProps = {

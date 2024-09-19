@@ -7,7 +7,7 @@ import Checkbox from "../Checkbox";
 import ThemeContext from "../Theme/ThemeContext";
 
 const ColorControl = (props:ColorControlProps) => {
-    const {value, onChange, defaultValue} ={...props};
+    const {value, onChange, defaultValue, label="color"} ={...props};
     const {primaryColor} = useContext(ThemeContext);
     const [internalId] = useState(crypto.randomUUID());
 
@@ -15,7 +15,7 @@ const ColorControl = (props:ColorControlProps) => {
         <div className="control-panel">
             <div className="label">
                 <label htmlFor={internalId}>
-                    color
+                    {label}
                 </label>
             </div>
             <div className="control">

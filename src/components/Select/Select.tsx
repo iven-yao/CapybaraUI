@@ -52,15 +52,25 @@ const Select = (props:SelectProps) => {
     }, []);
 
     useEffect(() => {
-        const option = options.find(o => o.value === value);
+        const option = options.filter(o => {
+            if(Array.isArray(value)) {
+                return value.includes(o.value);
+            } else {
+                return o.value === value;
+            }
+        });
         if(multiple) {
             if(option) {
-                setSelectedOption([option]);
+                setSelectedOption(option);
             } else {
                 setSelectedOption([]);
             }
         } else {
-            setSelectedOption(option);
+            if(option.length === 0) {
+                setSelectedOption(null);
+            } else {
+                setSelectedOption(option[0]);
+            }
         }
     },[value, multiple]);
     
