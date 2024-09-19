@@ -1,5 +1,5 @@
 import React from "react";
-import QuickViewResult from "../Docs/QuickViewResult";
+import QuickViewResult from "./QuickViewResult";
 
 const NavbarDocs = () => {
 

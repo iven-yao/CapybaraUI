@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useState } from "react";
-import QuickViewResult from "../Docs/QuickViewResult";
-import ThemeProvider from "./ThemeProvider";
-import Button from "../Button";
-import Dropdown from "../Dropdown";
-import Select from "../Select";
-import { selectDocData } from "../../constants/mockData";
-import Input from "../Input";
-import RadioGroup from "../RadioGroup";
-import { ColorControl } from "../Docs/ControlPanel";
+import QuickViewResult from "./QuickViewResult";
+import ThemeProvider from "../components/Theme/ThemeProvider";
+import Button from "../components/Button";
+import Dropdown from "../components/Dropdown";
+import Select from "../components/Select";
+import { selectDocData } from "../constants/mockData";
+import Input from "../components/Input";
+import RadioGroup from "../components/RadioGroup";
+import { ColorControl } from "./ControlPanel";
 
 const ThemeProviderDocs = () => {
     const [propsStr, setPropsStr] = useState("");

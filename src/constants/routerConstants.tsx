@@ -1,14 +1,14 @@
 import React from "react";
-import ButtonDocs from "../components/Button/ButtonDocs";
-import DropdownDocs from "../components/Dropdown/DropdownDocs";
-import InputDocs from "../components/Input/InputDocs";
-import RadioGroupDocs from "../components/RadioGroup/RadioGroupDocs";
-import SelectDocs from "../components/Select/SelectDocs";
-import SwitchDocs from "../components/Switch/SwitchDocs";
-import ImageTextDocs from "../components/Text/ImageTextDocs";
-import NeonTextDocs from "../components/Text/NeonTextDocs";
-import ThreeDTextDocs from "../components/Text/ThreeDTextDocs";
-import ThemeProviderDocs from "../components/Theme/ThemeProviderDocs";
+import ThreeDTextDocs from "../docs/ThreeDTextDocs";
+import ThemeProviderDocs from "../docs/ThemeProviderDocs";
+import ButtonDocs from "../docs/ButtonDocs";
+import DropdownDocs from "../docs/DropdownDocs";
+import ImageTextDocs from "../docs/ImageTextDocs";
+import InputDocs from "../docs/InputDocs";
+import NeonTextDocs from "../docs/NeonTextDocs";
+import RadioGroupDocs from "../docs/RadioGroupDocs";
+import SelectDocs from "../docs/SelectDocs";
+import SwitchDocs from "../docs/SwitchDocs";
 
 export const providers = [
     {

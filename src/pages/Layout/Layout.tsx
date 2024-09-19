@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
-import Navbar from "../Navbar";
+import Navbar from "../../components/Navbar";
 import logo from '../../assets/logo500.png';
 import './Layout.scss';
 import { LayoutContext } from "./LayoutContext";
-import ThemeContext from "../Theme/ThemeContext";
+import ThemeContext from "../../components/Theme/ThemeContext";
 import { hexToRGB } from "../../utils/colorHelper";
 // Layout component
 const Layout = () => {

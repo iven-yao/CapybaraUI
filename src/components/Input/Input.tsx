@@ -4,7 +4,7 @@ import { InputProps } from "./InputProps";
 import './Input.scss';
 import { hexToRGB } from "../../utils/colorHelper";
 import ThemeContext from "../Theme/ThemeContext";
-import { MailIcon, SearchIcon } from "../Icon/Icons";
+import Icon from "../Icon/Icon";
 
 const Input = (props:InputProps) => {
     const {
@@ -85,12 +85,7 @@ const Input = (props:InputProps) => {
             />
             {icon &&
                 <div className="icon-wrapper">
-                    {icon === 'search' &&
-                        <SearchIcon />
-                    }
-                    {icon === 'mail' &&
-                        <MailIcon />
-                    }
+                    <Icon name={icon} />
                 </div>
             }
             {floatingLabel &&

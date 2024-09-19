@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import Button from ".";
-import { size, rounded, buttonVariant, shape } from "../../types/propTypes";
-import { _rounded, _size, _button_variant, _button_shape } from "../../constants/propConstants";
-import QuickViewResult from "../Docs/QuickViewResult";
-import { CheckControl, ColorControl, SelectControl } from "../Docs/ControlPanel";
+import Button from "../components/Button";
+import { _button_variant, _size, _rounded, _button_shape } from "../constants/propConstants";
+import { buttonVariant, shape, size, rounded } from "../types/propTypes";
+import { SelectControl, ColorControl, CheckControl } from "./ControlPanel";
+import QuickViewResult from "./QuickViewResult";
 
 const ButtonDocs = () => {
     const [variant, setVariant] = useState<buttonVariant>('outline');

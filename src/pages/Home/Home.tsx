@@ -1,7 +1,7 @@
 import React from "react";
 import fullLogo from '../../assets/fullLogo1000x250.png'
 import './Home.scss';
-import Nebula from "../Background/Nebula";
+import Nebula from "../../components/Background/Nebula";
 
 const Home = () => {
 

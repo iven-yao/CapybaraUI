@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import './Docs.scss';
-import { components, effects, providers } from "../../constants/routerConstants";
+import { components, effects, providers } from "../constants/routerConstants";
 
 const Docs = () => {
     return (

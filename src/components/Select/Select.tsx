@@ -3,7 +3,7 @@ import { option, SelectProps } from "./SelectProps";
 import { SelectContext } from "./SelectContext";
 import './Select.scss';
 import clsx from "clsx";
-import { ChevronDownIcon, XIcon } from "../Icon/Icons";
+import Icon from "../Icon/Icon";
 import SelectOption from "./SelectOption";
 import SelectMultipleButton from "./SelectMultipleButton";
 import { contrastTextColor, hexToRGB } from "../../utils/colorHelper";
@@ -145,17 +145,17 @@ const Select = (props:SelectProps) => {
                         Array.isArray(selectedOption)?
                             <>
                                 <div className="value-wrapper">{selectedOption.map(o => <SelectMultipleButton option={o} key={`key_${o.value}`}/>)}</div>
-                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear All"><XIcon className="xicon"/></div>}
+                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear All"><Icon name="close"/></div>}
                             </>
                             :
                             <>
                                 <div className="value-wrapper">{selectedOption.label}</div>
-                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear"><XIcon className="xicon"/></div>}
+                                {clearBtn && <div className="icon-wrapper" onClick={handleClearSelect} title="Clear"><Icon name="close"/></div>}
                             </>
                     }
                 </div>
                 <div className="select-dropdown-icon">
-                    <ChevronDownIcon />
+                    <Icon name="chevron-down"/>
                 </div>
                 <div className={clsx(
                     "capybara-options",

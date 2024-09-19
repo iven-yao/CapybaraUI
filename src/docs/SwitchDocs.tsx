@@ -1,10 +1,10 @@
-import React, { useLayoutEffect, useState } from "react";
-import QuickViewResult from "../Docs/QuickViewResult";
-import Switch from ".";
-import { CheckControl, ColorControl, InputControl, SelectControl } from "../Docs/ControlPanel";
-import { switchShape } from "../../types/propTypes";
 import clsx from "clsx";
-import { _switch_shape } from "../../constants/propConstants";
+import React, { useLayoutEffect, useState } from "react";
+import Switch from "../components/Switch";
+import { _switch_shape } from "../constants/propConstants";
+import { switchShape } from "../types/propTypes";
+import { InputControl, SelectControl, ColorControl, CheckControl } from "./ControlPanel";
+import QuickViewResult from "./QuickViewResult";
 
 const SwitchDocs = () => {
     const [color, setColor] = useState("");

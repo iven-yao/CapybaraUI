@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
 import './styles/global.scss';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import Docs from './components/Docs/Docs';
-import ErrorPage from './components/Error';
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import Docs from './docs/Docs';
+import ErrorPage from './pages/Error';
 import { docs } from './constants/routerConstants';
 
 function AppRouter() {

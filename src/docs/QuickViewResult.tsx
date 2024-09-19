@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useState, createContext, useContext } from "react";
-import Button from "../Button";
-import { RotateIcon } from "../Icon/Icons";
-import { componentBasics } from "../../types/propTypes";
+import Button from "../components/Button";
+import Icon from "../components/Icon/Icon";
+import { componentBasics } from "../types/propTypes";
 import clsx from "clsx";
 
 type QuickViewShared = {showCode:boolean};
@@ -30,7 +30,7 @@ const QuickViewResult = ({children, style, className}:PropsWithChildren<componen
                 >
                     <div style={{display:'flex', justifyContent:'space-between'}}>
                         <div className="rotate-icon">
-                            <RotateIcon/>
+                            <Icon name="rotate"/>
                         </div>
                         {showCode?"Preview":"Code"}
                     </div>

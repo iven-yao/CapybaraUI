@@ -1,4 +1,5 @@
-import { option } from "../Select/SelectProps"
+import { option } from "../components/Select/SelectProps"
+import { inputTypes } from "../types/propTypes"
 
 export type ColorControlProps = {
     value: string, 
@@ -25,4 +26,5 @@ export type InputControlProps = {
     value: string|number|undefined,
     onChange: (value:string) => void,
     placeholder?: string
+    type?: inputTypes
 }

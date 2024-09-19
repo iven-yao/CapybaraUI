@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useContext } from "react";
 import { SelectMultipleButtonProps } from "./SelectProps";
-import { XIcon } from "../Icon/Icons";
 import { SelectContext } from "./SelectContext";
 import clsx from "clsx";
+import Icon from "../Icon/Icon";
 
 const SelectMultipleButton = (props:PropsWithChildren<SelectMultipleButtonProps>) => {
     const {
@@ -24,7 +24,7 @@ const SelectMultipleButton = (props:PropsWithChildren<SelectMultipleButtonProps>
                 "multiple-button",
             )}>
             <div>{option.label}</div>
-            <div className="icon-wrapper" onClick={handleRemoveOption} title="Remove"><XIcon className="xicon" /></div>
+            <div className="icon-wrapper" onClick={handleRemoveOption} title="Remove"><Icon name="close" /></div>
         </div>
     );
 }

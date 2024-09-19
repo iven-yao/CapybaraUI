@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import { CheckControl, ColorControl, InputControl, SelectControl } from "../Docs/ControlPanel";
-import QuickViewResult from "../Docs/QuickViewResult";
-import Input from "./Input";
-import { inputIcons, inputTypes, inputVariant } from "../../types/propTypes";
-import { _input_icons, _input_types, _input_variants } from "../../constants/propConstants";
+import Input from "../components/Input";
+import { _input_variants, _input_types, _input_icons } from "../constants/propConstants";
+import { inputVariant, inputTypes, inputIcons } from "../types/propTypes";
+import { SelectControl, ColorControl, InputControl, CheckControl } from "./ControlPanel";
+import QuickViewResult from "./QuickViewResult";
 
 const InputDocs = () => {
     const [variant, setVariant] = useState<inputVariant>(null);

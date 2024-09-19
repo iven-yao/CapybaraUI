@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import Input from "../Input";
-import { convertToHex } from "../../utils/colorHelper";
+import Input from "../components/Input";
+import { convertToHex } from "../utils/colorHelper";
 import { CheckControlProps, ColorControlProps, InputControlProps, SelectControlProps } from "./ControlPanelProps";
-import Select from "../Select";
-import Checkbox from "../Checkbox";
-import ThemeContext from "../Theme/ThemeContext";
+import Select from "../components/Select";
+import Checkbox from "../components/Checkbox";
+import ThemeContext from "../components/Theme/ThemeContext";
 
 const ColorControl = (props:ColorControlProps) => {
     const {value, onChange, defaultValue, label="color"} ={...props};
@@ -67,7 +67,7 @@ const CheckControl = (props:CheckControlProps) => {
 }
 
 const InputControl = (props:InputControlProps) => {
-    const {value, onChange, label, placeholder} = {...props};
+    const {value, onChange, label, placeholder, type="text"} = {...props};
 
     const handleChange = (value:string) => {
         onChange(value);
@@ -80,7 +80,7 @@ const InputControl = (props:InputControlProps) => {
             </div>
             <div className="control">
                 <Input 
-                    type="text" 
+                    type={type} 
                     value={value} 
                     placeholder={placeholder}
                     onChange={handleChange} 

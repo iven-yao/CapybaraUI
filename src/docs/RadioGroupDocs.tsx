@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import QuickViewResult from "../Docs/QuickViewResult";
-import { orientation, radioVariant } from "../../types/propTypes";
-import { _orientation, _radio_variant } from "../../constants/propConstants";
-import RadioGroup from ".";
-import { CheckControl, ColorControl, SelectControl } from "../Docs/ControlPanel";
+import RadioGroup from "../components/RadioGroup";
+import { _radio_variant, _orientation } from "../constants/propConstants";
+import { radioVariant, orientation } from "../types/propTypes";
+import { SelectControl, ColorControl, CheckControl } from "./ControlPanel";
+import QuickViewResult from "./QuickViewResult";
 
 const RadioGroupDocs = () => {
     const [color, setColor] = useState("");

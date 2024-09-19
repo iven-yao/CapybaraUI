@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { CheckboxProps } from "./CheckboxProps";
 import './Checkbox.scss';
+import { hexToRGB } from "../../utils/colorHelper";
+import ThemeContext from "../Theme/ThemeContext";
 
 const Checkbox = ({
     className,
@@ -11,12 +13,13 @@ const Checkbox = ({
     onChange,
     checked = false,
     disabled,
-    color = 'white',
+    color,
     label
 }:CheckboxProps) => {
 
     const [isChecked, setIsChecked] = useState(checked);
     const internal_id = crypto.randomUUID();
+    const {primaryColor} = useContext(ThemeContext);
     
     useEffect(() => {
         if(onChange) {
@@ -37,7 +40,6 @@ const Checkbox = ({
             <div 
                 className={clsx(
                     "capybara-checkbox",
-                    `bg-${color}`,
                     {
                         "checked":isChecked,
                         "disabled":disabled
@@ -45,7 +47,11 @@ const Checkbox = ({
                     className
                 )}
 
-                style={style}
+                style={{
+                    "--checkboxColor": color || primaryColor,
+                    "--checkboxColorRGB": hexToRGB(color || primaryColor).join(','),
+                    ...style
+                }}
                 onClick={handleClick}
             />
             {label &&

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './Error.scss';
-import Nebula from "../Background/Nebula";
-import NeonText from "../Text/NeonText";
+import Nebula from "../../components/Background/Nebula";
+import NeonText from "../../components/Text/NeonText";
 
 const ErrorPage = () => {
     return (

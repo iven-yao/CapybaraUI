@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useLayoutEffect, useState } from "react";
-import { selectDocData } from "../../constants/mockData";
-import Select from "./Select";
-import QuickViewResult from "../Docs/QuickViewResult";
-import Input from "../Input";
-import { CheckControl, ColorControl, InputControl } from "../Docs/ControlPanel";
+import Select from "../components/Select";
+import { selectDocData } from "../constants/mockData";
+import { ColorControl, InputControl, CheckControl } from "./ControlPanel";
+import QuickViewResult from "./QuickViewResult";
 
 const SelectDocs = () => {
     const [color, setColor] = useState("");
