@@ -1,6 +1,7 @@
 {
   "name": "capybaraui",
   "version": "0.1.0",
+  "author": "Iven Yao <ivenyao820109@gmail.com>",
   "private": true,
   "homepage": ".",
   "dependencies": {
@@ -28,8 +29,6 @@
     "preview": "vite preview",
     "test": "vitest",
     "lint": "eslint src --color",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "prepare": "husky install"
   },
   "eslintConfig": {

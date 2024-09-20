@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import Button from "../components/Button";
+// import {Button} from "capybarakit";
 import { _button_variant, _size, _rounded, _button_shape } from "../constants/propConstants";
 import { buttonVariant, shape, size, rounded } from "../types/propTypes";
 import { SelectControl, ColorControl, CheckControl } from "./ControlPanel";

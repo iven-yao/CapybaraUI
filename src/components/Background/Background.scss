@@ -1,13 +1,4 @@
 .nebula-container {
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -28,5 +19,14 @@
     animation: rotate var(--speed) linear infinite;
     border-radius: 50% 20% 70% 10%;
     z-index: -10;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

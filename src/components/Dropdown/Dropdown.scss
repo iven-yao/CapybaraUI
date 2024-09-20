@@ -17,8 +17,6 @@
 
   .dropdown-btn {
     &.open {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
       border-bottom-color: transparent;
     }
   }
@@ -33,10 +31,6 @@
     min-width: 100%;
     z-index: 10;
 
-    @include rounded;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-
     &.border {
       border: 1px solid var(--dropdownColor);
       border-top: none;
@@ -50,6 +44,8 @@
     &.outline {
       background-color: transparent;
     }
+
+    @include rounded;
   }
 
   .list-item {
