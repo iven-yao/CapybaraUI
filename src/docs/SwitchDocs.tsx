@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import React, { useLayoutEffect, useState } from "react";
-import Switch from "../components/Switch";
 import { _switch_shape } from "../constants/propConstants";
 import { switchShape } from "../types/propTypes";
 import { InputControl, SelectControl, ColorControl, CheckControl } from "./ControlPanel";
 import QuickViewResult from "./QuickViewResult";
+import { Switch } from "@ivenyao/capybara-ui";
 
 const SwitchDocs = () => {
     const [color, setColor] = useState("");

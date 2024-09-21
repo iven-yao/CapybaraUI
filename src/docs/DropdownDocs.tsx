@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import Dropdown from "../components/Dropdown";
 import { _button_variant, _size, _rounded } from "../constants/propConstants";
 import { buttonVariant, size, rounded } from "../types/propTypes";
 import { SelectControl, ColorControl, CheckControl } from "./ControlPanel";
 import QuickViewResult from "./QuickViewResult";
+import { Dropdown } from "@ivenyao/capybara-ui";
 
 const DropdownDocs = () => {
     const [variant, setVariant] = useState<buttonVariant>('outline');

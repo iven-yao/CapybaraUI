@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import ImageText from "../components/Text/ImageText";
 import QuickViewResult from "./QuickViewResult";
 import { InputControl } from "./ControlPanel";
+import { ImageText } from "@ivenyao/capybara-ui";
 
 const ImageTextDocs = () => {
     const [src, setSrc] = useState('https://tinyurl.com/3pjr5jdt');

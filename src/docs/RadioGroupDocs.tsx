@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import RadioGroup from "../components/RadioGroup";
 import { _radio_variant, _orientation } from "../constants/propConstants";
 import { radioVariant, orientation } from "../types/propTypes";
 import { SelectControl, ColorControl, CheckControl } from "./ControlPanel";
 import QuickViewResult from "./QuickViewResult";
+import { RadioGroup } from "@ivenyao/capybara-ui";
 
 const RadioGroupDocs = () => {
     const [color, setColor] = useState("");

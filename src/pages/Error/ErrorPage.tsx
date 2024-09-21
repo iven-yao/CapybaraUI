@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './Error.scss';
 import Nebula from "../../components/Background/Nebula";
-import NeonText from "../../components/Text/NeonText";
-import { Button } from "@ivenyao/capybara-ui";
+import { NeonText } from "@ivenyao/capybara-ui";
 
 const ErrorPage = () => {
     return (
@@ -16,7 +15,6 @@ const ErrorPage = () => {
                         -Back-
                     </Link>
                 </NeonText>
-                <Button>Test</Button>
             </div>
         </div>
     )

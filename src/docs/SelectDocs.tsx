@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useLayoutEffect, useState } from "react";
-import Select from "../components/Select";
 import { selectDocData } from "../constants/mockData";
 import { ColorControl, InputControl, CheckControl } from "./ControlPanel";
 import QuickViewResult from "./QuickViewResult";
+import { Select } from "@ivenyao/capybara-ui";
 
 const SelectDocs = () => {
     const [color, setColor] = useState("");

@@ -1,14 +1,11 @@
-import React, { useContext, useState } from "react";
-import Input from "../components/Input";
+import React, { useState } from "react";
 import { convertToHex } from "../utils/colorHelper";
 import { CheckControlProps, ColorControlProps, InputControlProps, SelectControlProps } from "./ControlPanelProps";
-import Select from "../components/Select";
-import Checkbox from "../components/Checkbox";
-import ThemeContext from "../components/Theme/ThemeContext";
+import { Checkbox, Input, Select, useThemeContext } from "@ivenyao/capybara-ui";
 
 const ColorControl = (props:ColorControlProps) => {
     const {value, onChange, defaultValue, label="color"} ={...props};
-    const {primaryColor} = useContext(ThemeContext);
+    const {primaryColor} = useThemeContext();
     const [internalId] = useState(crypto.randomUUID());
 
     return (

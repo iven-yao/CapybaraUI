@@ -1,8 +1,7 @@
 import React, { PropsWithChildren, useState, createContext, useContext } from "react";
-import Button from "../components/Button";
-import Icon from "../components/Icon/Icon";
 import { componentBasics } from "../types/propTypes";
 import clsx from "clsx";
+import { Button, Icon } from "@ivenyao/capybara-ui";
 
 type QuickViewShared = {showCode:boolean};
 const QuickViewContext = createContext<QuickViewShared>({} as QuickViewShared);

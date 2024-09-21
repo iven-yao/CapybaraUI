@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from "react";
-import Input from "../components/Input";
 import { _input_variants, _input_types, _input_icons } from "../constants/propConstants";
 import { inputVariant, inputTypes, inputIcons } from "../types/propTypes";
 import { SelectControl, ColorControl, InputControl, CheckControl } from "./ControlPanel";
 import QuickViewResult from "./QuickViewResult";
+import { Input } from "@ivenyao/capybara-ui";
 
 const InputDocs = () => {
     const [variant, setVariant] = useState<inputVariant>(null);

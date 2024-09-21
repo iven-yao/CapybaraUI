@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import NeonText from "../components/Text/NeonText";
 import QuickViewResult from "./QuickViewResult";
 import { ColorControl, InputControl } from "./ControlPanel";
+import { NeonText } from "@ivenyao/capybara-ui";
 
 const NeonTextDocs = () => {
     const [color, setColor] = useState('');

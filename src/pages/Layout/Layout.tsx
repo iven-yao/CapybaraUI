@@ -1,20 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import Navbar from "../../components/Navbar";
 import logo from '../../assets/logo500.png';
 import './Layout.scss';
 import { LayoutContext } from "./LayoutContext";
-import ThemeContext from "../../components/Theme/ThemeContext";
 import { hexToRGB } from "../../utils/colorHelper";
-// Layout component
-const Layout = () => {
-    const {primaryColor, lightBackgroundColor, lightTextColor, darkBackgroundColor, darkTextColor} = useContext(ThemeContext);
-    
-    // const [darkMode, setDarkMode] = useState(false);
+import { Navbar, useThemeContext } from "@ivenyao/capybara-ui";
 
-    // const handleDarkMode = () => {
-    //     setDarkMode(!darkMode);
-    // }
+const Layout = () => {
+    const {primaryColor, lightBackgroundColor, lightTextColor, darkBackgroundColor, darkTextColor} = useThemeContext();
 
     return (
         <LayoutContext.Provider value={{darkMode:false}}>

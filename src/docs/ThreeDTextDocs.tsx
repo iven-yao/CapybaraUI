@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import ThreeDText from "../components/Text/ThreeDText";
 import QuickViewResult from "./QuickViewResult";
 import { ColorControl, InputControl } from "./ControlPanel";
+import { ThreeDText } from "@ivenyao/capybara-ui";
 
 const ThreeDTextDocs = () => {
     const [color, setColor] = useState('white');
