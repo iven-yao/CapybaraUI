@@ -22,10 +22,12 @@ function AppRouter() {
         {
           path:'docs',
           element: <Docs />,
-          children: docs.map((page):RouteObject => ({
-            path: page.path,
-            element: page.element
-          }))
+          children: [
+            ...docs.map((page):RouteObject => ({
+              path: page.path,
+              element: page.element
+            }))
+          ]
         }
       ]
     }

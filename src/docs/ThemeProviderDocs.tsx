@@ -2,11 +2,11 @@ import React, { useLayoutEffect, useState } from "react";
 import QuickViewResult from "./QuickViewResult";
 import { selectDocData } from "../constants/mockData";
 import { ColorControl } from "./ControlPanel";
-import { ThemeProvider, Button, Dropdown, RadioGroup, Select, Input } from "@ivenyao/capybara-ui";
+import { Dropdown, RadioGroup, Select, Input, Button, ThemeProvider } from "@ivenyao/capybara-ui";
 
 const ThemeProviderDocs = () => {
     const [propsStr, setPropsStr] = useState("");
-    const [primaryColor, setPrimaryColor] = useState("#3B82F6");
+    const [primaryColor, setPrimaryColor] = useState<string|undefined>("#3B82F6");
 
     useLayoutEffect(() => {
         let props = '';
@@ -22,7 +22,7 @@ const ThemeProviderDocs = () => {
             <div className="interactive-section">
                 <div className="controller">
                     <div className="second-title" id="quick-view">Quick View</div>
-                    <ColorControl value={primaryColor} onChange={(value) => setPrimaryColor(value)} label="primaryColor"/>
+                    <ColorControl value={primaryColor} onChange={(value) => setPrimaryColor(value || undefined)} label="primaryColor"/>
                 </div>
                 <QuickViewResult>
                     <QuickViewResult.Code>
@@ -47,7 +47,7 @@ const ThemeProviderDocs = () => {
                                         <Dropdown.Item onClick={() => {}}>Dropdown Item 3</Dropdown.Item>
                                     </Dropdown.Items>
                                 </Dropdown>
-                                <RadioGroup name={"test-group"} orientation={"horizontal"}>
+                                <RadioGroup name={"test-group"} orientation={"horizontal"} value="3">
                                     <RadioGroup.Radio value="1" label="radio1"/>
                                     <RadioGroup.Radio value="2" label="radio2"/>
                                     <RadioGroup.Radio value="3" label="radio3"/>

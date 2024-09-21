@@ -2,7 +2,7 @@ import { option } from "../components/Select/SelectProps"
 import { inputTypes } from "../types/propTypes"
 
 export type ColorControlProps = {
-    value: string, 
+    value?: string, 
     onChange:(value:string) => void,
     defaultValue?: string,
     label?:string
